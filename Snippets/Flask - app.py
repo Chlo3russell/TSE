@@ -3,8 +3,13 @@ from datetime import datetime
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from cryptography.fernet import Fernet
+import base64
 
 app = Flask(__name__) # Initializes a flask web app instance
+
+key = Fernet.generate_key()  # Generate a new key; save it securely for production use!
+cipher = Fernet(key)
 
 Base = declarative_base() # Creates a base class for defining database models
 
@@ -34,7 +39,12 @@ def monitor_attack():
     attack_data = request.json.get('attack_data')
     ## Adds a new record to the database & commits it
     if ip_address and attack_type and attack_data:
-        attack_log = AttackLog(ip_address=ip_address, attack_type=attack_type, attack_data=attack_data)
+        encrypted_ip = cipher.encrypt(ip_address.encode()).decode()  # Encrypt IP address
+        encrypted_attack_type = cipher.encrypt(attack_type.encode()).decode()  # Encrypt attack type
+        encrypted_attack_data = cipher.encrypt(attack_data.encode()).decode()  # Encrypt attack data
+
+        # Log attack data into the database
+        attack_log = AttackLog(ip_address=encrypted_ip, attack_type=encrypted_attack_type, attack_data=encrypted_attack_data)
         session.add(attack_log)
         session.commit()
     ## Success or Error message depending on if the data is able to be committed to the DB
@@ -46,9 +56,22 @@ def monitor_attack():
 @app.route('/get_logs', methods=['GET']) # Fetches all stored attack logs from the database
 def get_logs():
     logs = session.query(AttackLog).all()
-    log_list = [{"ip_address": log.ip_address, "attack_type": log.attack_type, "timestamp": log.timestamp, "attack_data": log.attack_data} for log in logs]
-    
-    return jsonify(log_list), 200 # Converts the logs into JSON format
+    log_list = []
+
+    for log in logs:
+        # Decrypt the data when retrieving from the database
+        decrypted_ip = cipher.decrypt(log.ip_address.encode()).decode()  # Decrypt IP address
+        decrypted_attack_type = cipher.decrypt(log.attack_type.encode()).decode()  # Decrypt attack type
+        decrypted_attack_data = cipher.decrypt(log.attack_data.encode()).decode()  # Decrypt attack data
+
+        log_list.append({
+            "ip_address": decrypted_ip,
+            "attack_type": decrypted_attack_type,
+            "timestamp": log.timestamp,
+            "attack_data": decrypted_attack_data
+        })
+
+    return jsonify(log_list), 200
 
 ### Running application on local host
 if __name__ == '__main__':
