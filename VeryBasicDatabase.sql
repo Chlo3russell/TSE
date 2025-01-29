@@ -1,0 +1,7 @@
+CREATE TABLE attack_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(255) NOT NULL,
+    attack_type VARCHAR(255) NOT NULL,
+    attack_data TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
