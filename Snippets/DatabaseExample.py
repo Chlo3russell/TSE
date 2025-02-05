@@ -34,6 +34,17 @@ cursor.execute('''
     )
 ''')
 
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Flagged_Metrics (
+        Metric_ID INT PRIMARY KEY,
+        Connection_Frequency VARCHAR(45),
+        Failed_Login_Attempts INT,
+        Data_Transfer_Volume BIGINT(100),
+        Time_Of_Activity DATETIME,
+        IP_Traffic_IP_Address VARCHAR(45),
+        FOREIGN KEY (IP_Traffic_IP_Address) REFERENCES IP_Traffic(IP_Address)
+    )
+''')
 
 # Always commit changes
 conn.commit()
