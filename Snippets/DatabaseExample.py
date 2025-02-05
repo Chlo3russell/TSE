@@ -22,6 +22,18 @@ cursor.execute('''
     )
 ''')
 
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS IP_Traffic (
+        IP_Address VARCHAR(45) PRIMARY KEY,
+        Protocol_Type VARCHAR(10),
+        User_Agent VARCHAR(255),
+        Location_Location_ID INTEGER,
+        ISP_ISP_ID INTEGER,
+        FOREIGN KEY (Location_Location_ID) REFERENCES Location(Location_ID),
+        FOREIGN KEY (ISP_ISP_ID) REFERENCES ISP(ISP_ID)
+    )
+''')
+
 
 # Always commit changes
 conn.commit()
