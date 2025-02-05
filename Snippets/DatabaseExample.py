@@ -13,6 +13,13 @@ cursor.execute('''
     )
 ''')
 
+CREATE TABLE Location (
+    Location_ID INTEGER PRIMARY KEY,
+    Region VARCHAR(100),
+    Country VARCHAR(100),
+    City VARCHAR(100)
+);
+
 # Single insert
 cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", ('John', 'john@email.com'))
 
