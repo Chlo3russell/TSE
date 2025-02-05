@@ -6,26 +6,22 @@ cursor = conn.cursor()
 
 # Create a simple table
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        email TEXT UNIQUE
+    CREATE TABLE IF NOT EXISTS ISP (
+        ISP ID INT,
+        ISP Name VARCHAR(100),
+        Contact Information VARCHAR(255)
     )
 ''')
 
-CREATE TABLE Location (
-    Location_ID INTEGER PRIMARY KEY,
-    Region VARCHAR(100),
-    Country VARCHAR(100),
-    City VARCHAR(100)
-);
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Location (
+        Location_ID INTEGER PRIMARY KEY,
+        Region VARCHAR(100),
+        Country VARCHAR(100),
+        City VARCHAR(100)
+    )
+''')
 
-# Single insert
-cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", ('John', 'john@email.com'))
-
-# Multiple inserts
-users = [('Alice', 'alice@email.com'), ('Bob', 'bob@email.com')]
-cursor.executemany("INSERT INTO users (name, email) VALUES (?, ?)", users)
 
 # Always commit changes
 conn.commit()
