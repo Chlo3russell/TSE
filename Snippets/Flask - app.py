@@ -1,78 +1,206 @@
-from flask import Flask, request, jsonify # Flask: web framework, request: handles incoming http requests, jsonify: converts python dicts to json queries
+from flask import Flask, request, jsonify
 from datetime import datetime
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+import sqlite3
 from cryptography.fernet import Fernet
-import base64
 
-app = Flask(__name__) # Initializes a flask web app instance
+app = Flask(__name__)
 
-key = Fernet.generate_key()  # Generate a new key; save it securely for production use!
+key = Fernet.generate_key()
 cipher = Fernet(key)
 
-Base = declarative_base() # Creates a base class for defining database models
+def init_db():
+    conn = sqlite3.connect('ip_traffic.db')
+    c = conn.cursor()
+    
+    # Create Location table
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS Location (
+            Location_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Country VARCHAR(100),
+            City VARCHAR(100),
+            Region VARCHAR(100)
+        )
+    ''')
+    
+    # Create ISP table
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS ISP (
+            ISP_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            ISP_Name VARCHAR(100),
+            Contact_Information VARCHAR(255)
+        )
+    ''')
+    
+    # Create IP_Traffic table
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS IP_Traffic (
+            IP_Address VARCHAR(45) PRIMARY KEY,
+            Protocol_Type VARCHAR(10),
+            User_Agent VARCHAR(255),
+            Location_Location_ID INTEGER,
+            ISP_ISP_ID INTEGER,
+            FOREIGN KEY (Location_Location_ID) REFERENCES Location(Location_ID),
+            FOREIGN KEY (ISP_ISP_ID) REFERENCES ISP(ISP_ID)
+        )
+    ''')
+    
+    # Create Flagged_Metrics table
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS Flagged_Metrics (
+            Metric_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Connection_Frequency VARCHAR(45),
+            Failed_Login_Attempts INTEGER,
+            Data_Transfer_Volume BIGINT,
+            Time_of_Activity DATETIME DEFAULT CURRENT_TIMESTAMP,
+            IP_Traffic_IP_Address VARCHAR(45),
+            FOREIGN KEY (IP_Traffic_IP_Address) REFERENCES IP_Traffic(IP_Address)
+        )
+    ''')
+    
+    conn.commit()
+    conn.close()
 
-### Class for attack logs - represents a table in the MySQL database to store attack information
-class AttackLog(Base):
-    __tablename__ = 'attack_logs'
-    id = Column(Integer, primary_key=True) # Unique attack identifier
-    ip_address = Column(String(255)) # Attacker's IP
-    attack_type = Column(String(255)) # Attack type 
-    timestamp = Column(DateTime, default=datetime.utcnow) # Date & Time of attack (utcnow is deprecated so will need modifying)
-    attack_data = Column(String(500)) # Additional information
+def get_db_connection():
+    conn = sqlite3.connect('ip_traffic.db')
+    conn.row_factory = sqlite3.Row
+    return conn
 
-### Connection to the database
-DATABASE_URI = 'mysql+pymysql://username:password@localhost:3306/ddos_detection' # Connection string to the MySQL database
-engine = create_engine(DATABASE_URI) # Connects the application to the MySQL database
-Session = sessionmaker(bind=engine) # Creates a session to interact with the database/ execute queries
-session = Session()
+@app.route('/add_location', methods=['POST'])
+def add_location():
+    data = request.json
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        cur.execute('''
+            INSERT INTO Location (Country, City, Region)
+            VALUES (?, ?, ?)
+        ''', (
+            cipher.encrypt(data['country'].encode()).decode(),
+            cipher.encrypt(data['city'].encode()).decode(),
+            cipher.encrypt(data['region'].encode()).decode()
+        ))
+        
+        location_id = cur.lastrowid
+        conn.commit()
+        conn.close()
+        
+        return jsonify({"message": "Location added successfully", "location_id": location_id}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-Base.metadata.create_all(engine) # Ensures the attack log table is created if it doesn't already exist
+@app.route('/add_isp', methods=['POST'])
+def add_isp():
+    data = request.json
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        cur.execute('''
+            INSERT INTO ISP (ISP_Name, Contact_Information)
+            VALUES (?, ?)
+        ''', (
+            cipher.encrypt(data['isp_name'].encode()).decode(),
+            cipher.encrypt(data['contact_information'].encode()).decode()
+        ))
+        
+        isp_id = cur.lastrowid
+        conn.commit()
+        conn.close()
+        
+        return jsonify({"message": "ISP added successfully", "isp_id": isp_id}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-### Logging an attack
-@app.route('/monitor', methods=['POST']) # Accepts JSON data to log an attack
-def monitor_attack():
-    ## Check if all required fields are provided
-    ip_address = request.json.get('ip_address')
-    attack_type = request.json.get('attack_type')
-    attack_data = request.json.get('attack_data')
-    ## Adds a new record to the database & commits it
-    if ip_address and attack_type and attack_data:
-        encrypted_ip = cipher.encrypt(ip_address.encode()).decode()  # Encrypt IP address
-        encrypted_attack_type = cipher.encrypt(attack_type.encode()).decode()  # Encrypt attack type
-        encrypted_attack_data = cipher.encrypt(attack_data.encode()).decode()  # Encrypt attack data
+@app.route('/monitor_traffic', methods=['POST'])
+def monitor_traffic():
+    data = request.json
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        # Insert IP traffic data
+        cur.execute('''
+            INSERT INTO IP_Traffic (IP_Address, Protocol_Type, User_Agent, Location_Location_ID, ISP_ISP_ID)
+            VALUES (?, ?, ?, ?, ?)
+        ''', (
+            cipher.encrypt(data['ip_address'].encode()).decode(),
+            cipher.encrypt(data['protocol_type'].encode()).decode(),
+            cipher.encrypt(data['user_agent'].encode()).decode(),
+            data['location_id'],
+            data['isp_id']
+        ))
+        
+        # Insert flagged metrics if suspicious activity detected
+        if data.get('flagged_metrics'):
+            cur.execute('''
+                INSERT INTO Flagged_Metrics (
+                    Connection_Frequency, Failed_Login_Attempts, 
+                    Data_Transfer_Volume, IP_Traffic_IP_Address
+                )
+                VALUES (?, ?, ?, ?)
+            ''', (
+                cipher.encrypt(data['flagged_metrics']['connection_frequency'].encode()).decode(),
+                data['flagged_metrics']['failed_login_attempts'],
+                data['flagged_metrics']['data_transfer_volume'],
+                cipher.encrypt(data['ip_address'].encode()).decode()
+            ))
+        
+        conn.commit()
+        conn.close()
+        
+        return jsonify({"message": "Traffic data logged successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-        # Log attack data into the database
-        attack_log = AttackLog(ip_address=encrypted_ip, attack_type=encrypted_attack_type, attack_data=encrypted_attack_data)
-        session.add(attack_log)
-        session.commit()
-    ## Success or Error message depending on if the data is able to be committed to the DB
-        return jsonify({"message": "Attack logged successfully!"}), 200 
-    else:
-        return jsonify({"error": "Invalid data"}), 400
+@app.route('/get_traffic_data', methods=['GET'])
+def get_traffic_data():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        cur.execute('''
+            SELECT t.*, f.*, l.*, i.*
+            FROM IP_Traffic t
+            LEFT JOIN Flagged_Metrics f ON t.IP_Address = f.IP_Traffic_IP_Address
+            LEFT JOIN Location l ON t.Location_Location_ID = l.Location_ID
+            LEFT JOIN ISP i ON t.ISP_ISP_ID = i.ISP_ID
+        ''')
+        
+        rows = cur.fetchall()
+        traffic_data = []
+        
+        for row in rows:
+            decrypted_data = {
+                "ip_address": cipher.decrypt(row['IP_Address'].encode()).decode(),
+                "protocol_type": cipher.decrypt(row['Protocol_Type'].encode()).decode(),
+                "user_agent": cipher.decrypt(row['User_Agent'].encode()).decode(),
+                "location": {
+                    "country": cipher.decrypt(row['Country'].encode()).decode(),
+                    "city": cipher.decrypt(row['City'].encode()).decode(),
+                    "region": cipher.decrypt(row['Region'].encode()).decode()
+                },
+                "isp": {
+                    "name": cipher.decrypt(row['ISP_Name'].encode()).decode(),
+                    "contact": cipher.decrypt(row['Contact_Information'].encode()).decode()
+                }
+            }
+            
+            if row['Metric_ID']:
+                decrypted_data["flagged_metrics"] = {
+                    "connection_frequency": cipher.decrypt(row['Connection_Frequency'].encode()).decode(),
+                    "failed_login_attempts": row['Failed_Login_Attempts'],
+                    "data_transfer_volume": row['Data_Transfer_Volume'],
+                    "time_of_activity": row['Time_of_Activity']
+                }
+            
+            traffic_data.append(decrypted_data)
+        
+        conn.close()
+        return jsonify(traffic_data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-### Retrieving attack logs
-@app.route('/get_logs', methods=['GET']) # Fetches all stored attack logs from the database
-def get_logs():
-    logs = session.query(AttackLog).all()
-    log_list = []
-
-    for log in logs:
-        # Decrypt the data when retrieving from the database
-        decrypted_ip = cipher.decrypt(log.ip_address.encode()).decode()  # Decrypt IP address
-        decrypted_attack_type = cipher.decrypt(log.attack_type.encode()).decode()  # Decrypt attack type
-        decrypted_attack_data = cipher.decrypt(log.attack_data.encode()).decode()  # Decrypt attack data
-
-        log_list.append({
-            "ip_address": decrypted_ip,
-            "attack_type": decrypted_attack_type,
-            "timestamp": log.timestamp,
-            "attack_data": decrypted_attack_data
-        })
-
-    return jsonify(log_list), 200
-
-### Running application on local host
 if __name__ == '__main__':
+    init_db()
     app.run(debug=True, host='0.0.0.0', port=5000)
