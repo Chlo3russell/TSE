@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Monitoring Dashboard</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Traffic Monitoring Dashboard</h1>
+
+    <h2>Location Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Location ID</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Region</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for location in locations %}
+            <tr>
+                <td>{{ location.Location_ID }}</td>
+                <td>{{ location.Country }}</td>
+                <td>{{ location.City }}</td>
+                <td>{{ location.Region }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>IP Traffic Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Protocol Type</th>
+                <th>User Agent</th>
+                <th>Location ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for traffic in ip_traffic %}
+            <tr>
+                <td>{{ traffic.IP_Address }}</td>
+                <td>{{ traffic.Protocol_Type }}</td>
+                <td>{{ traffic.User_Agent }}</td>
+                <td>{{ traffic.Location_Location_ID }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Flagged Metrics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric ID</th>
+                <th>Connection Frequency</th>
+                <th>Failed Login Attempts</th>
+                <th>Data Transfer Volume</th>
+                <th>Time of Activity</th>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for metric in flagged_metrics %}
+            <tr>
+                <td>{{ metric.Metric_ID }}</td>
+                <td>{{ metric.Connection_Frequency }}</td>
+                <td>{{ metric.Failed_Login_Attempts }}</td>
+                <td>{{ metric.Data_Transfer_Volume }}</td>
+                <td>{{ metric.Time_of_Activity }}</td>
+                <td>{{ metric.IP_Traffic_IP_Address }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
