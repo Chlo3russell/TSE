@@ -1,9 +1,9 @@
-CREATE DATABASE traffic_monitoring;
+CREATE DATABASE IF NOT EXISTS traffic_monitoring;
 
 USE traffic_monitoring;
 
 -- Location Table
-CREATE TABLE Location (
+CREATE TABLE IF NOT EXISTS Location (
     Location_ID INT AUTO_INCREMENT PRIMARY KEY,
     Country VARCHAR(100),
     City VARCHAR(100),
@@ -11,7 +11,7 @@ CREATE TABLE Location (
 );
 
 -- IP Traffic Table
-CREATE TABLE IP_Traffic (
+CREATE TABLE IF NOT EXISTS IP_Traffic (
     IP_Address VARCHAR(45) PRIMARY KEY,
     Protocol_Type VARCHAR(10),
     User_Agent VARCHAR(255),
@@ -20,7 +20,7 @@ CREATE TABLE IP_Traffic (
 );
 
 -- Flagged Metrics Table
-CREATE TABLE Flagged_Metrics (
+CREATE TABLE IF NOT EXISTS Flagged_Metrics (
     Metric_ID INT AUTO_INCREMENT PRIMARY KEY,
     Connection_Frequency VARCHAR(45),
     Failed_Login_Attempts INT,
