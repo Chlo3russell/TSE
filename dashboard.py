@@ -23,7 +23,7 @@ def index():
         cursor.execute(f"SELECT * FROM {table}")
         data[table] = cursor.fetchall()
 
-    return render_template("template.html", data=data)
+    return render_template('template.html', data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)

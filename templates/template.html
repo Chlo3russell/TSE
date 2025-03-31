@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Monitoring Dashboard</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        h2 {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html "%}
+
+{% block content %}
     <h1>Traffic Monitoring Dashboard</h1>
 
     <h2>Location Data</h2>
@@ -95,5 +72,4 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+{% endblock %}
