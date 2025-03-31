@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ sqlite_db.row_factory = sqlite3.Row
 cursor = sqlite_db.cursor()
 
 @app.route("/")
-def index():
+def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.
     """
@@ -23,7 +23,14 @@ def index():
         cursor.execute(f"SELECT * FROM {table}")
         data[table] = cursor.fetchall()
 
-    return render_template('template.html', data=data)
+    return render_template('dashboard.html', data=data)
+
+@app.route("/defense-settings")
+def defense():
+    # Get all the current threshold data 
+    return render_template('defense.html', data=data)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

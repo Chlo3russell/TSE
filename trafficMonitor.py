@@ -4,7 +4,7 @@ import time
 import os
 import sqlite3
 
-THRESHOLD = 100  # packets per second threshold for DoS detection
+THRESHOLD = 150  # packets per second threshold for DoS detection
 BLOCK_DURATION = 300  # seconds to block an IP
 
 packet_counts = defaultdict(lambda: {"count": 0, "timestamp": time.time()})

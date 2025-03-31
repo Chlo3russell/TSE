@@ -1,4 +1,3 @@
-# LINUX APPROACH
 import time
 import logging
 import subprocess
