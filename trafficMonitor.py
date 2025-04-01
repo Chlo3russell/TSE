@@ -11,7 +11,7 @@ packet_counts = defaultdict(lambda: {"count": 0, "timestamp": time.time()})
 blocked_ips = {}
 
 # Ensure we're connecting to the same database as dashboard.py
-sqlite_db = sqlite3.connect("database.db", check_same_thread=False)
+sqlite_db = sqlite3.connect("database/database.db", check_same_thread=False)
 sqlite_db.row_factory = sqlite3.Row
 cursor = sqlite_db.cursor()
 

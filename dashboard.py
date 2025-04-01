@@ -4,7 +4,7 @@ import sqlite3
 app = Flask(__name__)
 
 # Connect to existing SQLite database
-sqlite_db = sqlite3.connect("database.db", check_same_thread=False)
+sqlite_db = sqlite3.connect("database/database.db", check_same_thread=False)
 sqlite_db.row_factory = sqlite3.Row
 cursor = sqlite_db.cursor()
 
@@ -26,18 +26,11 @@ def dashboard():
     return render_template('dashboard.html', data=data)
 
 @app.route("/defense-settings")
-def defense_settings():
+def defense():
     # Get all the current threshold data... will write soon
 
     # Display defense page
     return render_template('defense.html') # add - data=data
-
-@app.route("/update-thresholds", method=['POST'])
-def update_thresholds():
-    # Get new threshold limit
-    new_threshold = request.form.get('limit')
-    # Redirect to defense page
-    return redirect(url_for("defense_settings"))
 
 if __name__ == "__main__":
     app.run(debug=True)
