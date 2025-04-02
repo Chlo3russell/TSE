@@ -1,36 +1,45 @@
-/* Elsa's Styling */
 body {
-    background: #d9d9d9;
+    background-color: #fafaff;
+    font-family: arial, sans-serif;
+    margin: 0; 
+    padding: 0;
 }
 
 h1, h2, h3 {
-    color: #284b63;
+    color: #2c3e50;
 }
 
 nav {
-    background: #353535;
-    padding: 10px;
+    background-color: #1e2749;
+    padding: 1rem;
 }
 
 nav a {
-    color: #ffffff;
+    color: #fafaff;
     margin-right: 15px;
     text-decoration: none;
+    font-weight: bold;
 }
 
-/* Chloe's Styling */
+nav a:hover {
+    color: #e4d9ff;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: #e4d9ff;
+    color: #30343f;
 }
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #fafaff;
     padding: 8px;
     text-align: left;
+    color: #fafaff;
 }
 th {
-    background-color: #3c6e71;
+    background-color: #273469;
 }
 h2 {
     margin-top: 20px;
