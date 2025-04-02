@@ -114,6 +114,7 @@ class Database:
             )
         ''')
     
+### INDEX
     def __create_indexes(self):
         """
         Create database indexes for some tables for performance.
@@ -133,43 +134,7 @@ class Database:
             print(f"Error creating indexes: {e}")
             raise
 
-    def _add_location(self, country, city, region):
-        """
-        Add location information to the database. Can be called directly or used with IP lookup.
-        
-        Args:
-            country (str): Country name
-            city (str): City name
-            region (str): Region/state name
-        
-        Returns:
-            int: Location ID
-        """
-        try:
-            # Check if location exists
-            self._c.execute('''
-                SELECT id FROM location 
-                WHERE country = ? AND city = ? AND region = ?
-            ''', (country, city, region))
-            
-            existing_location = self._c.fetchone()
-            if existing_location:
-                return existing_location[0]
-            
-            # Insert new location
-            self._c.execute('''
-                INSERT INTO location (country, city, region)
-                VALUES (?, ?, ?)
-            ''', (country, city, region))
-            
-            self._conn.commit()
-            return self._c.lastrowid
-        
-        except sqlite3.Error as e:
-            print(f"Error adding location: {e}")
-            self._conn.rollback()
-            return None
-
+### HELPER FUNCTIONS
     def _get_ip_info_whois(self, ip_address):
         """
         Helper function to get IP information using whois
@@ -214,6 +179,44 @@ class Database:
         except Exception as e:
             print(f"Error getting scapy information: {e}")
             return None
+
+### SETTER FUNCTIONS
+    def _add_location(self, country, city, region):
+            """
+            Add location information to the database. Can be called directly or used with IP lookup.
+            
+            Args:
+                country (str): Country name
+                city (str): City name
+                region (str): Region/state name
+            
+            Returns:
+                int: Location ID
+            """
+            try:
+                # Check if location exists
+                self._c.execute('''
+                    SELECT id FROM location 
+                    WHERE country = ? AND city = ? AND region = ?
+                ''', (country, city, region))
+                
+                existing_location = self._c.fetchone()
+                if existing_location:
+                    return existing_location[0]
+                
+                # Insert new location
+                self._c.execute('''
+                    INSERT INTO location (country, city, region)
+                    VALUES (?, ?, ?)
+                ''', (country, city, region))
+                
+                self._conn.commit()
+                return self._c.lastrowid
+            
+            except sqlite3.Error as e:
+                print(f"Error adding location: {e}")
+                self._conn.rollback()
+                return None
 
     def _add_isp(self, isp_name, contact_information):
         """
@@ -302,11 +305,6 @@ class Database:
             print(f"Error blocking IP: {e}")
             self._conn.rollback()
             return False
-        
-
-
-
-    ### Leave Rate Limiting For Someone Else
 
     # Add/ log an admins action, did they change something e.g. add a new rate limit/ did they manually unblock someone/ change the value of a major metric i.e. the block duration
     def _add_admin_action(self, ip_id, action):
@@ -408,9 +406,51 @@ class Database:
             self._conn.rollback()
             return False
 
+    # Add an ip to the central ip table
+    def _add_ip(self, ip_address, location_id=None, isp_id=None):
+        # Add IP with just address
+        #ip_id = db._add_ip('192.168.1.1')
 
+        # Add IP with location and ISP info
+        #location_id = db._add_location('USA', 'New York', 'NY')
+        #isp_id = db._add_isp('Example ISP', 'support@example.com')
+        #ip_id = db._add_ip('192.168.1.2', location_id, isp_id)
 
-        # Query to get a list of blocked IPs, optionally filtered by a specific IP address
+        try:
+            # Check if IP already exists
+            self._c.execute('''
+                SELECT id FROM ip_list 
+                WHERE ip_address = ?
+            ''', (ip_address,))
+            
+            existing_ip = self._c.fetchone()
+            if existing_ip:
+                return existing_ip[0]
+            
+            # Insert new IP
+            self._c.execute('''
+                INSERT INTO ip_list (ip_address, location_id, isp_id)
+                VALUES (?, ?, ?)
+            ''', (ip_address, location_id, isp_id))
+            
+            self._conn.commit()
+            
+            # Log the action in admin_logs
+            self._c.execute('''
+                INSERT INTO admin_logs (ip_id, action)
+                VALUES (?, ?)
+            ''', (self._c.lastrowid, f"IP Added: {ip_address}"))
+            
+            self._conn.commit()
+            return self._c.lastrowid
+        
+        except sqlite3.Error as e:
+            print(f"Error adding IP: {e}")
+            self._conn.rollback()
+            return None
+
+### GETTER FUNCTIONS
+    # Query to get a list of blocked IPs, optionally filtered by a specific IP address
     def _get_blocked_ips(self, ip_address=None):
             try:
                 if ip_address:
@@ -431,7 +471,7 @@ class Database:
                 #error msg
                 print(f"Error fetching blocked IPs: {e}")
 
-        # Query to get traffic logs, optionally filtered by a start and end timestamp
+    # Query to get traffic logs, optionally filtered by a start and end timestamp
     def _get_traffic_logs(self, start_time=None, end_time=None):
             try:
                 if start_time and end_time:
@@ -445,7 +485,6 @@ class Database:
             except sqlite3.Error as e:
                 #error msg
                 print(f"Error fetching traffic logs: {e}")
-
 
     # Query to get an ip/ ip id from the ips table
     def _get_ip(self, ip_address=None, ip_id=None):
@@ -513,50 +552,6 @@ class Database:
         except sqlite3.Error as e:
             print(f"Error retrieving IP information: {e}")
             return None
-
-
-    # Add an ip to the central ip table
-    def _add_ip(self, ip_address, location_id=None, isp_id=None):
-        # Add IP with just address
-        #ip_id = db._add_ip('192.168.1.1')
-
-        # Add IP with location and ISP info
-        #location_id = db._add_location('USA', 'New York', 'NY')
-        #isp_id = db._add_isp('Example ISP', 'support@example.com')
-        #ip_id = db._add_ip('192.168.1.2', location_id, isp_id)
-
-        try:
-            # Check if IP already exists
-            self._c.execute('''
-                SELECT id FROM ip_list 
-                WHERE ip_address = ?
-            ''', (ip_address,))
-            
-            existing_ip = self._c.fetchone()
-            if existing_ip:
-                return existing_ip[0]
-            
-            # Insert new IP
-            self._c.execute('''
-                INSERT INTO ip_list (ip_address, location_id, isp_id)
-                VALUES (?, ?, ?)
-            ''', (ip_address, location_id, isp_id))
-            
-            self._conn.commit()
-            
-            # Log the action in admin_logs
-            self._c.execute('''
-                INSERT INTO admin_logs (ip_id, action)
-                VALUES (?, ?)
-            ''', (self._c.lastrowid, f"IP Added: {ip_address}"))
-            
-            self._conn.commit()
-            return self._c.lastrowid
-        
-        except sqlite3.Error as e:
-            print(f"Error adding IP: {e}")
-            self._conn.rollback()
-            return None
         
     # Query to get the changes/ actions taken on rate limits
     def _get_rate_limit_actions(self):
@@ -614,7 +609,18 @@ class Database:
             print(f"Error retrieving admin actions: {e}")
             return []
 
+    def get_whois_info(domain):
+        try:
+            # Remove 'https://' from the domain
+            domain = domain.replace('https://', '').replace('http://', '')
+            w = whois.whois(domain)
+            print(f"WHOIS data retrieved: {w}")
+            return w
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None
 
+### DELETE FUNCTION
     # Delete query to get rid of old records after a certain amount of time - improvement: have it be a default amount of time/ admin can change it
     def _clear_records(self, days_to_keep=30):
         # Clear records older than 30 days (default)
@@ -676,17 +682,6 @@ class Database:
 
         # Always commit changes
         conn.commit()
-
-    def get_whois_info(domain):
-        try:
-            # Remove 'https://' from the domain
-            domain = domain.replace('https://', '').replace('http://', '')
-            w = whois.whois(domain)
-            print(f"WHOIS data retrieved: {w}")
-            return w
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            return None
 
     def save_to_db(domain, whois_info):
         try:
