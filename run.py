@@ -10,5 +10,10 @@ def run_flask():
 def run_monitoring():
     os.system("python trafficMonitor.py")  # Runs the traffic monitor
 
+def run_attack():
+    os.system("python attacks/synack.py")
+
 threading.Thread(target=run_flask).start()
 threading.Thread(target=run_monitoring).start()
+threading.Thread(target=run_attack).start()
+

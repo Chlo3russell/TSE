@@ -30,16 +30,18 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     background-color: #e4d9ff;
-    color: #30343f;
 }
 th, td {
     border: 1px solid #fafaff;
     padding: 8px;
     text-align: left;
-    color: #fafaff;
 }
 th {
     background-color: #273469;
+    color: #fafaff;
+}
+td {
+    color: #2c3e50;
 }
 h2 {
     margin-top: 20px;
