@@ -3,7 +3,7 @@ from scapy.all import IP, TCP, Raw, RandShort, send
 from random import randint
 
 # Target configuration (for testing in YOUR environment)
-target_ip = "192.168.0.80"  # Replace with your router's IP
+target_ip = ""  # Replace with your router's IP
 target_port = 80             # Replace with an open port on your router
 
 # Function to send a high volume of SYN packets

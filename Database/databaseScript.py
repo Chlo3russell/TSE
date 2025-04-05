@@ -554,7 +554,7 @@ class Database:
             return None
         
     # Query to get the changes/ actions taken on rate limits
-    def _get_rate_limit_actions(self, ):
+    def _get_rate_limit_actions(self):
         pass
 
     # Query to get a records of the admins actions/ changes they've made 

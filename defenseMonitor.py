@@ -1,12 +1,12 @@
 from datetime import datetime, timedelta
 from defense.defenseScript import Blocker
-from database import databaseScript
+from database.databaseScript import Database
 import logging
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class RunDefense: 
-    def __init__(self, db, block_duration=300):
+    def __init__(self):
         '''
         Initalises the RunDefense class, the class that conjoins the database script with the defense script
         Args:
@@ -14,8 +14,8 @@ class RunDefense:
             block_duration: Duration in seconds that the blocker script needs to block each IP
         '''
 
-        self.db = db
-        self.blocker = Blocker(block_duration=block_duration)
+        self.db = Database()
+        self.blocker = Blocker(block_duration=300)
         logging.info("RunDefense Class Initalised")
 
     def block_ip(self, ip_address, reason='') -> bool:

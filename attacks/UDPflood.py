@@ -4,7 +4,7 @@ import time
 
 # Set the target to your VM's VICTIMS IP address
 # I haven't done this one for a flask app yet
-target_ip = "192.168.0.80"  
+target_ip = ""  
 target_port = 80  # Target port
 
 
