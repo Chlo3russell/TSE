@@ -1,5 +1,7 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, flash
 import sqlite3
+from defenseMonitor import RunDefense
+from database.databaseScript import Database
 
 app = Flask(__name__)
 
@@ -7,6 +9,9 @@ app = Flask(__name__)
 conn = sqlite3.connect("database/database.db", check_same_thread=False)
 conn.row_factory = sqlite3.Row
 cursor = conn.cursor()
+
+app.secret_key = "defenseBranch"
+defense = RunDefense()
 
 @app.route("/")
 def dashboard():
@@ -32,12 +37,25 @@ def dashboard():
         cursor.close()
         conn.close()
 
-@app.route("/defense-settings")
+@app.route("/defense-settings", methods=['GET', 'POST'])
 def defense():
     # Get all the current threshold data... will write soon
+    if request.method == 'POST':
+        ip_address = request.form.get('ip_address')
+        action = request.form.get('action')
 
+        if not ip_address:
+            print(f"Input error, IP address not entered")
+        elif action == 'block':
+            defense.block_ip(ip_address, reason="Blocked manually by admin")
+        elif action == 'unblock':
+            defense.unblock_ip(ip_address)
+        
+        return redirect(url_for('defense'))
+
+    blocked_ips = conn._get_blocked_ips()
     # Display defense page
-    return render_template('defense.html') # add - data=data
+    return render_template('defense.html', blocked_ips=blocked_ips)
 
 if __name__ == "__main__":
     app.run(debug=True)
