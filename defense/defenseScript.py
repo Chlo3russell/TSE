@@ -4,19 +4,23 @@ Script not meant to be ran on it's own, use defenseMonitor.
 import time
 import logging
 import subprocess
+import os
 
 ## Logging config - better for traceability & debugging instead of print
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 ## Class for blocking & unblocking IPs using iptables
 class Blocker:
-    def __init__(self, block_duration = 300):
+    def __init__(self, block_duration):
         self.block_duration = block_duration # Duration the IPs will be blocked for in seconds
         self.blocked_ips = {} # Dictionary to track blocked IPs & expiry times
 
     def _run_command(self, *args):
         try:
-            subprocess.run(['iptables'] + list(args), check= True)
+            if os.name == "posix":
+                subprocess.run(['iptables'] + list(args), check= True)
+            elif os.name == "nt":
+                subprocess.run(['netsh'] + list(args), check= True)
         except subprocess.CalledProcessError as e:
             logging.error(f"Unable to run iptables command | {e}")
             raise
@@ -25,7 +29,10 @@ class Blocker:
         ## Blocks IPs using iptables
         try:
             if ip_address not in self.blocked_ips:
-                self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
+                if os.name == "posix":
+                    self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
+                elif os.name == "nt":
+                    self._run_command("advfirewall", "firewall", "add", "rule", f"name=\"Block {ip_address}\"", "dir=in", "action=block", f"remoteip={ip_address}", "enable=yes")
                 self.blocked_ips[ip_address] = time.time() + self.block_duration # When does that IP block last till
                 logging.info(f"Blocked IP Address {ip_address}")
             else:
@@ -38,7 +45,10 @@ class Blocker:
         try:
             for ip_address, block_time in list(self.blocked_ips.items()):
                 if time.time() >= block_time:
-                    self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
+                    if os.name == "posix":
+                        self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
+                    elif os.name == "nt":
+                        self._run_command("advfirewall", "firewall", "delete", "rule", f"name=\"Block {ip_address}\"")
                     del self.blocked_ips[ip_address]
                     logging.info(f"Unblocked IP Address {ip_address}")
         except Exception as e:
@@ -48,7 +58,10 @@ class Blocker:
         ## Manually unblock a specific ip
         try:
             if ip_address in self.blocked_ips:
-                self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
+                if os.name == "posix":
+                    self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
+                elif os.name == "nt":
+                    self._run_command("advfirewall", "firewall", "delete", "rule", f"name=\"Block {ip_address}\"")
                 del self.blocked_ips[ip_address]
                 logging.info(f"Manually blocked IP Address {ip_address}")
             else:
@@ -59,9 +72,29 @@ class Blocker:
     def get_blocked_ips(self):
         ## Retrieve the list of blocked ips from iptables to check which ones are blocked
         try:
-            command = subprocess.check_output(["iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
-            blocked = [line.split()[3] for line in command.stdout.splitlines() if "DROP" in line]
-            return blocked
+            if os.name == "posix":
+                command = subprocess.check_output(["iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
+                blocked = [line.split()[3] for line in command.stdout.splitlines() if "DROP" in line]
+                return blocked
+            elif os.name == "nt":
+                command = subprocess.check_output(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
+                blocked = []
+                current_rule = {}
+
+                for line in command.stdout.splitlines():
+                    if "Rule Name:" in line:
+                        if current_rule.get("action") == "Block" and current_rule.get("remoteip"):
+                            blocked.extend(current_rule["remoteip"].split(','))
+                        current_rule = {"name": line.split(":")[1].strip()}
+                    elif "Action:" in line:
+                        current_rule["action"] = line.split(":")[1].strip()
+                    elif "RemoteIP" in line:
+                        current_rule['remoteip'] = line.split(":")[1].strip()
+                
+                if current_rule.get("action") == "Block" and current_rule.get("remoteip"):
+                    blocked.extend(current_rule["remoteip"].split(','))
+                return line(set(blocked))
+
         except subprocess.CalledProcessError as e:
             logging.error(f"Unable to retrieve blocked IPs | {e}")
             return []
@@ -69,10 +102,14 @@ class Blocker:
     def check_table_rules(self):
         ## Returns/ Prints the current rules of the IP table
         try:
-            command = subprocess.check_output(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
-            logging.info("Current iptables rules:\n", command.stdout)
+            if os.name == "posix":
+                command = subprocess.check_output(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
+                logging.info("Current iptables rules:\n", command.stdout)
+            elif os.name == "nt":
+                command = subprocess.check_output(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check=True, text=True)
+                logging.info("Current firewall rules:\n" + command.stdout)
         except subprocess.CalledProcessError as e:
-            logging.error(f"Unable to retrieve iptables rules | {e}")
+            logging.error(f"Unable to retrieve rules | {e}")
 
     def add_rate_limit(self, protocol, port=None, per_second = 25, burst_limit = 50):
         ## Add iptables rule to limit syn packets directly
