@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
 
 # Create/connect to a database
-conn = sqlite3.connect('database/database.db')
+conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
 
 # Create a simple table
 class Database:
     def __init__(self):
         # Protected methods
-        self._conn = sqlite3.connect("database/database.db")
+        self._conn = sqlite3.connect("database.db")
         self._conn.row_factory = sqlite3.Row
         self._conn.execute('PRAGMA foreign_keys = ON')
         self._c = self._conn.cursor() 
@@ -21,9 +21,9 @@ class Database:
         self.__create_indexes()
     
     def __setup_db(self):
-        '''
-        Creates all databases if they don't exist.
-        '''
+        
+        #Creates all databases if they don't exist.
+        
         # Create IPs table - reason: can add more ip metadata without changing other tables
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS ip_list (
@@ -116,9 +116,9 @@ class Database:
     
 ### INDEX
     def __create_indexes(self):
-        """
-        Create database indexes for some tables for performance.
-        """
+        
+        #Create database indexes for some tables for performance.
+        
         try:
             # Index for frequently queried columns
             self._c.execute('CREATE INDEX IF NOT EXISTS index_ip_address ON ip_list(ip_address)')
@@ -136,9 +136,9 @@ class Database:
 
 ### HELPER FUNCTIONS
     def _get_ip_info_whois(self, ip_address):
-        """
-        Helper function to get IP information using whois
-        """
+        
+        #Helper function to get IP information using whois
+        
         try:
             w = whois.whois(ip_address)
             country = w.country or "Unknown"
@@ -159,9 +159,9 @@ class Database:
             return None
 
     def _get_ip_info_scapy(self, ip_address):
-        """
-        Helper function to get IP information using scapy
-        """
+        
+        #Helper function to get IP information using scapy
+        
         try:
             # Send ICMP echo request
             packet = IP(dst=ip_address)/ICMP()
@@ -182,53 +182,53 @@ class Database:
 
 ### SETTER FUNCTIONS
     def _add_location(self, country, city, region):
-            """
-            Add location information to the database. Can be called directly or used with IP lookup.
+        
+        #Add location information to the database. Can be called directly or used with IP lookup.
+        
+        #Args:
+        #    country (str): Country name
+        #    city (str): City name
+        #    region (str): Region/state name
+        
+        #Returns:
+        #    int: Location ID
+        
+        try:
+            # Check if location exists
+            self._c.execute('''
+                SELECT id FROM location 
+                WHERE country = ? AND city = ? AND region = ?
+            ''', (country, city, region))
             
-            Args:
-                country (str): Country name
-                city (str): City name
-                region (str): Region/state name
+            existing_location = self._c.fetchone()
+            if existing_location:
+                return existing_location[0]
             
-            Returns:
-                int: Location ID
-            """
-            try:
-                # Check if location exists
-                self._c.execute('''
-                    SELECT id FROM location 
-                    WHERE country = ? AND city = ? AND region = ?
-                ''', (country, city, region))
-                
-                existing_location = self._c.fetchone()
-                if existing_location:
-                    return existing_location[0]
-                
-                # Insert new location
-                self._c.execute('''
-                    INSERT INTO location (country, city, region)
-                    VALUES (?, ?, ?)
-                ''', (country, city, region))
-                
-                self._conn.commit()
-                return self._c.lastrowid
+            # Insert new location
+            self._c.execute('''
+                INSERT INTO location (country, city, region)
+                VALUES (?, ?, ?)
+            ''', (country, city, region))
             
-            except sqlite3.Error as e:
-                print(f"Error adding location: {e}")
-                self._conn.rollback()
-                return None
+            self._conn.commit()
+            return self._c.lastrowid
+        
+        except sqlite3.Error as e:
+            print(f"Error adding location: {e}")
+            self._conn.rollback()
+            return None
 
     def _add_isp(self, isp_name, contact_information):
-        """
-        Add ISP information to the database
         
-        Args:
-            isp_name (str): Name of the ISP
-            contact_information (str): Contact details for the ISP
+        #Add ISP information to the database
         
-        Returns:
-            int: ISP ID
-        """
+        #Args:
+        #    isp_name (str): Name of the ISP
+        #    contact_information (str): Contact details for the ISP
+        
+        #Returns:
+        #    int: ISP ID
+        
         try:
             # Check if ISP exists
             self._c.execute('''
@@ -255,18 +255,18 @@ class Database:
             return None
 
     def _add_blocked_ip(self, ip_id, block_time=None, unblock_time=None, reason=""):
-        """
-        Add an IP to the blocked IPs list
         
-        Args:
-            ip_id (str): ID of the IP to block
-            block_time (datetime): Time when the block starts (default: current time)
-            unblock_time (datetime): Time when the block ends (default: 24 hours from block_time)
-            reason (str): Reason for blocking the IP
+        #Add an IP to the blocked IPs list
         
-        Returns:
-            bool: True if successful, False otherwise
-        """
+        #Args:
+        #    ip_id (str): ID of the IP to block
+        #    block_time (datetime): Time when the block starts (default: current time)
+        #    unblock_time (datetime): Time when the block ends (default: 24 hours from block_time)
+        #    reason (str): Reason for blocking the IP
+        
+        #Returns:
+        #    bool: True if successful, False otherwise
+        
         try:
             # Set default block time to current time if not provided
             if block_time is None:
@@ -620,14 +620,18 @@ class Database:
             print(f"An error occurred: {e}")
             return None
 
+
+
 ### DELETE FUNCTION
-    # Delete query to get rid of old records after a certain amount of time - improvement: have it be a default amount of time/ admin can change it
+
     def _clear_records(self, days_to_keep=30):
         # Clear records older than 30 days (default)
         #deleted = db._clear_records()
 
-        # Clear records older than 60 days
-        #deleted = db._clear_records(days_to_keep=60)
+        # Set retention period to 30 days (default)
+        #db._clear_records()
+        # Change retention period to 60 days
+        #db._clear_records(days_to_keep=60)
 
         # Example response:
         # {
@@ -637,12 +641,46 @@ class Database:
         #     'flagged_metrics': 200,
         #     'blocked_ips': 25
         # }
+        
+        #Sets up automatic cleanup of old records and performs immediate cleanup.
+        #Args:
+        #    days_to_keep (int): Number of days to keep records before deletion (default: 30)
 
         try:
-            cutoff_date = datetime.now() - timedelta(days=days_to_keep)
-            deleted_counts = {}
-            
-            # Define tables and their timestamp columns
+            # Create a table to store cleanup configuration
+            self._c.execute('''
+                CREATE TABLE IF NOT EXISTS cleanup_config (
+                    id INTEGER PRIMARY KEY CHECK (id = 1),
+                    days_to_keep INTEGER NOT NULL,
+                    last_cleanup TIMESTAMP
+                )
+            ''')
+
+            # unblocked info is changed to "Auto-unblocked" when the block duration expires
+            self._c.execute('''
+                CREATE TRIGGER IF NOT EXISTS unblock_expired_ips
+                AFTER UPDATE ON blocked_ips
+                BEGIN
+                    UPDATE blocked_ips 
+                    SET unblock_time = CURRENT_TIMESTAMP,
+                        reason = reason || ' (Auto-unblocked)'
+                    WHERE unblock_time <= CURRENT_TIMESTAMP 
+                    AND unblock_time IS NOT NULL;
+
+                    INSERT INTO admin_logs (ip_id, action)
+                    SELECT ip_id, 'IP Auto-unblocked: Block duration expired'
+                    FROM blocked_ips
+                    WHERE unblock_time <= CURRENT_TIMESTAMP;
+                END;
+            ''')
+
+            # Update or insert cleanup configuration
+            self._c.execute('''
+                INSERT OR REPLACE INTO cleanup_config (id, days_to_keep, last_cleanup)
+                VALUES (1, ?, CURRENT_TIMESTAMP)
+            ''', (days_to_keep,))
+
+            # Create triggers for automatic cleanup on each table
             tables = {
                 'traffic_logs': 'timestamp',
                 'rate_limit_logs': 'timestamp',
@@ -650,7 +688,24 @@ class Database:
                 'flagged_metrics': 'time_of_activity',
                 'blocked_ips': 'unblock_time'
             }
-            
+
+            for table, timestamp_col in tables.items():
+                # Create trigger that runs on INSERT
+                self._c.execute(f'''
+                    CREATE TRIGGER IF NOT EXISTS cleanup_{table}_trigger
+                    AFTER INSERT ON {table}
+                    BEGIN
+                        DELETE FROM {table}
+                        WHERE {timestamp_col} < datetime('now', '-' || (
+                            SELECT days_to_keep FROM cleanup_config WHERE id = 1
+                        ) || ' days');
+                    END;
+                ''')
+
+            # Perform immediate cleanup
+            deleted_counts = {}
+            cutoff_date = datetime.now() - timedelta(days=days_to_keep)
+
             for table, timestamp_col in tables.items():
                 # Get count of records to be deleted
                 self._c.execute(f'''
@@ -658,32 +713,32 @@ class Database:
                     WHERE {timestamp_col} < ?
                 ''', (cutoff_date,))
                 count = self._c.fetchone()[0]
-                
+
                 # Delete old records
                 self._c.execute(f'''
                     DELETE FROM {table}
                     WHERE {timestamp_col} < ?
                 ''', (cutoff_date,))
-                
+
                 deleted_counts[table] = count
-            
+
             # Log this cleanup action
             self._c.execute('''
                 INSERT INTO admin_logs (ip_id, action)
                 VALUES (?, ?)
-            ''', (0, f"Records cleanup: Deleted records older than {days_to_keep} days"))
-            
+            ''', (0, f"Records cleanup configuration updated: Keeping {days_to_keep} days of records"))
+
             self._conn.commit()
             return deleted_counts
-            
+
         except sqlite3.Error as e:
-            print(f"Error clearing records: {e}")
+            print(f"Error setting up automatic cleanup: {e}")
             self._conn.rollback()
+            return None
 
-        # Always commit changes
-        conn.commit()
 
-    def save_to_db(domain, whois_info):
+    # Store WHOIS information in the database
+    def _store_domain_details(domain, whois_info):
         try:
             conn = sqlite3.connect('database.db')
             cursor = conn.cursor()
