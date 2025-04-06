@@ -555,7 +555,29 @@ class Database:
         
     # Query to get the changes/ actions taken on rate limits
     def _get_rate_limit_actions(self):
-        pass
+        '''
+        Gets all rate limit actions from the database
+        Returns: 
+            List of dicts containing timestamp, action and config if present
+        '''
+        try:
+            self._c.execute('''
+                SELECT timestamp, action, 
+                    CASE WHEN config IS NULL THEN '' ELSE config END as config
+                FROM rate_limit_logs
+                ORDER BY timestamp DESC
+            ''')
+            results = self._c.fetchall()
+
+            return [{
+                'timestamp': row[0],
+                'action': row[1],
+                'config': row[2]
+            } for row in results
+            ]
+        except Exception as e:
+            print(f"Error retrieving rate limit actions: {e}")
+            return []
 
     # Query to get a records of the admins actions/ changes they've made 
     def _get_admin_actions(self, start_date=None, end_date=None, ip_id=None, limit=100):
@@ -619,8 +641,6 @@ class Database:
         except Exception as e:
             print(f"An error occurred: {e}")
             return None
-
-
 
 ### DELETE FUNCTION
 
@@ -735,7 +755,6 @@ class Database:
             print(f"Error setting up automatic cleanup: {e}")
             self._conn.rollback()
             return None
-
 
     # Store WHOIS information in the database
     def _store_domain_details(domain, whois_info):
