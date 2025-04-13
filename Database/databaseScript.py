@@ -756,9 +756,6 @@ class Database:
             self._conn.rollback()
             return None
 
-        # Always commit changes
-        conn.commit()
-
     def _store_domain_details(domain, whois_info):
         try:
             conn = sqlite3.connect('database.db')
