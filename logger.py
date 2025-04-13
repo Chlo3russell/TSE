@@ -9,7 +9,10 @@ import re
 LOG_DIRECTORY = "logs"
 LOG_FILE = os.path.join(LOG_DIRECTORY, "app.log")
 
-def setup_logger(name):
+def setup_logger(name=__name__):
+    '''
+    Setter function to configure and ensure backups for the shared log file.
+    '''
     # Creates the log directory if it doesn't exists yet
     if not os.path.exists(LOG_DIRECTORY):
         os.makedirs(LOG_DIRECTORY)
