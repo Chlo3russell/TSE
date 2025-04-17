@@ -3,6 +3,7 @@ from collections import defaultdict
 import time
 import os
 import sqlite3
+import shutil
 
 THRESHOLD = 100  # packets per second threshold for DoS detection
 BLOCK_DURATION = 300  # seconds to block an IP
@@ -10,37 +11,16 @@ BLOCK_DURATION = 300  # seconds to block an IP
 packet_counts = defaultdict(lambda: {"count": 0, "timestamp": time.time()})
 blocked_ips = {}
 
-# Ensure we're connecting to the same database as dashboard.py
+# Replace database initialization with template copy
+if not os.path.exists("database.db"):
+    template_path = os.path.join(os.path.dirname(__file__), "templates", "databaseTemplate.db")
+    if not os.path.exists(template_path):
+        raise FileNotFoundError("databaseTemplate.db not found in templates folder")
+    shutil.copy(template_path, "database.db")
+
 sqlite_db = sqlite3.connect("database.db", check_same_thread=False)
 sqlite_db.row_factory = sqlite3.Row
 cursor = sqlite_db.cursor()
-
-# Initialize the database schema (if not already present)
-cursor.executescript("""
-    CREATE TABLE IF NOT EXISTS Location (
-        Location_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        Country VARCHAR(100),
-        City VARCHAR(100),
-        Region VARCHAR(100)
-    );
-    CREATE TABLE IF NOT EXISTS IP_Traffic (
-        IP_Address TEXT PRIMARY KEY,
-        Protocol_Type VARCHAR(10),
-        User_Agent VARCHAR(255),
-        Location_Location_ID INTEGER,
-        FOREIGN KEY (Location_Location_ID) REFERENCES Location(Location_ID)
-    );
-    CREATE TABLE IF NOT EXISTS Flagged_Metrics (
-        Metric_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        Connection_Frequency VARCHAR(45),
-        Failed_Login_Attempts INTEGER,
-        Data_Transfer_Volume INTEGER,
-        Time_of_Activity DATETIME DEFAULT CURRENT_TIMESTAMP,
-        IP_Traffic_IP_Address TEXT,
-        FOREIGN KEY (IP_Traffic_IP_Address) REFERENCES IP_Traffic(IP_Address)
-    );
-""")
-sqlite_db.commit()
 
 def log_to_database(ip, alert_type, protocol="TCP", user_agent="Unknown"):
     """
