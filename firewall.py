@@ -1,22 +1,20 @@
 from datetime import datetime, timedelta
 from defense.defenseScript import Blocker
 from database.databaseScript import Database
-import logging
+from logger import setup_logger
 
-logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = setup_logger(__name__)
+BLOCK_DURATION = 300
 
-class RunDefense: 
+class Firewall: 
     def __init__(self):
         '''
-        Initalises the RunDefense class, the class that conjoins the database script with the defense script
-        Args:
-            db: Database instance from databaseScript.py
-            block_duration: Duration in seconds that the blocker script needs to block each IP
+        Initalises the Defense class, the class that conjoins the database script with the defense script.
         '''
 
         self.db = Database()
-        self.blocker = Blocker(block_duration=300)
-        logging.info("RunDefense Class Initalised")
+        self.blocker = Blocker(BLOCK_DURATION)
+        logger.info("Firewall Class Initalised")
 
     def block_ip(self, ip_address, reason='') -> bool:
         '''
@@ -32,7 +30,7 @@ class RunDefense:
             if not ip_info:
                 ip_id = self.db._add_ip(ip_address)
                 if not ip_id:
-                    logging.error(f"Failed to add IP {ip_address} to the database")
+                    logger.error(f"Failed to add IP {ip_address} to the database")
                     return False
             else:
                 ip_id = ip_info['id']
@@ -53,16 +51,16 @@ class RunDefense:
             )
 
             if block_logged:
-                logging.info(f"Successfully logged the block of IP {ip_address} to the database")
+                logger.info(f"Successfully logged the block of IP {ip_address} to the database")
                 return True
             else:
-                logging.error(f"Failed to log the block of IP {ip_address} to the database")
+                logger.error(f"Failed to log the block of IP {ip_address} to the database")
                 # If the block cannot be logged, rollback
                 self.blocker.manual_unblock(ip_address)
                 return False
             
         except Exception as e: 
-            logging.error(f"Error blocking IP {ip_address} | {e}")
+            logger.error(f"Error blocking IP {ip_address} | {e}")
 
     def unblock_ip(self, ip_address) -> bool:
         '''
@@ -75,7 +73,7 @@ class RunDefense:
         try:
             ip_info = self.db._get_ip(ip_address)
             if not ip_info:
-                logging.warning(f"IP {ip_address} cannot be found in the database")
+                logger.warning(f"IP {ip_address} cannot be found in the database")
                 return False
             
             ip_id = ip_info['id']
@@ -98,11 +96,11 @@ class RunDefense:
             )
 
             self.db._conn.commit()
-            logging.info(f"Successfully logged the unblocking of IP {ip_address} to the database")
+            logger.info(f"Successfully logged the unblocking of IP {ip_address} to the database")
             return True
     
         except Exception as e:
-            logging.error(f"Error unblocking IP {ip_address} | {e}")
+            logger.error(f"Error unblocking IP {ip_address} | {e}")
 
 
     def add_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
