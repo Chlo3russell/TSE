@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 import sqlite3
-from firewall import RunDefense
+from firewallMonitor import RunDefense
 from database.databaseScript import Database
 
 app = Flask(__name__)
