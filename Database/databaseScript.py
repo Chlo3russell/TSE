@@ -32,7 +32,7 @@ class Database:
                 location_id INTEGER,
                 isp_id INTEGER,
                 FOREIGN KEY (location_id) REFERENCES location(id),
-                FOREIGN KEY (isp_id) REFERENCES isp(id),
+                FOREIGN KEY (isp_id) REFERENCES isp(id)
             )
         ''')
 
@@ -89,7 +89,7 @@ class Database:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 ip_id VARCHAR(40) NOT NULL,
                 metric_type TEXT NOT NULL,
-                value FLOAT NOT NULL
+                value FLOAT NOT NULL,
                 time_of_activity DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
                 FOREIGN KEY (ip_id) REFERENCES ip_list(id)
             )
