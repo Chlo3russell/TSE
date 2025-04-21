@@ -1,10 +1,13 @@
-from flask import Flask, render_template, redirect, url_for, request, flash
+from datetime import datetime
+import os
+import time
+from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash
 import sqlite3
 from firewallMonitor import Firewall
 from database.databaseScript import Database
 
 # Path to central log file
-LOG_FILE = 'logs/app.log'
+LOG_FILE = 'output_logs/app.log'
 
 app = Flask(__name__)
 app.secret_key = "defenseBranch"
@@ -52,8 +55,63 @@ def defense_settings():
     blocked_ips = db._conn._get_blocked_ips()
     return render_template('defense.html', blocked_ips=blocked_ips)
 
+@app.route("/logviewer")
+def log_view():
+    return render_template("logview.html")
 
+@app.route("/output_logs")
+def stream_logs():
+    level = request.args.get('level')
+    keyword = request.args.get('keyword')
 
+    def tail_log():
+        with open(LOG_FILE, "r") as file:
+            file.seek(0, 2)
+            while True:
+                line = file.readline()
+                if not line:
+                    time.sleep(0.5)
+                    continue
+                if level and f" - {level.upper()} -" not in line:
+                    continue
+                if keyword and keyword.lower() not in line.lower():
+                    continue
+                yield f"data: {line.strip()}\n\n"
+
+    return Response(stream_with_context(tail_log()), mimetype="text/event-stream")
+
+@app.route("/historical-output_logs")
+def get_historical_logs():
+    level = request.args.get('level')
+    keyword = request.args.get('keyword')
+    start = request.args.get('start')
+    end = request.args.get('end')
+
+    output_logs = []
+    if not os.path.exists(LOG_FILE):
+        return jsonify(output_logs)
+
+    with open(LOG_FILE, "r") as file:
+        for line in file:
+            if level and f" - {level.upper()} -" not in line:
+                continue
+            if keyword and keyword.lower() not in line.lower():
+                continue
+            if start or end:
+                try:
+                    timestamp = datetime.strptime(line.split(" - ")[0], "%Y-%m-%d %H:%M:%S,%f")
+                    if start and timestamp < datetime.fromisoformat(start):
+                        continue
+                    if end and timestamp > datetime.fromisoformat(end):
+                        continue
+                except Exception:
+                    continue
+            output_logs.append(line.strip())
+    return jsonify(output_logs)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    with open(LOG_FILE, "a") as file:
+        file.write("LOG STREAM OPENED")
+    app.run(debug=True, threaded=True)
