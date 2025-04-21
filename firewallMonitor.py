@@ -63,6 +63,7 @@ class Firewall:
             
         except Exception as e: 
             logger.error(f"Error blocking IP {ip_address} | {e}")
+            return False
 
     def unblock_ip(self, ip_address) -> bool:
         '''
@@ -97,6 +98,7 @@ class Firewall:
     
         except Exception as e:
             logger.error(f"Error unblocking IP {ip_address} | {e}")
+            return False
 
 
     def add_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
@@ -110,9 +112,19 @@ class Firewall:
         Returns:
             bool: True if successful, False if unsuccessful
         '''
-        
-
-        pass
+        try: 
+            self.blocker.add_rate_limit(protocol, port, per_second, burst_limit)
+            self.db._add_rate_limit_action("Add rate limit", {
+                'protocol': protocol,
+                'port': port,
+                'limit': per_second,
+                'burst': burst_limit
+            })
+            logger.info(f"Added rate limit for Protocol: {protocol}, Port: {port}")
+            return True
+        except Exception as e:
+            logger.error(f"Error adding rate limit for Protocol: {protocol}, Port: {port} | {e}")
+            return False
 
     def remove_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
         '''
@@ -125,4 +137,16 @@ class Firewall:
         Returns:
             bool: True if successful, False if unsuccessful
         '''
-        pass
+        try: 
+            self.blocker.remove_rate_limit(protocol, port, per_second, burst_limit)
+            self.db._add_rate_limit_action("Add rate limit", {
+                'protocol': protocol,
+                'port': port,
+                'limit': per_second,
+                'burst': burst_limit
+            })
+            logger.info(f"Removed rate limit for Protocol: {protocol}, Port: {port}")
+            return True
+        except Exception as e:
+            logger.error(f"Error removing rate limit for Protocol: {protocol}, Port: {port} | {e}")
+            return False
