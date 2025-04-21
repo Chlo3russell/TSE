@@ -26,7 +26,9 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try:
+            # Check if the IP is already in the database
             ip_info = self.db._get_ip(ip_address)
+            # If IP isn't in the database, add the IP and get the IP ID
             if not ip_info:
                 ip_id = self.db._add_ip(ip_address)
                 if not ip_id:
@@ -56,7 +58,7 @@ class Firewall:
             else:
                 logger.error(f"Failed to log the block of IP {ip_address} to the database")
                 # If the block cannot be logged, rollback
-                self.blocker.manual_unblock(ip_address)
+                self.blocker.unblock_ip(ip_address)
                 return False
             
         except Exception as e: 
@@ -71,31 +73,25 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try:
+            # Try to get the IP from the database
             ip_info = self.db._get_ip(ip_address)
+            # If you cannot find the IP, throw and error
             if not ip_info:
                 logger.warning(f"IP {ip_address} cannot be found in the database")
                 return False
             
+            # Get IP ID
             ip_id = ip_info['id']
 
             # Unblock the IP using the Blocker object
-            self.blocker.manual_unblock(ip_address)
-
-            # Update the blocked Ips table - (need to ask about this method)
-            self.db._c.execute('''
-                UPDATE blocked_ips 
-                SET unblock_time = ?
-                WHERE ip_id = ? AND unblock_time > ?
-            ''', (datetime.now(), ip_id, datetime.now())
-            )
+            self.blocker.unblock_ip(ip_address)
 
             # Log the unblock action
             self.db._add_admin_action(
                 ip_id=ip_id,
                 action=f"Manually unblocked IP {ip_address}"
             )
-
-            self.db._conn.commit()
+            
             logger.info(f"Successfully logged the unblocking of IP {ip_address} to the database")
             return True
     
@@ -114,6 +110,8 @@ class Firewall:
         Returns:
             bool: True if successful, False if unsuccessful
         '''
+        
+
         pass
 
     def remove_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
