@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: monospace;
+            display: flex;
+            height: 100vh;
+            background: #111;
+            color: white;
+        }
+        .panel {
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #filters {
+            flex: 1;
+            background: #222;
+        }
+        #live {
+            flex: 2;
+            background: #000;
+            border-left: 1px solid #444;
+        }
+        #historical {
+            flex: 2;
+            background: #1a1a1a;
+            border-left: 1px solid #444;
+        }
+        select, input, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 5px;
+            font-size: 14px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .log-container {
+            white-space: pre-wrap;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="filters" class="panel">
+        <h2>Filter Logs</h2>
+        <label>Log Level:</label>
+        <select id="level">
+            <option value="">All</option>
+            <option value="INFO">INFO</option>
+            <option value="WARNING">WARNING</option>
+            <option value="ERROR">ERROR</option>
+        </select>
+
+        <label>Keyword:</label>
+        <input type="text" id="keyword">
+
+        <label>Start Time:</label>
+        <input type="datetime-local" id="start">
+
+        <label>End Time:</label>
+        <input type="datetime-local" id="end">
+
+        <label>Apply To:</label>
+        <select id="log_view">
+            <option value="live">Live Logs</option>
+            <option value="historical">Historical Logs</option>
+        </select>
+
+        <button onclick="apply_filters()">Apply</button>
+        <button onclick="clear_logs()">Clear Logs</button>
+    </div>
+
+    <div id="live" class="panel">
+        <h2>Live Logs</h2>
+        <div id="liveLogs" class="log-container"></div>
+    </div>
+
+    <div id="historical" class="panel">
+        <h2>Historical Logs</h2>
+        <div id="historicalLogs" class="log-container"></div>
+    </div>
+
+<script>
+    let live_stream;
+
+    function start_live(query = "") {
+        if (live_stream) live_stream.close();
+
+        live_stream = new EventSource("/logs" + query);
+        live_stream.onmessage = function(e) {
+            const log_div = document.getElementById("liveLogs");
+            log_div.textContent += e.data + "\n";
+            log_div.scrollTop = log_div.scrollHeight;
+        };
+    }
+
+    function apply_filters() {
+        const level = document.getElementById("level").value;
+        const keyword = document.getElementById("keyword").value;
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        const log_view = document.getElementById("log_view").value;
+
+        const params = new URLSearchParams();
+        if (level) params.append("level", level);
+        if (keyword) params.append("keyword", keyword);
+        if (start) params.append("start", start);
+        if (end) params.append("end", end);
+
+        if (log_view === "live") {
+            clear_logs();
+            start_live("?" + params.toString());
+        } else if (log_view === "historical") {
+            fetch("/historical-logs?" + params.toString())
+                .then(res => res.json())
+                .then(data => {
+                    const hist_div = document.getElementById("historicalLogs");
+                    hist_div.textContent = data.join("\n");
+                });
+        }
+    }
+
+    function clear_logs() {
+        document.getElementById("liveLogs").textContent = "";
+        document.getElementById("historicalLogs").textContent = "";
+    }
+
+    start_live();  // Default stream when page loaded
+</script>
+
+</body>
+</html>

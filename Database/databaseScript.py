@@ -449,6 +449,10 @@ class Database:
             self._conn.rollback()
             return None
 
+    def _add_flagged_metric(self, ip_id, metric_type, value):
+        pass
+
+
 ### GETTER FUNCTIONS
     # Query to get a list of blocked IPs, optionally filtered by a specific IP address
     def _get_blocked_ips(self, ip_address=None):
