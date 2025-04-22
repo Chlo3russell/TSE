@@ -7,7 +7,7 @@ from firewallMonitor import Firewall
 from database.databaseScript import Database
 
 # Path to central log file
-LOG_FILE = 'output_logs/app.log'
+LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
 app.secret_key = "defenseBranch"
@@ -23,7 +23,7 @@ def dashboard():
     """
     try:
         # Get list of all tables
-        db._c.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
+        db._c.execute("SELECT name FROM sqlite_master WHERE type='table'")
         tables = [row["name"] for row in db._c.fetchall()]
         
         # Retrieve data from each table
@@ -80,7 +80,7 @@ def stream_logs():
 
     return Response(stream_with_context(tail_log()), mimetype="text/event-stream")
 
-@app.route("/historical-output_logs")
+@app.route("/historical-logs")
 def get_historical_logs():
     level = request.args.get('level')
     keyword = request.args.get('keyword')
@@ -114,4 +114,4 @@ if __name__ == "__main__":
         os.makedirs("logs")
     with open(LOG_FILE, "a") as file:
         file.write("LOG STREAM OPENED")
-    app.run(debug=True, threaded=True)
+    app.run(debug=True)
