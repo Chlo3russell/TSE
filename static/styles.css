@@ -31,144 +31,140 @@ table {
     margin-bottom: 20px;
     background-color: #e4d9ff;
 }
+
 th, td {
     border: 1px solid #fafaff;
     padding: 8px;
     text-align: left;
 }
+
 th {
     background-color: #273469;
     color: #fafaff;
 }
+
 td {
     color: #2c3e50;
 }
+
 h2 {
     margin-top: 20px;
 }
 
 .log-view-container {
-
- 
-
     display: flex;
- 
-
     height: calc(100vh - 80px);
- 
-
 }
- 
-
-
- 
 
 .panel {
- 
-
     flex: 1;
- 
-
     padding: 20px;
- 
-
     overflow-y: auto;
- 
-
     background-color: #e4d9ff;
- 
-
     border-left: 1px solid #ccc;
- 
-
 }
- 
-
-
- 
 
 .panel:first-child {
- 
-
     border-left: none;
- 
-
     background-color: #f0f0ff;
- 
-
 }
- 
-
-
- 
 
 .panel h2 {
- 
-
     margin-top: 0;
- 
-
     color: #2c3e50;
- 
-
 }
- 
-
-
- 
 
 select, input, button {
- 
-
     width: 100%;
- 
-
     margin: 5px 0;
- 
-
     padding: 6px;
- 
-
     font-size: 14px;
- 
-
     border: 1px solid #ccc;
- 
-
     border-radius: 4px;
- 
-
 }
- 
-
-
- 
 
 .log-container {
- 
-
     background: #fff;
- 
-
     border: 1px solid #ccc;
- 
-
     padding: 10px;
- 
-
     height: 85vh;
- 
-
     overflow-y: auto;
- 
-
     font-family: monospace;
- 
-
     font-size: 13px;
- 
-
     white-space: pre-wrap;
- 
-
 }
+
+.defense-container {
+    max-width: 80vh;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #000000;
+}
+
+.defense-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.defense-container form div {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.defense-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #273469;
+}
+
+.defense-container button {
+    flex: 1 1 120px;
+    padding: 8px 12px;
+    background-color: #1e2749;
+    color: #fafaff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.defense-container button:hover {
+    background-color: #273469;
+}
+
+.rate-limit-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rate-limit-buttons button {
+    flex: 1;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px 0;
+}
+
+.defense-container table {
+    margin-top: 10px;
+}
+
+pre {
+    background: #f8f8ff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+

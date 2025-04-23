@@ -8,4 +8,147 @@ LOG STREAM OPENED2025-04-23 17:41:40,069 - firewallMonitor - INFO - Firewall Cla
 2025-04-23 17:41:40,070 - __main__ - INFO - Starting packet sniffing...
 2025-04-23 17:41:40,184 - firewallMonitor - INFO - Firewall Class Initalised
 LOG STREAM OPENED2025-04-23 17:41:41,101 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:42:56,155 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,169 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,179 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,180 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,180 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,189 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,189 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,190 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,201 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,202 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,202 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,212 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,214 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,214 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,227 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,228 - __main__ - WARNING - Potential DoS attack detected from IP: 10.169.198.139
+2025-04-23 17:42:56,228 - __main__ - INFO - Flagged metric: IP: 10.169.198.139, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,236 - firewallMonitor - ERROR - Error blocking IP 10.169.198.139 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,301 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,311 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,319 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,321 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,321 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,327 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,328 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,328 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,335 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,336 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,336 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,342 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,342 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,342 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,349 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,350 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,350 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,355 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,357 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,357 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,364 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,365 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,365 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,372 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,372 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,373 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,380 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,380 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,381 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,391 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,392 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,393 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,402 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,403 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,403 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,411 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,411 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,412 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,419 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,420 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,421 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,430 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,431 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,432 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,439 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,440 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,440 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,446 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,450 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,451 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,460 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,461 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,461 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,471 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,472 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,472 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,479 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,481 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,481 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,489 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,491 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,491 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,498 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,501 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,502 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,509 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,510 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,511 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,517 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,517 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,517 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,523 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,524 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,524 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,530 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,530 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,531 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,536 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,537 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,537 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,543 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,543 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,543 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,551 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,554 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,554 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,564 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:42:56,566 - __main__ - WARNING - Potential DoS attack detected from IP: 20.189.172.73
+2025-04-23 17:42:56,566 - __main__ - INFO - Flagged metric: IP: 20.189.172.73, Metric: DoS Detected, Value: DoS Detected
+2025-04-23 17:42:56,575 - firewallMonitor - ERROR - Error blocking IP 20.189.172.73 | [WinError 2] The system cannot find the file specified
+2025-04-23 17:45:01,561 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 17:45:01,562 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 17:45:01,562 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 17:45:01,648 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:45:02,584 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:45:10,182 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 17:45:10,183 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 17:45:10,183 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 17:45:10,306 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:45:11,151 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:50:00,442 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 17:50:00,443 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 17:50:00,443 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 17:50:00,534 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:50:01,481 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:53:09,018 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 17:53:09,020 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 17:53:09,020 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 17:53:09,148 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:53:10,086 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:53:14,882 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 17:53:14,883 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 17:53:14,883 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 17:53:15,003 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 17:53:15,772 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 21:07:52,653 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 21:07:52,656 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 21:07:52,656 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 21:07:52,901 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 21:07:54,259 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 21:30:56,125 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-23 21:30:56,128 - __main__ - INFO - Traffic Monitor Initialised
+2025-04-23 21:30:56,129 - __main__ - INFO - Starting packet sniffing...
+2025-04-23 21:30:56,393 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-23 21:30:57,746 - firewallMonitor - INFO - Firewall Class Initalised
 LOG STREAM OPENED

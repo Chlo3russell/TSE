@@ -1,7 +1,92 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Defense HTML</h1>
-    <table>
-        
-    </table>
+<div class="defense-container">
+    <h2>Defense Control Panel</h2>
+    <!-- Block / Unblock Section -->
+    <form method="POST">
+        <div>
+            <label>IP Address:</label>
+            <input type="text" name="ip_address" placeholder="Enter IP address" required>
+        </div>
+        <button type="submit" name="action" value="block">Block IP</button>
+        <button type="submit" name="action" value="unblock">Unblock IP</button>
+    </form>
+    <hr>
+    <!-- Rate Limit Section -->
+    <form method="POST">
+        <div>
+            <label>Protocol:</label>
+            <input type="text" name="protocol" placeholder="e.g. tcp" required>
+        </div>
+        <div>
+            <label>Port (optional):</label>
+            <input type="text" name="port" placeholder="e.g. 80">
+        </div>
+        <div>
+            <label>Per Second Limit:</label>
+            <input type="number" name="per_second" required>
+        </div>
+        <div>
+            <label>Burst Limit:</label>
+            <input type="number" name="burst_limit" required>
+        </div>
+        <div class="rate-limit-buttons">
+            <button type="submit" name="action" value="add_rate_limit">Add Rate Limit</button>
+            <button type="submit" name="action" value="remove_rate_limit">Remove Rate Limit</button>
+        </div>
+    </form>
+    <hr>
+    <!-- Blocked IPs Section -->
+    <h3>Currently Blocked IPs</h3>
+    <div id="blocked-ips-table"></div>
+    <!-- Rate Limit Table -->
+    <h3>Current Rate Limits</h3>
+    <div id="rate-limits-table"></div>
+</div>
+
+<script>
+    function retrieve_blocked_ips() {
+        fetch("/api/blocked-ips")
+            .then(res => res.json())
+            .then(data => {
+                let html = '<table><tr><th>IP Address</th><th>Blocked At</th><th>Unblock At</th><th>Reason</th></tr>';
+                data.forEach(row => {
+                    html += `<tr>
+                        <td>${row.ip_address}</td>
+                        <td>${row.block_time}</td>
+                        <td>${row.unblock_time || "None"}</td>
+                        <td>${row.reason || "None"}</td>
+                    </tr>`;
+                });
+                html += '</table>';
+                document.getElementById("blocked-ips-table").innerHTML = html;
+            });
+    }
+
+    function retrieve_rate_limits() {
+        fetch("/api/rate-limits")
+            .then(res => res.json())
+            .then(data => {
+                let html = '<table><tr><th>Timestamp</th><th>Action</th><th>Config</th></tr>';
+                data.forEach(row => {
+                    html += `<tr>
+                        <td>${row.timestamp}</td>
+                        <td>${row.action}</td>
+                        <td><pre>${row.config}</pre></td>
+                    </tr>`;
+                });
+                html += '</table>';
+                document.getElementById("rate-limits-table").innerHTML = html;
+            });
+    }
+
+    setInterval(() => {
+        retrieve_blocked_ips();
+        retrieve_rate_limits();
+    }, 3000); // Refresh every 3 seconds
+
+    // Initial page load
+    retrieve_blocked_ips();
+    retrieve_rate_limits();
+</script>
 {% endblock %}

@@ -55,10 +55,11 @@
             log_div.textContent += e.data + "\n";
             log_div.scrollTop = log_div.scrollHeight;
         };
- 
+        
+        live_stream.onerror = function(e) {
+            console.error("EventSource failed:", e);
+        };
     }
- 
-
  
     function apply_filters() {
         const level = document.getElementById("level").value;

@@ -10,7 +10,7 @@ from datetime import timedelta, datetime
 THRESHOLD = 150
 
 # Configuration
-TARGET_WEBSITE_IP = "127.0.0.1"  # Replace with the actual IP address of your target website VM!
+TARGET_WEBSITE_IP = "127.0.0.1"  # Replace with the actual IP address of the target website VM!
 
 # Setup
 defense = Firewall()
