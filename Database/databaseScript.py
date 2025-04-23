@@ -40,11 +40,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS blocked_ips (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id VARCHAR(40) UNIQUE NOT NULL,
+                ip_id INTEGER NOT NULL,
                 block_time TIMESTAMP NOT NULL,
                 unblock_time TIMESTAMP,
                 reason TEXT,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -52,11 +52,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS traffic_logs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                source_ip_id VARCHAR(40) NOT NULL,
+                source_ip_id INTEGER NOT NULL,
                 destination_ip VARCHAR(40) NOT NULL,
-                protocol_type VARCHAR(10) NOT NULL,
+                protocol_type INTEGER NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                FOREIGN KEY (source_ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -74,10 +74,10 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS admin_logs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id VARCHAR(40) NOT NULL,
+                ip_id INTEGER NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
                 action TEXT NOT NULL,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -87,11 +87,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS flagged_metrics (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id VARCHAR(40) NOT NULL,
+                ip_id INTEGER NOT NULL,
                 metric_type TEXT NOT NULL,
                 value FLOAT NOT NULL,
                 time_of_activity DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -648,139 +648,139 @@ class Database:
 
 ### DELETE FUNCTION
 
-    def _clear_records(self, days_to_keep=30):
-        # Clear records older than 30 days (default)
-        #deleted = db._clear_records()
+    # def _clear_records(self, days_to_keep=30):
+    #     # Clear records older than 30 days (default)
+    #     #deleted = db._clear_records()
 
-        # Set retention period to 30 days (default)
-        #db._clear_records()
-        # Change retention period to 60 days
-        #db._clear_records(days_to_keep=60)
+    #     # Set retention period to 30 days (default)
+    #     #db._clear_records()
+    #     # Change retention period to 60 days
+    #     #db._clear_records(days_to_keep=60)
 
-        # Example response:
-        # {
-        #     'traffic_logs': 150,
-        #     'rate_limit_logs': 45,
-        #     'admin_logs': 30,
-        #     'flagged_metrics': 200,
-        #     'blocked_ips': 25
-        # }
+    #     # Example response:
+    #     # {
+    #     #     'traffic_logs': 150,
+    #     #     'rate_limit_logs': 45,
+    #     #     'admin_logs': 30,
+    #     #     'flagged_metrics': 200,
+    #     #     'blocked_ips': 25
+    #     # }
         
-        #Sets up automatic cleanup of old records and performs immediate cleanup.
-        #Args:
-        #    days_to_keep (int): Number of days to keep records before deletion (default: 30)
+    #     #Sets up automatic cleanup of old records and performs immediate cleanup.
+    #     #Args:
+    #     #    days_to_keep (int): Number of days to keep records before deletion (default: 30)
 
-        try:
-            # Create a table to store cleanup configuration
-            self._c.execute('''
-                CREATE TABLE IF NOT EXISTS cleanup_config (
-                    id INTEGER PRIMARY KEY CHECK (id = 1),
-                    days_to_keep INTEGER NOT NULL,
-                    last_cleanup TIMESTAMP
-                )
-            ''')
+    #     try:
+    #         # Create a table to store cleanup configuration
+    #         self._c.execute('''
+    #             CREATE TABLE IF NOT EXISTS cleanup_config (
+    #                 id INTEGER PRIMARY KEY CHECK (id = 1),
+    #                 days_to_keep INTEGER NOT NULL,
+    #                 last_cleanup TIMESTAMP
+    #             )
+    #         ''')
 
-            # unblocked info is changed to "Auto-unblocked" when the block duration expires
-            self._c.execute('''
-                CREATE TRIGGER IF NOT EXISTS unblock_expired_ips
-                AFTER UPDATE ON blocked_ips
-                BEGIN
-                    UPDATE blocked_ips 
-                    SET unblock_time = CURRENT_TIMESTAMP,
-                        reason = reason || ' (Auto-unblocked)'
-                    WHERE unblock_time <= CURRENT_TIMESTAMP 
-                    AND unblock_time IS NOT NULL;
+    #         # unblocked info is changed to "Auto-unblocked" when the block duration expires
+    #         self._c.execute('''
+    #             CREATE TRIGGER IF NOT EXISTS unblock_expired_ips
+    #             AFTER UPDATE ON blocked_ips
+    #             BEGIN
+    #                 UPDATE blocked_ips 
+    #                 SET unblock_time = CURRENT_TIMESTAMP,
+    #                     reason = reason || ' (Auto-unblocked)'
+    #                 WHERE unblock_time <= CURRENT_TIMESTAMP 
+    #                 AND unblock_time IS NOT NULL;
 
-                    INSERT INTO admin_logs (ip_id, action)
-                    SELECT ip_id, 'IP Auto-unblocked: Block duration expired'
-                    FROM blocked_ips
-                    WHERE unblock_time <= CURRENT_TIMESTAMP;
-                END;
-            ''')
+    #                 INSERT INTO admin_logs (ip_id, action)
+    #                 SELECT ip_id, 'IP Auto-unblocked: Block duration expired'
+    #                 FROM blocked_ips
+    #                 WHERE unblock_time <= CURRENT_TIMESTAMP;
+    #             END;
+    #         ''')
 
-            # Update or insert cleanup configuration
-            self._c.execute('''
-                INSERT OR REPLACE INTO cleanup_config (id, days_to_keep, last_cleanup)
-                VALUES (1, ?, CURRENT_TIMESTAMP)
-            ''', (days_to_keep,))
+    #         # Update or insert cleanup configuration
+    #         self._c.execute('''
+    #             INSERT OR REPLACE INTO cleanup_config (id, days_to_keep, last_cleanup)
+    #             VALUES (1, ?, CURRENT_TIMESTAMP)
+    #         ''', (days_to_keep,))
 
-            # Create triggers for automatic cleanup on each table
-            tables = {
-                'traffic_logs': 'timestamp',
-                'rate_limit_logs': 'timestamp',
-                'admin_logs': 'timestamp',
-                'flagged_metrics': 'time_of_activity',
-                'blocked_ips': 'unblock_time'
-            }
+    #         # Create triggers for automatic cleanup on each table
+    #         tables = {
+    #             'traffic_logs': 'timestamp',
+    #             'rate_limit_logs': 'timestamp',
+    #             'admin_logs': 'timestamp',
+    #             'flagged_metrics': 'time_of_activity',
+    #             'blocked_ips': 'unblock_time'
+    #         }
 
-            for table, timestamp_col in tables.items():
-                # Create trigger that runs on INSERT
-                self._c.execute(f'''
-                    CREATE TRIGGER IF NOT EXISTS cleanup_{table}_trigger
-                    AFTER INSERT ON {table}
-                    BEGIN
-                        DELETE FROM {table}
-                        WHERE {timestamp_col} < datetime('now', '-' || (
-                            SELECT days_to_keep FROM cleanup_config WHERE id = 1
-                        ) || ' days');
-                    END;
-                ''')
+    #         for table, timestamp_col in tables.items():
+    #             # Create trigger that runs on INSERT
+    #             self._c.execute(f'''
+    #                 CREATE TRIGGER IF NOT EXISTS cleanup_{table}_trigger
+    #                 AFTER INSERT ON {table}
+    #                 BEGIN
+    #                     DELETE FROM {table}
+    #                     WHERE {timestamp_col} < datetime('now', '-' || (
+    #                         SELECT days_to_keep FROM cleanup_config WHERE id = 1
+    #                     ) || ' days');
+    #                 END;
+    #             ''')
 
-            # Perform immediate cleanup
-            deleted_counts = {}
-            cutoff_date = datetime.now() - timedelta(days=days_to_keep)
+    #         # Perform immediate cleanup
+    #         deleted_counts = {}
+    #         cutoff_date = datetime.now() - timedelta(days=days_to_keep)
 
-            for table, timestamp_col in tables.items():
-                # Get count of records to be deleted
-                self._c.execute(f'''
-                    SELECT COUNT(*) FROM {table}
-                    WHERE {timestamp_col} < ?
-                ''', (cutoff_date,))
-                count = self._c.fetchone()[0]
+    #         for table, timestamp_col in tables.items():
+    #             # Get count of records to be deleted
+    #             self._c.execute(f'''
+    #                 SELECT COUNT(*) FROM {table}
+    #                 WHERE {timestamp_col} < ?
+    #             ''', (cutoff_date,))
+    #             count = self._c.fetchone()[0]
 
-                # Delete old records
-                self._c.execute(f'''
-                    DELETE FROM {table}
-                    WHERE {timestamp_col} < ?
-                ''', (cutoff_date,))
+    #             # Delete old records
+    #             self._c.execute(f'''
+    #                 DELETE FROM {table}
+    #                 WHERE {timestamp_col} < ?
+    #             ''', (cutoff_date,))
 
-                deleted_counts[table] = count
+    #             deleted_counts[table] = count
 
-            # Log this cleanup action
-            self._c.execute('''
-                INSERT INTO admin_logs (ip_id, action)
-                VALUES (?, ?)
-            ''', (0, f"Records cleanup configuration updated: Keeping {days_to_keep} days of records"))
+    #         # Log this cleanup action
+    #         self._c.execute('''
+    #             INSERT INTO admin_logs (ip_id, action)
+    #             VALUES (?, ?)
+    #         ''', (0, f"Records cleanup configuration updated: Keeping {days_to_keep} days of records"))
 
-            self._conn.commit()
-            return deleted_counts
+    #         self._conn.commit()
+    #         return deleted_counts
 
-        except sqlite3.Error as e:
-            print(f"Error setting up automatic cleanup: {e}")
-            self._conn.rollback()
-            return None
+    #     except sqlite3.Error as e:
+    #         print(f"Error setting up automatic cleanup: {e}")
+    #         self._conn.rollback()
+    #         return None
 
-    def _store_domain_details(domain, whois_info):
-        try:
-            conn = sqlite3.connect('database.db')
-            cursor = conn.cursor()
+    # def _store_domain_details(domain, whois_info):
+    #     try:
+    #         conn = sqlite3.connect('database.db')
+    #         cursor = conn.cursor()
             
-            # Handle potential list/tuple values for dates
-            creation_date = whois_info.creation_date[0] if isinstance(whois_info.creation_date, (list, tuple)) else whois_info.creation_date
-            expiration_date = whois_info.expiration_date[0] if isinstance(whois_info.expiration_date, (list, tuple)) else whois_info.expiration_date
+    #         # Handle potential list/tuple values for dates
+    #         creation_date = whois_info.creation_date[0] if isinstance(whois_info.creation_date, (list, tuple)) else whois_info.creation_date
+    #         expiration_date = whois_info.expiration_date[0] if isinstance(whois_info.expiration_date, (list, tuple)) else whois_info.expiration_date
             
-            cursor.execute('''
-                INSERT INTO Whois (Website, Registering_Company, Date_Created, Date_Expires, DNS_Servers)
-                VALUES (?, ?, ?, ?, ?)''',
-                (domain, 
-                whois_info.registrar, 
-                str(creation_date), 
-                str(expiration_date), 
-                ','.join(whois_info.name_servers)))
+    #         cursor.execute('''
+    #             INSERT INTO Whois (Website, Registering_Company, Date_Created, Date_Expires, DNS_Servers)
+    #             VALUES (?, ?, ?, ?, ?)''',
+    #             (domain, 
+    #             whois_info.registrar, 
+    #             str(creation_date), 
+    #             str(expiration_date), 
+    #             ','.join(whois_info.name_servers)))
             
-            conn.commit()
-            print(f"WHOIS info for {domain} inserted into database.")
-        except Exception as e:
-            print(f"Error saving to database: {e}")
-        finally:
-            conn.close()
+    #         conn.commit()
+    #         print(f"WHOIS info for {domain} inserted into database.")
+    #     except Exception as e:
+    #         print(f"Error saving to database: {e}")
+    #     finally:
+    #         conn.close()

@@ -13,6 +13,10 @@ def run_monitoring():
 def run_attack():
     os.system("python attacks/synack.py")
 
+def run_dashboard():
+    os.system("python dashboard.py")  # Runs the dashboard
+
 threading.Thread(target=run_flask).start()
 threading.Thread(target=run_monitoring).start()
-threading.Thread(target=run_attack).start()
+#threading.Thread(target=run_attack).start()
+threading.Thread(target=run_dashboard).start()

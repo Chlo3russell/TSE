@@ -17,9 +17,13 @@ class Blocker:
             *args: Inputs to be merged into a list
         '''
         if os.name == "posix":
-            subprocess.run(['iptables'] + list(args), check= True)
+            command = ['iptables'] + list(args)
+            print(f"Executing command: {' '.join(command)}") # Debugging statement
+            subprocess.run(command, check= True)
         elif os.name == "nt":
-            subprocess.run(['netsh'] + list(args), check= True)
+            command = ['netsh'] + list(args)
+            print(f"Executing command: {' '.join(command)}") # Debugging statement
+            subprocess.run(command, check= True)
 
     def block_ip(self, ip_address):
         '''
@@ -32,7 +36,11 @@ class Blocker:
             if os.name == "posix":
                 self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
             elif os.name == "nt":
-                self._run_command("advfirewall", "firewall", "add", "rule", f"name=\"Block {ip_address}\"", "dir=in", "action=block", f"remoteip={ip_address}", "enable=yes")
+                # Apply the rule to each profile explicitly
+                for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
+                    command = ["advfirewall", "firewall", "add", "rule", f"name=\"Block {ip_address} {profile}\"", "dir=in", "action=block", f"remoteip={ip_address}", f"profile={profile}", "enable=yes"]
+                    print(f"Executing command: {' '.join(command)}")
+                    subprocess.run(command, check=True)
             self.blocked_ips[ip_address] = time.time() + self.block_duration # When does that IP block last till
     
     def unblock_ip(self, ip_address):
@@ -132,5 +140,4 @@ class Blocker:
             self._run_command("-D", "INPUT", "-p", protocol, "--dport", str(port), "-m", "limit", "--limit", f"{per_second}/s", "--limit-burst", f"{burst_limit}", "-j", "ACCEPT")
         else:
             self._run_command("-D", "INPUT", "-p", protocol, "-j", "DROP") # Drops the block 
-            self._run_command("-D", "INPUT", "-p", protocol, "-m", "limit", "--limit", f"{per_second}/s", "--limit-burst", f"{burst_limit}", "-j", "ACCEPT") # Command to change the firewall rules (iptables), delete the rule (-D) to the incoming traffic (INPUT). 
-        
+            self._run_command("-D", "INPUT", "-p", protocol, "-m", "limit", "--limit", f"{per_second}/s", "--limit-burst", f"{burst_limit}", "-j", "ACCEPT") # Command to change the firewall rules (iptables), delete the rule (-D) to the incoming traffic (INPUT).
