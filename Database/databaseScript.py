@@ -714,13 +714,15 @@ class Database:
                 ''', (cutoff_date,))
                 count = self._c.fetchone()[0]
 
-                # Delete old records
-                self._c.execute(f'''
-                    DELETE FROM {table}
-                    WHERE {timestamp_col} < ?
-                ''', (cutoff_date,))
-
-                deleted_counts[table] = count
+                if count > 0:
+                    # Delete old records
+                    self._c.execute(f'''
+                        DELETE FROM {table}
+                        WHERE {timestamp_col} < ?
+                    ''', (cutoff_date,))
+                    deleted_counts[table] = count
+                else:
+                    deleted_counts[table] = 0
 
             # Log this cleanup action
             self._c.execute('''
@@ -762,3 +764,5 @@ class Database:
             print(f"Error saving to database: {e}")
         finally:
             conn.close()
+
+
