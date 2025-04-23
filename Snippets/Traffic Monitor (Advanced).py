@@ -43,7 +43,7 @@ ml_model = IsolationForest(contamination=0.01, random_state=42)
 def flag_metric(ip_address, value, metric_type="DoS Detected"):
     """Record flagged metrics using database class"""
     try:
-        # Get basic IP info (using your whois helper)
+        # Get basic IP info
         ip_info = db._get_ip_info_whois(ip_address) or {
             'country': 'Unknown',
             'city': 'Unknown',
