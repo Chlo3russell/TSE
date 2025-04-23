@@ -31,8 +31,8 @@ class Database:
                 ip_address VARCHAR(40) UNIQUE NOT NULL,
                 location_id INTEGER,
                 isp_id INTEGER,
-                FOREIGN KEY (location_id) REFERENCES location(id),
-                FOREIGN KEY (isp_id) REFERENCES isp(id),
+                FOREIGN KEY (location_id) REFERENCES location(id) ON DELETE SET NULL,
+                FOREIGN KEY (isp_id) REFERENCES isp(id) ON DELETE SET NULL
             )
         ''')
 
@@ -40,11 +40,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS blocked_ips (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id VARCHAR(40) UNIQUE NOT NULL,
+                ip_id INTEGER NOT NULL,
                 block_time TIMESTAMP NOT NULL,
                 unblock_time TIMESTAMP,
                 reason TEXT,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -52,11 +52,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS traffic_logs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                source_ip_id VARCHAR(40) NOT NULL,
+                source_ip_id INTEGER NOT NULL,
                 destination_ip VARCHAR(40) NOT NULL,
                 protocol_type VARCHAR(10) NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                FOREIGN KEY (source_ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
@@ -74,10 +74,10 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS admin_logs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id VARCHAR(40) NOT NULL,
+                ip_id INTEGER NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
                 action TEXT NOT NULL,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
         ''')
 
