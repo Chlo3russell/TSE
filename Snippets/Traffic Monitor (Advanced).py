@@ -7,9 +7,9 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import IsolationForest
 
 # Import custom components
-from database.databaseScript import Database  # Your complete database class
-from logger import setup_logger  # Your configured logger
-from firewallMonitor import Firewall  # Your firewall control
+from database.databaseScript import Database  #complete database class
+from logger import setup_logger  # configured logger
+from firewallMonitor import Firewall  #firewall control
 
 # Configuration
 THRESHOLD = 150
@@ -22,7 +22,7 @@ ANOMALY_DETECTION_SAMPLES = 1000
 # Initialize components
 defense = Firewall()
 db = Database()
-logger = setup_logger(__name__)  # Using your logger setup
+logger = setup_logger(__name__)  # Using logger setup
 
 # Packet tracking structure
 packet_counts = defaultdict(lambda: {
@@ -41,7 +41,7 @@ packet_features = []
 ml_model = IsolationForest(contamination=0.01, random_state=42)
 
 def flag_metric(ip_address, value, metric_type="DoS Detected"):
-    """Record flagged metrics using your database class"""
+    """Record flagged metrics using database class"""
     try:
         # Get basic IP info (using your whois helper)
         ip_info = db._get_ip_info_whois(ip_address) or {
