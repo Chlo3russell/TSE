@@ -3,7 +3,7 @@ from collections import defaultdict
 import time
 from Database.databaseScript import Database
 from firewallMonitor import Firewall
-#from logger import setup_logger
+from logger import setup_logger
 from datetime import timedelta, datetime
 
 # Threshold configuration - packets per second
@@ -15,11 +15,11 @@ TARGET_WEBSITE_IP = "127.0.0.1"  # Replace with the actual IP address of your ta
 # Setup
 defense = Firewall()
 db = Database()
-#logger = setup_logger(__name__)
+logger = setup_logger(__name__)
 
 # Packet tracking
 packet_counts = defaultdict(lambda: {"count": 0, "timestamp": time.time()})
-#logger.info("Traffic Monitor Initialised")
+logger.info("Traffic Monitor Initialised")
 
 def commit_to_db(ip_address, value, metric_type="DoS Detected"):
     """
@@ -33,17 +33,17 @@ def commit_to_db(ip_address, value, metric_type="DoS Detected"):
         if not ip_info:
             ip_id = db._add_ip(ip_address)
             if not ip_id:
-                #logger.error(f"Failed to add IP {ip_address} to the database")
+                logger.error(f"Failed to add IP {ip_address} to the database")
                 return
         else:
             ip_id = ip_info['id']
 
         # Log the flagged metric
         #db._add_flagged_metric(ip_id, metric_type, value)
-        #logger.info(f"Flagged metric: IP: {ip_address}, Metric: {metric_type}, Value: {value}")
+        logger.info(f"Flagged metric: IP: {ip_address}, Metric: {metric_type}, Value: {value}")
 
     except Exception as e:
-        #logger.error(f"Error committing to database: {e}")
+        logger.error(f"Error committing to database: {e}")
         pass
 
 def process_packets(packet):
@@ -65,7 +65,7 @@ def process_packets(packet):
                 if not ip_info:
                     ip_id = db._add_ip(source_ip)
                     if not ip_id:
-                        #logger.error(f"Failed to add IP {source_ip} to the database")
+                        logger.error(f"Failed to add IP {source_ip} to the database")
                         return
                 else:
                     ip_id = ip_info['id']
@@ -74,9 +74,9 @@ def process_packets(packet):
                 try:
                     db._c.execute("INSERT INTO traffic_logs (source_ip_id, destination_ip, protocol_type) VALUES (?, ?, ?)", (ip_id, dest_ip, protocol))
                     db._conn.commit()
-                    #logger.info(f"Logged traffic: Source IP: {source_ip}, Destination IP: {dest_ip}, Protocol: {protocol}")
+                    logger.info(f"Logged traffic: Source IP: {source_ip}, Destination IP: {dest_ip}, Protocol: {protocol}")
                 except Exception as e:
-                    #logger.error(f"Error logging traffic to database: {e}")
+                    logger.error(f"Error logging traffic to database: {e}")
                     pass
 
         current_time = time.time()
@@ -88,9 +88,9 @@ def process_packets(packet):
         packet_data["count"] += 1
 
         if packet_data["count"] > THRESHOLD and not defense.db._get_blocked_ips(source_ip):
-            #logger.warning(f"Potential DoS attack detected from IP: {source_ip}")
+            logger.warning(f"Potential DoS attack detected from IP: {source_ip}")
             commit_to_db(source_ip, "DoS Detected")
             defense.block_ip(source_ip, "DoS Detected")
 
-#logger.info("Starting packet sniffing...")
+logger.info("Starting packet sniffing...")
 sniff(prn=process_packets, store=False)

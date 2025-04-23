@@ -9,7 +9,7 @@ import subprocess
 import threading
 
 # Path to central log file
-# LOG_FILE = 'logs/app.log'
+LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
 app.secret_key = "defenseBranch"
@@ -80,59 +80,57 @@ def defense_settings():
 
 @app.route("/logviewer")
 def log_view():
-    return render_template("logview.html")
+    return render_template("logviewer.html")
 
 @app.route("/output_logs")
 def stream_logs():
-    pass
-    # level = request.args.get('level')
-    # keyword = request.args.get('keyword')
+    level = request.args.get('level')
+    keyword = request.args.get('keyword')
 
-    # def tail_log():
-    #     with open(LOG_FILE, "r") as file:
-    #         file.seek(0, 2)
-    #         while True:
-    #             line = file.readline()
-    #             if not line:
-    #                 time.sleep(0.5)
-    #                 continue
-    #             if level and f" - {level.upper()} -" not in line:
-    #                 continue
-    #             if keyword and keyword.lower() not in line.lower():
-    #                 continue
-    #             yield f"data: {line.strip()}\n\n"
+    def tail_log():
+        with open(LOG_FILE, "r") as file:
+            file.seek(0, 2)
+            while True:
+                line = file.readline()
+                if not line:
+                    time.sleep(0.5)
+                    continue
+                if level and f" - {level.upper()} -" not in line:
+                    continue
+                if keyword and keyword.lower() not in line.lower():
+                    continue
+                yield f"data: {line.strip()}\n\n"
 
-    # return Response(stream_with_context(tail_log()), mimetype="text/event-stream")
+    return Response(stream_with_context(tail_log()), mimetype="text/event-stream")
 
 @app.route("/historical-logs")
 def get_historical_logs():
-    pass
-    # level = request.args.get('level')
-    # keyword = request.args.get('keyword')
-    # start = request.args.get('start')
-    # end = request.args.get('end')
+    level = request.args.get('level')
+    keyword = request.args.get('keyword')
+    start = request.args.get('start')
+    end = request.args.get('end')
 
-    # output_logs = []
-    # if not os.path.exists(LOG_FILE):
-    #     return jsonify(output_logs)
+    output_logs = []
+    if not os.path.exists(LOG_FILE):
+        return jsonify(output_logs)
 
-    # with open(LOG_FILE, "r") as file:
-    #     for line in file:
-    #         if level and f" - {level.upper()} -" not in line:
-    #             continue
-    #         if keyword and keyword.lower() not in line.lower():
-    #             continue
-    #         if start or end:
-    #             try:
-    #                 timestamp = datetime.strptime(line.split(" - ")[0], "%Y-%m-%d %H:%M:%S,%f")
-    #                 if start and timestamp < datetime.fromisoformat(start):
-    #                     continue
-    #                 if end and timestamp > datetime.fromisoformat(end):
-    #                     continue
-    #             except Exception:
-    #                 continue
-    #         output_logs.append(line.strip())
-    # return jsonify(output_logs)
+    with open(LOG_FILE, "r") as file:
+        for line in file:
+            if level and f" - {level.upper()} -" not in line:
+                continue
+            if keyword and keyword.lower() not in line.lower():
+                continue
+            if start or end:
+                try:
+                    timestamp = datetime.strptime(line.split(" - ")[0], "%Y-%m-%d %H:%M:%S,%f")
+                    if start and timestamp < datetime.fromisoformat(start):
+                        continue
+                    if end and timestamp > datetime.fromisoformat(end):
+                        continue
+                except Exception:
+                    continue
+            output_logs.append(line.strip())
+    return jsonify(output_logs)
 
 @app.route("/traffic-logs")
 def traffic_log_view():
@@ -149,8 +147,8 @@ def attack_simulation():
 
 
 if __name__ == "__main__":
-    # if not os.path.exists("logs"):
-    #     os.makedirs("logs")
-    # with open(LOG_FILE, "a") as file:
-    #     file.write("LOG STREAM OPENED")
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    with open(LOG_FILE, "a") as file:
+        file.write("LOG STREAM OPENED")
     app.run(debug=True, port=5001)
