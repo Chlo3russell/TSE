@@ -46,3 +46,129 @@ td {
 h2 {
     margin-top: 20px;
 }
+
+.log-view-container {
+
+ 
+
+    display: flex;
+ 
+
+    height: calc(100vh - 80px);
+ 
+
+}
+ 
+
+
+ 
+
+.panel {
+ 
+
+    flex: 1;
+ 
+
+    padding: 20px;
+ 
+
+    overflow-y: auto;
+ 
+
+    background-color: #e4d9ff;
+ 
+
+    border-left: 1px solid #ccc;
+ 
+
+}
+ 
+
+
+ 
+
+.panel:first-child {
+ 
+
+    border-left: none;
+ 
+
+    background-color: #f0f0ff;
+ 
+
+}
+ 
+
+
+ 
+
+.panel h2 {
+ 
+
+    margin-top: 0;
+ 
+
+    color: #2c3e50;
+ 
+
+}
+ 
+
+
+ 
+
+select, input, button {
+ 
+
+    width: 100%;
+ 
+
+    margin: 5px 0;
+ 
+
+    padding: 6px;
+ 
+
+    font-size: 14px;
+ 
+
+    border: 1px solid #ccc;
+ 
+
+    border-radius: 4px;
+ 
+
+}
+ 
+
+
+ 
+
+.log-container {
+ 
+
+    background: #fff;
+ 
+
+    border: 1px solid #ccc;
+ 
+
+    padding: 10px;
+ 
+
+    height: 85vh;
+ 
+
+    overflow-y: auto;
+ 
+
+    font-family: monospace;
+ 
+
+    font-size: 13px;
+ 
+
+    white-space: pre-wrap;
+ 
+
+}
