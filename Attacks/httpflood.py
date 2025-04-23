@@ -4,7 +4,7 @@ import threading
 
 
 # This attack is directly to a flask app
-target_url = "http://192.168.1.233"
+target_url = ""
 
 # this creates an infinite loop, constantly sending GET requests, ignoring all the errrors 
 def http_flood():
