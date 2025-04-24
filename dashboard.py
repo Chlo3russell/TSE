@@ -152,7 +152,7 @@ def api_rate_limits():
 
 @app.route("/logviewer")
 def log_view():
-    return render_template("logviewer.html")
+    return render_template("log_viewer.html")
 
 @app.route("/logs")  # Single clear route for logs
 def stream_logs():
