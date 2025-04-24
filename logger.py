@@ -66,30 +66,3 @@ def get_all():
                 logs.append(log_data)
     lf.close()
     return logs
-
-def filter_by_time(start, end):
-    '''
-    Retrieve all logs from the log file within a certain timeframe.
-    '''
-    return [log for log in get_all() if start <= log['timestamp'] <= end]
-
-def filer_by_level(level):
-    '''
-    Retrieve all logs from the log file that match a certain level.
-    '''
-    return [log for log in get_all() if log['level'] == level.upper()]
-
-if __name__ == "__main__":
-    logger = setup_logger(__name__)
-    logger.info("Logger test message")
-
-    start = datetime.now() - timedelta(hours=1)
-    end = datetime.now()
-    recent_logs = filter_by_time(start, end)
-
-    print("\nRecent Logs:")
-    for log in recent_logs:
-        print(log)
-    
-    print("\nStructured Example:")
-    print(recent_logs[0] if recent_logs else "None Found")

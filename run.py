@@ -18,5 +18,5 @@ def run_dashboard():
 
 threading.Thread(target=run_flask).start()
 threading.Thread(target=run_monitoring).start()
-#threading.Thread(target=run_attack).start()
+threading.Thread(target=run_attack).start()
 threading.Thread(target=run_dashboard).start()
