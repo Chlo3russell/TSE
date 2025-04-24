@@ -119,3 +119,46 @@ LOG STREAM OPENED2025-04-24 15:06:20,728 - firewallMonitor - INFO - Firewall Cla
 2025-04-24 15:06:39,074 - firewallMonitor - INFO - Firewall Class Initalised
 2025-04-24 15:06:39,079 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | [WinError 2] The system cannot find the file specified
 2025-04-24 15:06:39,085 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-24 17:17:18,457 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:17:18,459 - __main__ - INFO - Starting network monitoring system
+LOG STREAM OPENED2025-04-24 17:17:34,842 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 151
+2025-04-24 17:17:34,842 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,843 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 152
+2025-04-24 17:17:34,843 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,844 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 153
+2025-04-24 17:17:34,844 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,845 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 154
+2025-04-24 17:17:34,845 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,845 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 155
+2025-04-24 17:17:34,845 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,847 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 156
+2025-04-24 17:17:34,847 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,848 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 157
+2025-04-24 17:17:34,848 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,849 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 158
+2025-04-24 17:17:34,849 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,850 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 159
+2025-04-24 17:17:34,850 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,851 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 160
+2025-04-24 17:17:34,851 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,852 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 161
+2025-04-24 17:17:34,852 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,853 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 162
+2025-04-24 17:17:34,853 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,854 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 163
+2025-04-24 17:17:34,854 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,855 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 164
+2025-04-24 17:17:34,855 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,856 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 165
+2025-04-24 17:17:34,856 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,857 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 166
+2025-04-24 17:17:34,857 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,858 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 167
+2025-04-24 17:17:34,858 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:18:00,623 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:31,571 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:34,147 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:34,198 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-24 17:18:34,206 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-24 17:35:22,479 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:35:49,931 - firewallMonitor - INFO - Firewall Class Initalised

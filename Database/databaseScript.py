@@ -3,10 +3,6 @@ import sqlite3
 from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
 
-# Create/connect to a database
-conn = sqlite3.connect('database/database.db')
-cursor = conn.cursor()
-
 # Create a simple table
 class Database:
     def __init__(self):
