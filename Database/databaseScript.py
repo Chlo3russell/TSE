@@ -2,6 +2,7 @@ import whois
 import sqlite3
 from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
+import hashlib
 
 # Create/connect to a database
 conn = sqlite3.connect('database.db')
@@ -230,6 +231,9 @@ class Database:
         #    int: ISP ID
         
         try:
+            # Hash the contact information using SHA256
+            hashed_contact = hashlib.sha256(contact_information.encode()).hexdigest()
+
             # Check if ISP exists
             self._c.execute('''
                 SELECT id FROM isp 
@@ -240,11 +244,11 @@ class Database:
             if existing_isp:
                 return existing_isp[0]
             
-            # Insert new ISP
+            # Insert new ISP with hashed contact information
             self._c.execute('''
                 INSERT INTO isp (isp_name, contact_information)
                 VALUES (?, ?)
-            ''', (isp_name, contact_information))
+            ''', (isp_name, hashed_contact))
             
             self._conn.commit()
             return self._c.lastrowid
@@ -408,8 +412,8 @@ class Database:
 
     # Add an ip to the central ip table
     def _add_ip(self, ip_address, location_id=None, isp_id=None):
-        # Add IP with just address
-        #ip_id = db._add_ip('192.168.1.1')
+        # Add hashed IP with just address
+        # ip_id = db._add_ip('192.168.1.1')
 
         # Add IP with location and ISP info
         #location_id = db._add_location('USA', 'New York', 'NY')
@@ -417,21 +421,24 @@ class Database:
         #ip_id = db._add_ip('192.168.1.2', location_id, isp_id)
 
         try:
-            # Check if IP already exists
+            # Hash the IP address using SHA256
+            hashed_ip = hashlib.sha256(ip_address.encode()).hexdigest()
+
+            # Check if the hashed IP already exists
             self._c.execute('''
                 SELECT id FROM ip_list 
                 WHERE ip_address = ?
-            ''', (ip_address,))
+            ''', (hashed_ip,))
             
             existing_ip = self._c.fetchone()
             if existing_ip:
                 return existing_ip[0]
             
-            # Insert new IP
+            # Insert new hashed IP
             self._c.execute('''
                 INSERT INTO ip_list (ip_address, location_id, isp_id)
                 VALUES (?, ?, ?)
-            ''', (ip_address, location_id, isp_id))
+            ''', (hashed_ip, location_id, isp_id))
             
             self._conn.commit()
             
@@ -439,7 +446,7 @@ class Database:
             self._c.execute('''
                 INSERT INTO admin_logs (ip_id, action)
                 VALUES (?, ?)
-            ''', (self._c.lastrowid, f"IP Added: {ip_address}"))
+            ''', (self._c.lastrowid, f"IP Added: {ip_address} (hashed)"))
             
             self._conn.commit()
             return self._c.lastrowid
@@ -474,6 +481,7 @@ class Database:
     # Query to get traffic logs, optionally filtered by a start and end timestamp
     def _get_traffic_logs(self, start_time=None, end_time=None):
             try:
+                
                 if start_time and end_time:
                     self._c.execute("""
                         SELECT * FROM traffic_logs
