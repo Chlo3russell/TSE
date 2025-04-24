@@ -4,7 +4,7 @@ import time
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 import sqlite3
 from firewallMonitor import Firewall
-from Database.databaseScript import Database
+from database.databaseScript import Database
 import subprocess
 import threading
 

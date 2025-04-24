@@ -1,5 +1,4 @@
 import time
-import logging
 import subprocess
 import os
 
