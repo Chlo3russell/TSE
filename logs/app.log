@@ -1,3 +1,4 @@
 2025-04-24 13:57:06,893 - firewallMonitor - INFO - Firewall Class Initalised
 LOG STREAM OPENED2025-04-24 13:57:07,523 - firewallMonitor - INFO - Firewall Class Initalised
-LOG STREAM OPENED
+LOG STREAM OPENED2025-04-24 13:59:24,314 - firewallMonitor - ERROR - Error blocking IP 192.168.10.1 | SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 28424 and this is thread id 11956.
+2025-04-24 14:04:19,203 - firewallMonitor - INFO - Firewall Class Initalised

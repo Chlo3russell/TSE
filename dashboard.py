@@ -12,12 +12,29 @@ import threading
 LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
-app.secret_key = "defenseBranch"
+app.secret_key = "defenceBranch"
 
-# Initialize database and firewall
-defense = Firewall()
+def get_firewall():
+    '''
+    Helper function to get the firewall
+    '''
+    if 'firewall' not in g:
+        g.firewall = Firewall()
+    return g.firewall
+
+@app.teardown_appcontext
+def close_firewall(exception):
+    '''
+    Helper function to close the firewall connection
+    '''
+    fw = g.pop('firewall', None)
+    if fw is not None:
+        fw.db._conn.close()  # Close the db connection if firewall has one
 
 def get_db():
+    '''
+    Helper function to get the db connection
+    '''
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = Database()
@@ -25,6 +42,9 @@ def get_db():
 
 @app.teardown_appcontext
 def close_connection(exception):
+    '''
+    Helper function to close the db connection
+    '''
     db = getattr(g, '_database', None)
     if db is not None:
         db._conn.close()
@@ -65,6 +85,7 @@ def defense_settings():
     '''
     try:
         db = get_db()
+        firewall = get_firewall()
     
         if request.method == 'POST':
             ip_address = request.form.get('ip_address')
@@ -77,10 +98,10 @@ def defense_settings():
             # Block/Unblock 
             if ip_address: 
                 if action == 'block': 
-                    if not defense.block_ip(ip_address, reason="Blocked manually by admin"):
+                    if not firewall.block_ip(ip_address, reason="Blocked manually by admin"):
                         flash("Failed to block IP", "error")
                 elif action == 'unblock': 
-                    if not defense.unblock_ip(ip_address):
+                    if not firewall.unblock_ip(ip_address):
                         flash("Failed to unblock IP", "error")
             elif action in ['add_rate_limit', 'remove_rate_limit'] and protocol:
                 try:
@@ -89,14 +110,14 @@ def defense_settings():
                     port = int(port) if port else None
                     # Validate protocol
                     if action == 'add_rate_limit':
-                        defense.add_rate_limit(protocol, port, per_second, burst_limit)
+                        firewall.add_rate_limit(protocol, port, per_second, burst_limit)
                     elif action == 'remove_rate_limit':
-                        defense.remove_rate_limit(protocol, port, per_second, burst_limit)
+                        firewall.remove_rate_limit(protocol, port, per_second, burst_limit)
                 except Exception as e:
                     flash(f"Error parsing rate limit values: {e}", "error")
                     return redirect(url_for('defense_settings'))
             return redirect(url_for('defense_settings'))
-      
+
         blocked_ips = db._get_blocked_ips()
         return render_template('defense.html', blocked_ips=blocked_ips)
     except Exception as e:
