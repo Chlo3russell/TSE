@@ -37,9 +37,7 @@ class Blocker:
             elif os.name == "nt":
                 # Apply the rule to each profile explicitly
                 for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
-                    command = ["advfirewall", "firewall", "add", "rule", f"name=\"Block {ip_address} {profile}\"", "dir=in", "action=block", f"remoteip={ip_address}", f"profile={profile}", "enable=yes"]
-                    print(f"Executing command: {' '.join(command)}")
-                    subprocess.run(command, check=True)
+                    self._run_command("advfirewall", "firewall", "add", "rule", f"name=Block {ip_address} {profile}", "dir=in", "action=block", f"remoteip={ip_address}", f"profile={profile}", "enable=yes")
             self.blocked_ips[ip_address] = time.time() + self.block_duration # When does that IP block last till
     
     def unblock_ip(self, ip_address):
@@ -53,7 +51,8 @@ class Blocker:
                 if os.name == "posix":
                     self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
                 elif os.name == "nt":
-                    self._run_command("advfirewall", "firewall", "delete", "rule", f"name=\"Block {ip_address}\"")
+                    for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
+                        self._run_command("advfirewall", "firewall", "delete", "rule", f"name=Block {ip_address} {profile}")
                 del self.blocked_ips[ip_address]
 
     ### TODO: This may be redundant depending on how the database has been handled.

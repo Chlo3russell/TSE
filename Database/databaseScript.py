@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
 
 # Create/connect to a database
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('database/database.db')
 cursor = conn.cursor()
 
 # Create a simple table
 class Database:
     def __init__(self):
         # Protected methods
-        self._conn = sqlite3.connect("database.db")
+        self._conn = sqlite3.connect("database/database.db")
         self._conn.row_factory = sqlite3.Row
         self._conn.execute('PRAGMA foreign_keys = ON')
         self._c = self._conn.cursor() 
