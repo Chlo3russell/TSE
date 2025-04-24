@@ -446,8 +446,23 @@ class Database:
             return None
 
     def _add_flagged_metric(self, ip_id, metric_type, value):
-        pass
-
+        '''
+        Add flagged metrics to the database
+        Args:
+            ip_id: IP ID
+            metric_type: Type of metric being flagged (SYN, UDP, etc)
+            value: Value of suspicion
+        '''
+        try:
+            self._c.execute('''
+                INSERT INTO flagged_metrics (ip_id, metric_type, value)
+                VALUES (?, ?, ?)
+            ''', (ip_id, metric_type, value))
+            self._conn.commit()
+            return True
+        except sqlite3.Error as e:
+            print(f"Error flagging suspicious metric: {e}")
+            return False
 
 ### GETTER FUNCTIONS
     # Query to get a list of blocked IPs, optionally filtered by a specific IP address
