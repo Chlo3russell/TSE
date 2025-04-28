@@ -162,3 +162,1177 @@ LOG STREAM OPENED2025-04-24 17:17:34,842 - __main__ - WARNING - Flagged High Tra
 2025-04-24 17:18:34,206 - firewallMonitor - INFO - Firewall Class Initalised
 LOG STREAM OPENEDLOG STREAM OPENED2025-04-24 17:35:22,479 - firewallMonitor - INFO - Firewall Class Initalised
 2025-04-24 17:35:49,931 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-28 12:14:42,935 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-28 12:16:33,014 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-04-28 12:18:11,331 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-28 12:18:11,333 - __main__ - INFO - Starting network monitoring system
+2025-04-28 12:19:29,296 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 151
+2025-04-28 12:19:29,297 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,306 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 152
+2025-04-28 12:19:29,306 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,312 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 153
+2025-04-28 12:19:29,312 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,317 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 154
+2025-04-28 12:19:29,317 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,322 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 155
+2025-04-28 12:19:29,322 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,328 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 156
+2025-04-28 12:19:29,328 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,333 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 157
+2025-04-28 12:19:29,334 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,338 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 158
+2025-04-28 12:19:29,338 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,343 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 159
+2025-04-28 12:19:29,343 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,348 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 160
+2025-04-28 12:19:29,348 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,352 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 161
+2025-04-28 12:19:29,352 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,356 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 162
+2025-04-28 12:19:29,357 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,361 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 163
+2025-04-28 12:19:29,361 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,365 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 164
+2025-04-28 12:19:29,365 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,369 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 165
+2025-04-28 12:19:29,370 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,374 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 166
+2025-04-28 12:19:29,374 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,378 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 167
+2025-04-28 12:19:29,379 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,400 - __main__ - WARNING - Flagged High Traffic from 95.101.63.31 (Unknown) - Value: 168
+2025-04-28 12:19:29,401 - __main__ - WARNING - Would block 95.101.63.31 for High Traffic
+2025-04-28 12:19:29,414 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 151
+2025-04-28 12:19:29,415 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,418 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 152
+2025-04-28 12:19:29,419 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,423 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 153
+2025-04-28 12:19:29,423 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,428 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 154
+2025-04-28 12:19:29,428 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,433 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 155
+2025-04-28 12:19:29,433 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,439 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 156
+2025-04-28 12:19:29,439 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,443 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 157
+2025-04-28 12:19:29,444 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,448 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 158
+2025-04-28 12:19:29,449 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,452 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 159
+2025-04-28 12:19:29,452 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,458 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 160
+2025-04-28 12:19:29,458 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,462 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 161
+2025-04-28 12:19:29,462 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,466 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 162
+2025-04-28 12:19:29,466 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,472 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 163
+2025-04-28 12:19:29,472 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,476 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 164
+2025-04-28 12:19:29,476 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,480 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 165
+2025-04-28 12:19:29,480 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,483 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 166
+2025-04-28 12:19:29,483 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,489 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 167
+2025-04-28 12:19:29,489 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,493 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 168
+2025-04-28 12:19:29,493 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,497 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 169
+2025-04-28 12:19:29,497 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,501 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 170
+2025-04-28 12:19:29,501 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,508 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 171
+2025-04-28 12:19:29,508 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,514 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 172
+2025-04-28 12:19:29,514 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,519 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 173
+2025-04-28 12:19:29,520 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,525 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 174
+2025-04-28 12:19:29,526 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,532 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 175
+2025-04-28 12:19:29,532 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,537 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 176
+2025-04-28 12:19:29,537 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,542 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 177
+2025-04-28 12:19:29,543 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,547 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 178
+2025-04-28 12:19:29,547 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,552 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 179
+2025-04-28 12:19:29,552 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,558 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 180
+2025-04-28 12:19:29,558 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,563 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 181
+2025-04-28 12:19:29,563 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,570 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 182
+2025-04-28 12:19:29,570 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,575 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 183
+2025-04-28 12:19:29,576 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,581 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 184
+2025-04-28 12:19:29,582 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,588 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 185
+2025-04-28 12:19:29,588 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,592 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 186
+2025-04-28 12:19:29,593 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,596 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 187
+2025-04-28 12:19:29,596 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,661 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 188
+2025-04-28 12:19:29,661 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,668 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 189
+2025-04-28 12:19:29,669 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,676 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 190
+2025-04-28 12:19:29,676 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,682 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 191
+2025-04-28 12:19:29,682 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,687 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 192
+2025-04-28 12:19:29,688 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,693 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 193
+2025-04-28 12:19:29,693 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,698 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 194
+2025-04-28 12:19:29,698 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,702 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 195
+2025-04-28 12:19:29,702 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,705 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 196
+2025-04-28 12:19:29,706 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,709 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 197
+2025-04-28 12:19:29,710 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,714 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 198
+2025-04-28 12:19:29,714 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,718 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 199
+2025-04-28 12:19:29,718 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,723 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 200
+2025-04-28 12:19:29,723 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:29,727 - __main__ - WARNING - Flagged High Traffic from 10.83.34.38 (Unknown) - Value: 201
+2025-04-28 12:19:29,727 - __main__ - WARNING - Would block 10.83.34.38 for High Traffic
+2025-04-28 12:19:31,805 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 151
+2025-04-28 12:19:31,806 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,811 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 152
+2025-04-28 12:19:31,811 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,815 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 153
+2025-04-28 12:19:31,817 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,820 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 154
+2025-04-28 12:19:31,823 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,832 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 155
+2025-04-28 12:19:31,833 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,836 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 156
+2025-04-28 12:19:31,837 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,842 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 157
+2025-04-28 12:19:31,842 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,846 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 158
+2025-04-28 12:19:31,848 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,854 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 159
+2025-04-28 12:19:31,854 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,858 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 160
+2025-04-28 12:19:31,859 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,864 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 161
+2025-04-28 12:19:31,864 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,869 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 162
+2025-04-28 12:19:31,869 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,873 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 163
+2025-04-28 12:19:31,875 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,878 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 164
+2025-04-28 12:19:31,878 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,883 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 165
+2025-04-28 12:19:31,883 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,887 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 166
+2025-04-28 12:19:31,887 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,892 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 167
+2025-04-28 12:19:31,893 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,897 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 168
+2025-04-28 12:19:31,899 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,902 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 169
+2025-04-28 12:19:31,903 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,907 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 170
+2025-04-28 12:19:31,907 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,911 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 171
+2025-04-28 12:19:31,912 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,916 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 172
+2025-04-28 12:19:31,917 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,921 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 173
+2025-04-28 12:19:31,921 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,926 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 174
+2025-04-28 12:19:31,926 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,930 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 175
+2025-04-28 12:19:31,930 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,934 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 176
+2025-04-28 12:19:31,935 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,938 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 177
+2025-04-28 12:19:31,939 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,942 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 178
+2025-04-28 12:19:31,943 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,946 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 179
+2025-04-28 12:19:31,946 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,951 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 180
+2025-04-28 12:19:31,951 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,956 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 181
+2025-04-28 12:19:31,956 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,960 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 182
+2025-04-28 12:19:31,961 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,966 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 183
+2025-04-28 12:19:31,966 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,970 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 184
+2025-04-28 12:19:31,970 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,974 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 185
+2025-04-28 12:19:31,974 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,978 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 186
+2025-04-28 12:19:31,978 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,982 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 187
+2025-04-28 12:19:31,983 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,987 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 188
+2025-04-28 12:19:31,987 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,991 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 189
+2025-04-28 12:19:31,991 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,994 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 190
+2025-04-28 12:19:31,995 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:31,998 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 191
+2025-04-28 12:19:31,999 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,002 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 192
+2025-04-28 12:19:32,002 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,006 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 193
+2025-04-28 12:19:32,006 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,011 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 194
+2025-04-28 12:19:32,011 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,015 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 195
+2025-04-28 12:19:32,016 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,028 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 196
+2025-04-28 12:19:32,028 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,034 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 197
+2025-04-28 12:19:32,035 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,042 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 198
+2025-04-28 12:19:32,042 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,046 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 199
+2025-04-28 12:19:32,046 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,050 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 200
+2025-04-28 12:19:32,050 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,054 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 201
+2025-04-28 12:19:32,054 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,059 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 202
+2025-04-28 12:19:32,059 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,063 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 203
+2025-04-28 12:19:32,063 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,067 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 204
+2025-04-28 12:19:32,067 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,070 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 205
+2025-04-28 12:19:32,071 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,074 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 206
+2025-04-28 12:19:32,074 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,078 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 207
+2025-04-28 12:19:32,079 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,082 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 208
+2025-04-28 12:19:32,083 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,086 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 209
+2025-04-28 12:19:32,086 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,090 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 210
+2025-04-28 12:19:32,090 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,094 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 211
+2025-04-28 12:19:32,094 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,097 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 212
+2025-04-28 12:19:32,098 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,101 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 213
+2025-04-28 12:19:32,101 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,105 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 214
+2025-04-28 12:19:32,106 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,110 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 215
+2025-04-28 12:19:32,110 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,113 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 216
+2025-04-28 12:19:32,114 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,117 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 217
+2025-04-28 12:19:32,119 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,123 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 218
+2025-04-28 12:19:32,123 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,127 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 219
+2025-04-28 12:19:32,127 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,131 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 220
+2025-04-28 12:19:32,131 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,135 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 221
+2025-04-28 12:19:32,135 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,138 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 222
+2025-04-28 12:19:32,138 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,142 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 223
+2025-04-28 12:19:32,142 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,145 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 224
+2025-04-28 12:19:32,145 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,150 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 225
+2025-04-28 12:19:32,150 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,154 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 226
+2025-04-28 12:19:32,155 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,159 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 227
+2025-04-28 12:19:32,159 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,164 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 228
+2025-04-28 12:19:32,164 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,169 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 229
+2025-04-28 12:19:32,169 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,173 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 230
+2025-04-28 12:19:32,173 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,177 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 231
+2025-04-28 12:19:32,177 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,182 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 232
+2025-04-28 12:19:32,182 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,187 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 233
+2025-04-28 12:19:32,187 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,191 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 234
+2025-04-28 12:19:32,191 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,195 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 235
+2025-04-28 12:19:32,195 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,199 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 236
+2025-04-28 12:19:32,200 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,204 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 237
+2025-04-28 12:19:32,204 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,208 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 238
+2025-04-28 12:19:32,209 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,213 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 239
+2025-04-28 12:19:32,213 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,220 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 240
+2025-04-28 12:19:32,220 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,224 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 241
+2025-04-28 12:19:32,225 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,229 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 242
+2025-04-28 12:19:32,229 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,234 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 243
+2025-04-28 12:19:32,235 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,239 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 244
+2025-04-28 12:19:32,239 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,243 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 245
+2025-04-28 12:19:32,244 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,248 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 246
+2025-04-28 12:19:32,248 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,253 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 247
+2025-04-28 12:19:32,253 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,257 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 248
+2025-04-28 12:19:32,257 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,261 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 249
+2025-04-28 12:19:32,262 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,268 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 250
+2025-04-28 12:19:32,269 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,273 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 251
+2025-04-28 12:19:32,273 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,277 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 252
+2025-04-28 12:19:32,277 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,281 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 253
+2025-04-28 12:19:32,281 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,285 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 254
+2025-04-28 12:19:32,285 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,289 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 255
+2025-04-28 12:19:32,289 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,294 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 256
+2025-04-28 12:19:32,294 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,298 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 257
+2025-04-28 12:19:32,298 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,302 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 258
+2025-04-28 12:19:32,303 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,307 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 259
+2025-04-28 12:19:32,308 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,312 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 260
+2025-04-28 12:19:32,313 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,318 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 261
+2025-04-28 12:19:32,318 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,322 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 262
+2025-04-28 12:19:32,324 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,328 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 263
+2025-04-28 12:19:32,328 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,332 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 264
+2025-04-28 12:19:32,332 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,337 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 265
+2025-04-28 12:19:32,337 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,341 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 266
+2025-04-28 12:19:32,341 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,345 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 267
+2025-04-28 12:19:32,346 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,349 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 268
+2025-04-28 12:19:32,350 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,353 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 269
+2025-04-28 12:19:32,354 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,358 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 270
+2025-04-28 12:19:32,358 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,362 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 271
+2025-04-28 12:19:32,362 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,366 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 272
+2025-04-28 12:19:32,367 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,371 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 273
+2025-04-28 12:19:32,372 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,376 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 274
+2025-04-28 12:19:32,376 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,381 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 275
+2025-04-28 12:19:32,381 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,385 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 276
+2025-04-28 12:19:32,385 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,389 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 277
+2025-04-28 12:19:32,389 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,393 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 278
+2025-04-28 12:19:32,393 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,397 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 279
+2025-04-28 12:19:32,398 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,402 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 280
+2025-04-28 12:19:32,402 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,405 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 281
+2025-04-28 12:19:32,406 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,410 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 282
+2025-04-28 12:19:32,410 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,414 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 283
+2025-04-28 12:19:32,414 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,418 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 284
+2025-04-28 12:19:32,419 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,424 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 285
+2025-04-28 12:19:32,424 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,429 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 286
+2025-04-28 12:19:32,429 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,434 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 287
+2025-04-28 12:19:32,434 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,439 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 288
+2025-04-28 12:19:32,439 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,444 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 289
+2025-04-28 12:19:32,444 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,448 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 290
+2025-04-28 12:19:32,448 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,453 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 291
+2025-04-28 12:19:32,453 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,458 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 292
+2025-04-28 12:19:32,459 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,463 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 293
+2025-04-28 12:19:32,463 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,467 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 294
+2025-04-28 12:19:32,469 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,473 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 295
+2025-04-28 12:19:32,473 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,477 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 296
+2025-04-28 12:19:32,478 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,482 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 297
+2025-04-28 12:19:32,483 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,487 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 298
+2025-04-28 12:19:32,487 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,491 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 299
+2025-04-28 12:19:32,491 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,495 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 300
+2025-04-28 12:19:32,495 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,499 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 301
+2025-04-28 12:19:32,499 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,503 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 302
+2025-04-28 12:19:32,504 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,508 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 303
+2025-04-28 12:19:32,508 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,512 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 304
+2025-04-28 12:19:32,513 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,517 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 305
+2025-04-28 12:19:32,517 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,523 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 306
+2025-04-28 12:19:32,524 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,528 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 307
+2025-04-28 12:19:32,528 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,532 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 308
+2025-04-28 12:19:32,532 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,536 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 309
+2025-04-28 12:19:32,536 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,540 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 310
+2025-04-28 12:19:32,540 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,544 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 311
+2025-04-28 12:19:32,544 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,548 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 312
+2025-04-28 12:19:32,548 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,552 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 313
+2025-04-28 12:19:32,553 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,556 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 314
+2025-04-28 12:19:32,557 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,561 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 315
+2025-04-28 12:19:32,561 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,565 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 316
+2025-04-28 12:19:32,565 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,569 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 317
+2025-04-28 12:19:32,569 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,574 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 318
+2025-04-28 12:19:32,574 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,578 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 319
+2025-04-28 12:19:32,578 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,583 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 320
+2025-04-28 12:19:32,583 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,588 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 321
+2025-04-28 12:19:32,588 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,592 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 322
+2025-04-28 12:19:32,592 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,597 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 323
+2025-04-28 12:19:32,597 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,602 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 324
+2025-04-28 12:19:32,602 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,606 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 325
+2025-04-28 12:19:32,607 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,611 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 326
+2025-04-28 12:19:32,611 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,615 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 327
+2025-04-28 12:19:32,616 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,619 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 328
+2025-04-28 12:19:32,620 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,624 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 329
+2025-04-28 12:19:32,624 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,629 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 330
+2025-04-28 12:19:32,629 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,634 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 331
+2025-04-28 12:19:32,634 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,638 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 332
+2025-04-28 12:19:32,638 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,642 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 333
+2025-04-28 12:19:32,642 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,646 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 334
+2025-04-28 12:19:32,646 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,650 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 335
+2025-04-28 12:19:32,650 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,654 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 336
+2025-04-28 12:19:32,654 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,658 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 337
+2025-04-28 12:19:32,658 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,661 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 338
+2025-04-28 12:19:32,662 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,666 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 339
+2025-04-28 12:19:32,666 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,670 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 340
+2025-04-28 12:19:32,670 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,674 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 341
+2025-04-28 12:19:32,675 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,680 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 342
+2025-04-28 12:19:32,680 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,686 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 343
+2025-04-28 12:19:32,686 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,690 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 344
+2025-04-28 12:19:32,691 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,695 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 345
+2025-04-28 12:19:32,695 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:32,869 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 151
+2025-04-28 12:19:32,869 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,876 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 152
+2025-04-28 12:19:32,877 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,886 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 153
+2025-04-28 12:19:32,887 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,894 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 154
+2025-04-28 12:19:32,895 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,902 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 155
+2025-04-28 12:19:32,902 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,908 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 156
+2025-04-28 12:19:32,909 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,914 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 157
+2025-04-28 12:19:32,915 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,920 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 158
+2025-04-28 12:19:32,920 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,928 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 159
+2025-04-28 12:19:32,929 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,935 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 160
+2025-04-28 12:19:32,935 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,941 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 161
+2025-04-28 12:19:32,942 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,949 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 162
+2025-04-28 12:19:32,950 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,956 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 163
+2025-04-28 12:19:32,956 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,960 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 164
+2025-04-28 12:19:32,961 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,967 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 165
+2025-04-28 12:19:32,967 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,974 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 166
+2025-04-28 12:19:32,974 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,980 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 167
+2025-04-28 12:19:32,980 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,986 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 168
+2025-04-28 12:19:32,986 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,990 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 169
+2025-04-28 12:19:32,990 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:32,996 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 170
+2025-04-28 12:19:32,996 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,000 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 171
+2025-04-28 12:19:33,000 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,036 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 172
+2025-04-28 12:19:33,036 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,041 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 173
+2025-04-28 12:19:33,041 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,050 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 174
+2025-04-28 12:19:33,050 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,056 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 175
+2025-04-28 12:19:33,057 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,061 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 176
+2025-04-28 12:19:33,061 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,066 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 177
+2025-04-28 12:19:33,066 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,070 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 178
+2025-04-28 12:19:33,070 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,075 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 179
+2025-04-28 12:19:33,075 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,079 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 180
+2025-04-28 12:19:33,079 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,085 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 181
+2025-04-28 12:19:33,085 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,090 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 182
+2025-04-28 12:19:33,091 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,096 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 183
+2025-04-28 12:19:33,096 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,100 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 184
+2025-04-28 12:19:33,100 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,103 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 185
+2025-04-28 12:19:33,104 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,108 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 186
+2025-04-28 12:19:33,108 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,112 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 187
+2025-04-28 12:19:33,113 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,117 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 188
+2025-04-28 12:19:33,117 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,121 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 189
+2025-04-28 12:19:33,122 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,126 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 190
+2025-04-28 12:19:33,126 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,130 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 191
+2025-04-28 12:19:33,130 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,137 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 192
+2025-04-28 12:19:33,137 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,141 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 193
+2025-04-28 12:19:33,142 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,146 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 194
+2025-04-28 12:19:33,146 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,150 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 195
+2025-04-28 12:19:33,151 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,155 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 196
+2025-04-28 12:19:33,155 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,159 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 197
+2025-04-28 12:19:33,159 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,163 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 198
+2025-04-28 12:19:33,163 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,166 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 199
+2025-04-28 12:19:33,166 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,170 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 200
+2025-04-28 12:19:33,170 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,173 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 201
+2025-04-28 12:19:33,173 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,177 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 202
+2025-04-28 12:19:33,178 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,181 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 203
+2025-04-28 12:19:33,181 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,185 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 204
+2025-04-28 12:19:33,185 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,189 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 205
+2025-04-28 12:19:33,189 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,192 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 206
+2025-04-28 12:19:33,192 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,196 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 207
+2025-04-28 12:19:33,196 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,199 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 208
+2025-04-28 12:19:33,199 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,203 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 209
+2025-04-28 12:19:33,203 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,207 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 210
+2025-04-28 12:19:33,207 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,211 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 211
+2025-04-28 12:19:33,211 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,214 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 212
+2025-04-28 12:19:33,214 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,222 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 213
+2025-04-28 12:19:33,222 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,225 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 214
+2025-04-28 12:19:33,226 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,229 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 215
+2025-04-28 12:19:33,229 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,232 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 216
+2025-04-28 12:19:33,232 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,236 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 217
+2025-04-28 12:19:33,236 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,239 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 218
+2025-04-28 12:19:33,239 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,243 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 219
+2025-04-28 12:19:33,243 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,246 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 220
+2025-04-28 12:19:33,246 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,250 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 221
+2025-04-28 12:19:33,250 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,254 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 222
+2025-04-28 12:19:33,254 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,257 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 223
+2025-04-28 12:19:33,258 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,262 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 224
+2025-04-28 12:19:33,262 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,266 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 225
+2025-04-28 12:19:33,266 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,269 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 226
+2025-04-28 12:19:33,269 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,273 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 227
+2025-04-28 12:19:33,273 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,276 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 228
+2025-04-28 12:19:33,277 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,280 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 229
+2025-04-28 12:19:33,280 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,284 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 230
+2025-04-28 12:19:33,284 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,287 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 231
+2025-04-28 12:19:33,288 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,290 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 232
+2025-04-28 12:19:33,292 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,296 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 233
+2025-04-28 12:19:33,296 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,300 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 234
+2025-04-28 12:19:33,300 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,303 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 235
+2025-04-28 12:19:33,303 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,421 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 236
+2025-04-28 12:19:33,421 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,425 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 237
+2025-04-28 12:19:33,425 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,430 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 238
+2025-04-28 12:19:33,430 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,434 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 239
+2025-04-28 12:19:33,434 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,439 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 240
+2025-04-28 12:19:33,439 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,444 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 241
+2025-04-28 12:19:33,444 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,449 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 242
+2025-04-28 12:19:33,451 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,455 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 243
+2025-04-28 12:19:33,456 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,460 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 244
+2025-04-28 12:19:33,461 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,465 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 245
+2025-04-28 12:19:33,465 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,470 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 246
+2025-04-28 12:19:33,470 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,475 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 247
+2025-04-28 12:19:33,475 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,480 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 248
+2025-04-28 12:19:33,480 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,485 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 249
+2025-04-28 12:19:33,485 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,492 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 250
+2025-04-28 12:19:33,492 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,497 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 251
+2025-04-28 12:19:33,497 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,502 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 252
+2025-04-28 12:19:33,502 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,506 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 253
+2025-04-28 12:19:33,507 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,512 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 254
+2025-04-28 12:19:33,512 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,516 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 255
+2025-04-28 12:19:33,516 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,520 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 256
+2025-04-28 12:19:33,521 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,524 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 257
+2025-04-28 12:19:33,526 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,530 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 258
+2025-04-28 12:19:33,530 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,534 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 259
+2025-04-28 12:19:33,534 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,538 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 260
+2025-04-28 12:19:33,538 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,542 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 261
+2025-04-28 12:19:33,542 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,545 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 262
+2025-04-28 12:19:33,546 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,549 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 263
+2025-04-28 12:19:33,549 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,552 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 264
+2025-04-28 12:19:33,553 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,556 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 265
+2025-04-28 12:19:33,556 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,560 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 266
+2025-04-28 12:19:33,560 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,563 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 267
+2025-04-28 12:19:33,564 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,567 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 268
+2025-04-28 12:19:33,568 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,572 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 269
+2025-04-28 12:19:33,572 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,576 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 270
+2025-04-28 12:19:33,576 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,579 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 271
+2025-04-28 12:19:33,580 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,583 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 272
+2025-04-28 12:19:33,583 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,587 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 273
+2025-04-28 12:19:33,587 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,591 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 274
+2025-04-28 12:19:33,591 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,595 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 275
+2025-04-28 12:19:33,595 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,598 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 276
+2025-04-28 12:19:33,600 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,604 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 277
+2025-04-28 12:19:33,604 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,608 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 278
+2025-04-28 12:19:33,608 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,612 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 279
+2025-04-28 12:19:33,612 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,615 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 280
+2025-04-28 12:19:33,615 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,619 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 281
+2025-04-28 12:19:33,619 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,622 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 282
+2025-04-28 12:19:33,622 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,626 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 283
+2025-04-28 12:19:33,626 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,629 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 284
+2025-04-28 12:19:33,629 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,632 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 285
+2025-04-28 12:19:33,633 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,636 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 286
+2025-04-28 12:19:33,637 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,641 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 287
+2025-04-28 12:19:33,641 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,645 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 288
+2025-04-28 12:19:33,645 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,648 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 289
+2025-04-28 12:19:33,648 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,651 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 290
+2025-04-28 12:19:33,652 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,655 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 291
+2025-04-28 12:19:33,655 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,658 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 292
+2025-04-28 12:19:33,658 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,661 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 293
+2025-04-28 12:19:33,662 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,665 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 294
+2025-04-28 12:19:33,666 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,669 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 295
+2025-04-28 12:19:33,669 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,673 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 296
+2025-04-28 12:19:33,673 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,676 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 297
+2025-04-28 12:19:33,676 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,681 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 298
+2025-04-28 12:19:33,682 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,686 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 299
+2025-04-28 12:19:33,686 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,690 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 300
+2025-04-28 12:19:33,690 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,694 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 301
+2025-04-28 12:19:33,694 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:33,697 - __main__ - WARNING - Flagged Burst Attack from 72.247.176.106 (Unknown) - Value: 302
+2025-04-28 12:19:33,697 - __main__ - WARNING - Would block 72.247.176.106 for Burst Attack
+2025-04-28 12:19:33,860 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 151
+2025-04-28 12:19:33,861 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,867 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 152
+2025-04-28 12:19:33,868 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,874 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 153
+2025-04-28 12:19:33,874 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,879 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 154
+2025-04-28 12:19:33,879 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,883 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 155
+2025-04-28 12:19:33,883 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,888 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 156
+2025-04-28 12:19:33,888 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,892 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 157
+2025-04-28 12:19:33,893 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,896 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 158
+2025-04-28 12:19:33,897 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,900 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 159
+2025-04-28 12:19:33,900 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,905 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 160
+2025-04-28 12:19:33,906 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,911 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 161
+2025-04-28 12:19:33,911 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,916 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 162
+2025-04-28 12:19:33,916 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,921 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 163
+2025-04-28 12:19:33,921 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,926 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 164
+2025-04-28 12:19:33,926 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,930 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 165
+2025-04-28 12:19:33,931 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,934 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 166
+2025-04-28 12:19:33,935 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,939 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 167
+2025-04-28 12:19:33,939 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,944 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 168
+2025-04-28 12:19:33,944 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,949 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 169
+2025-04-28 12:19:33,949 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,953 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 170
+2025-04-28 12:19:33,954 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,958 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 171
+2025-04-28 12:19:33,958 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,962 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 172
+2025-04-28 12:19:33,962 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,965 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 173
+2025-04-28 12:19:33,966 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,969 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 174
+2025-04-28 12:19:33,969 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,973 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 175
+2025-04-28 12:19:33,974 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,978 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 176
+2025-04-28 12:19:33,978 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,983 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 177
+2025-04-28 12:19:33,983 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,988 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 178
+2025-04-28 12:19:33,988 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,992 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 179
+2025-04-28 12:19:33,992 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,995 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 180
+2025-04-28 12:19:33,995 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:33,999 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 181
+2025-04-28 12:19:33,999 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,002 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 182
+2025-04-28 12:19:34,003 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,006 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 183
+2025-04-28 12:19:34,007 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,010 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 184
+2025-04-28 12:19:34,010 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,013 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 185
+2025-04-28 12:19:34,014 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,017 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 186
+2025-04-28 12:19:34,017 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,020 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 187
+2025-04-28 12:19:34,020 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,026 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 188
+2025-04-28 12:19:34,026 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,031 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 189
+2025-04-28 12:19:34,032 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,036 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 190
+2025-04-28 12:19:34,037 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,040 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 191
+2025-04-28 12:19:34,041 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,044 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 192
+2025-04-28 12:19:34,045 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,048 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 193
+2025-04-28 12:19:34,048 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,051 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 194
+2025-04-28 12:19:34,051 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,054 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 195
+2025-04-28 12:19:34,055 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,058 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 196
+2025-04-28 12:19:34,058 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,062 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 197
+2025-04-28 12:19:34,062 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,066 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 198
+2025-04-28 12:19:34,066 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,071 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 199
+2025-04-28 12:19:34,071 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,075 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 200
+2025-04-28 12:19:34,075 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,078 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 201
+2025-04-28 12:19:34,078 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,082 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 202
+2025-04-28 12:19:34,082 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,086 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 203
+2025-04-28 12:19:34,086 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,090 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 204
+2025-04-28 12:19:34,090 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,093 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 205
+2025-04-28 12:19:34,093 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,097 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 206
+2025-04-28 12:19:34,097 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,100 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 207
+2025-04-28 12:19:34,101 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,104 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 208
+2025-04-28 12:19:34,104 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,108 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 209
+2025-04-28 12:19:34,108 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,112 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 210
+2025-04-28 12:19:34,112 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,115 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 211
+2025-04-28 12:19:34,116 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,119 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 212
+2025-04-28 12:19:34,120 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,123 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 213
+2025-04-28 12:19:34,123 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,126 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 214
+2025-04-28 12:19:34,127 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,130 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 215
+2025-04-28 12:19:34,130 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,133 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 216
+2025-04-28 12:19:34,133 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,137 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 217
+2025-04-28 12:19:34,137 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,140 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 218
+2025-04-28 12:19:34,140 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,144 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 219
+2025-04-28 12:19:34,144 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,147 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 220
+2025-04-28 12:19:34,147 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,151 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 221
+2025-04-28 12:19:34,151 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,157 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 222
+2025-04-28 12:19:34,157 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,161 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 223
+2025-04-28 12:19:34,161 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,166 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 224
+2025-04-28 12:19:34,167 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,171 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 225
+2025-04-28 12:19:34,171 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,175 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 226
+2025-04-28 12:19:34,175 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,179 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 227
+2025-04-28 12:19:34,180 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,184 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 228
+2025-04-28 12:19:34,184 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,188 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 229
+2025-04-28 12:19:34,189 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,193 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 230
+2025-04-28 12:19:34,193 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,197 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 231
+2025-04-28 12:19:34,197 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,201 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 232
+2025-04-28 12:19:34,201 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,206 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 233
+2025-04-28 12:19:34,208 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,212 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 234
+2025-04-28 12:19:34,213 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,217 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 235
+2025-04-28 12:19:34,217 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,221 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 236
+2025-04-28 12:19:34,222 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,226 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 237
+2025-04-28 12:19:34,227 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,231 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 238
+2025-04-28 12:19:34,231 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,235 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 239
+2025-04-28 12:19:34,235 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,238 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 240
+2025-04-28 12:19:34,239 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,243 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 241
+2025-04-28 12:19:34,244 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,248 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 242
+2025-04-28 12:19:34,248 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,252 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 243
+2025-04-28 12:19:34,252 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,257 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 244
+2025-04-28 12:19:34,257 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,261 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 245
+2025-04-28 12:19:34,262 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,266 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 246
+2025-04-28 12:19:34,267 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,271 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 247
+2025-04-28 12:19:34,271 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,275 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 248
+2025-04-28 12:19:34,276 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,280 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 249
+2025-04-28 12:19:34,280 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,284 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 250
+2025-04-28 12:19:34,284 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,289 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 251
+2025-04-28 12:19:34,289 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,293 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 252
+2025-04-28 12:19:34,293 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,297 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 253
+2025-04-28 12:19:34,297 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,301 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 254
+2025-04-28 12:19:34,302 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,306 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 255
+2025-04-28 12:19:34,306 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,312 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 256
+2025-04-28 12:19:34,312 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,317 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 257
+2025-04-28 12:19:34,317 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,321 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 258
+2025-04-28 12:19:34,321 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,325 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 259
+2025-04-28 12:19:34,325 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,329 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 260
+2025-04-28 12:19:34,329 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,333 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 261
+2025-04-28 12:19:34,334 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,338 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 262
+2025-04-28 12:19:34,338 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,342 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 263
+2025-04-28 12:19:34,342 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,347 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 264
+2025-04-28 12:19:34,347 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,351 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 265
+2025-04-28 12:19:34,352 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,356 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 266
+2025-04-28 12:19:34,356 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,361 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 267
+2025-04-28 12:19:34,361 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,365 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 268
+2025-04-28 12:19:34,365 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,370 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 269
+2025-04-28 12:19:34,370 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,374 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 270
+2025-04-28 12:19:34,374 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,378 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 271
+2025-04-28 12:19:34,378 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,382 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 272
+2025-04-28 12:19:34,383 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,387 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 273
+2025-04-28 12:19:34,387 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,391 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 274
+2025-04-28 12:19:34,391 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,395 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 275
+2025-04-28 12:19:34,396 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,401 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 276
+2025-04-28 12:19:34,401 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,408 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 277
+2025-04-28 12:19:34,408 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,412 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 278
+2025-04-28 12:19:34,412 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,416 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 279
+2025-04-28 12:19:34,417 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,421 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 280
+2025-04-28 12:19:34,422 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,426 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 281
+2025-04-28 12:19:34,426 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,430 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 282
+2025-04-28 12:19:34,431 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,436 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 283
+2025-04-28 12:19:34,436 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,439 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 284
+2025-04-28 12:19:34,440 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,444 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 285
+2025-04-28 12:19:34,444 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,448 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 286
+2025-04-28 12:19:34,449 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,453 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 287
+2025-04-28 12:19:34,453 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,457 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 288
+2025-04-28 12:19:34,457 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,461 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 289
+2025-04-28 12:19:34,462 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+2025-04-28 12:19:34,478 - __main__ - WARNING - Flagged High Traffic from 72.247.176.106 (Unknown) - Value: 290
+2025-04-28 12:19:34,479 - __main__ - WARNING - Would block 72.247.176.106 for High Traffic
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-28 12:25:02,657 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-28 12:25:02,658 - __main__ - INFO - Starting network monitoring system
+LOG STREAM OPENED2025-04-28 12:25:28,904 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 151
+2025-04-28 12:25:29,019 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,020 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,030 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 152
+2025-04-28 12:25:29,074 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,074 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,081 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 153
+2025-04-28 12:25:29,120 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,120 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,125 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 154
+2025-04-28 12:25:29,164 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,164 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,170 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 155
+2025-04-28 12:25:29,207 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,207 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,212 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 156
+2025-04-28 12:25:29,249 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,249 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,253 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 157
+2025-04-28 12:25:29,289 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,289 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,294 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 158
+2025-04-28 12:25:29,330 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,330 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,335 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 159
+2025-04-28 12:25:29,371 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,371 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,376 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 160
+2025-04-28 12:25:29,424 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,424 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,430 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 161
+2025-04-28 12:25:29,468 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,469 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,474 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 162
+2025-04-28 12:25:29,519 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,519 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,526 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 163
+2025-04-28 12:25:29,564 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,565 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,570 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 164
+2025-04-28 12:25:29,610 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,610 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,613 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 165
+2025-04-28 12:25:29,650 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,651 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,656 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 166
+2025-04-28 12:25:29,692 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,693 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,698 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 167
+2025-04-28 12:25:29,741 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,741 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-28 12:25:29,747 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 168
+2025-04-28 12:25:29,788 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-28 12:25:29,788 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-28 12:35:52,180 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-28 12:35:52,181 - __main__ - INFO - Starting network monitoring system

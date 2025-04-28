@@ -1,7 +1,7 @@
 # whereas this one works for a specified amount of packets
 from scapy.all import IP, TCP, Raw, RandShort, send
 from random import randint
-from logger import setup_logger
+from logs.logger import setup_logger
 
 logger = setup_logger(__name__)
 

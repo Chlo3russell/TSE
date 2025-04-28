@@ -8,7 +8,7 @@ from sklearn.ensemble import IsolationForest
 
 # Import custom components
 from database.databaseScript import Database  #complete database class
-from logger import setup_logger  # configured logger
+from logs.logger import setup_logger  # configured logger
 from firewallMonitor import Firewall  #firewall control
 
 # Configuration
@@ -200,13 +200,13 @@ def process_packets(packet):
                 flag_metric(src_ip, ip_data["count"], alert_type)
                 
                 # TODO: Uncomment when firewall is ready
-                # defense.block_ip(src_ip, alert_type)
+                defense.block_ip(src_ip, alert_type)
                 logger.warning(f"Would block {src_ip} for {alert_type}")
             
             # DNS amplification
             if packet.haslayer(UDP) and packet[UDP].sport == 53 and len(packet) > 1000:
                 flag_metric(src_ip, len(packet), "DNS Amplification")
-                # defense.block_ip(src_ip, "DNS Amplification")
+                defense.block_ip(src_ip, "DNS Amplification")
                 logger.warning(f"Would block {src_ip} for DNS Amplification")
 
 def start_sniffing():
