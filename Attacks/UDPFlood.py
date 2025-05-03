@@ -1,4 +1,4 @@
-from scapy.all import *
+from scapy.all import UDP, IP, Raw, send
 import random
 import time
 
