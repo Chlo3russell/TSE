@@ -1336,3 +1336,23 @@ LOG STREAM OPENED2025-04-28 12:25:28,904 - __main__ - WARNING - Flagged High Tra
 2025-04-28 12:25:29,788 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
 LOG STREAM OPENEDLOG STREAM OPENED2025-04-28 12:35:52,180 - firewallMonitor - INFO - Firewall Class Initalised
 2025-04-28 12:35:52,181 - __main__ - INFO - Starting network monitoring system
+2025-05-03 12:32:47,967 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-03 12:33:48,300 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:33:48,301 - __main__ - INFO - Starting network monitoring system
+2025-05-03 12:33:52,757 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:34:36,658 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:34:42,111 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:34:42,282 - firewallMonitor - INFO - Successfully logged the block of IP 192.168.10.1 to the database
+2025-05-03 12:34:42,291 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:34:55,088 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:35:04,236 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:35:37,066 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 12:35:37,106 - firewallMonitor - ERROR - Error adding rate limit for Protocol: tcp, Port: 80 | Command '['netsh', '-A', 'INPUT', '-p', 'tcp', '--dport', '80', '-m', 'limit', '--limit', '125/s', '--limit-burst', '105', '-j', 'ACCEPT']' returned non-zero exit status 1.
+2025-05-03 12:35:37,113 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-03 13:16:09,266 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 13:16:19,735 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 13:17:01,080 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 13:17:52,789 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 13:17:52,790 - __main__ - INFO - Starting network monitoring system
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-03 13:26:41,375 - firewallMonitor - INFO - Firewall Class Initalised
+2025-05-03 13:26:41,376 - __main__ - INFO - Starting network monitoring system

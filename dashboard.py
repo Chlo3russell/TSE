@@ -73,7 +73,7 @@ def dashboard():
         for table in tables:
             db._c.execute(f"SELECT * FROM {table}")
             data[table] = [dict(row) for row in db._c.fetchall()]
-        return render_template('dashboard.html', data=data)
+        return render_template('network_monitor.html', data=data)
     
     except sqlite3.Error as e:
         return (f"Database error occurred: {e}", 500)
