@@ -22,7 +22,7 @@ def setup_logger(name=__name__):
     logger.setLevel(logging.INFO)
 
     # Standard format that the log messages will be in
-    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s\n")
 
     # Handling multiple log files - when a log file reaches a certain limit it will create backups (max of 3 of size 1MB)
     if not logger.handlers:

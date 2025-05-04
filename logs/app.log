@@ -9,3 +9,78 @@ AttributeError: 'Firewall' object has no attribute 'unblock_list'. Did you mean:
 LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 12:37:38,023 - firewallMonitor - INFO - Successfully initalised Firewall
 2025-05-04 12:37:38,027 - __main__ - INFO - Starting network monitoring system
 2025-05-04 12:37:38,035 - firewallMonitor - INFO - Periodic cleanup complete
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 20:52:48,450 - firewallMonitor - ERROR - Failed to initalised Firewall: near "time_of_activity": syntax error
+Traceback (most recent call last):
+  File "C:\Users\elsad\TSE\TSE\firewallMonitor.py", line 16, in __init__
+    self.db = Database()
+              ~~~~~~~~^^
+  File "C:\Users\elsad\TSE\TSE\database\databaseScript.py", line 21, in __init__
+    self.__setup_db()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\elsad\TSE\TSE\database\databaseScript.py", line 88, in __setup_db
+    self._c.execute('''
+    ~~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS flagged_metrics (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        )
+        ^
+    ''')
+    ^^^^
+sqlite3.OperationalError: near "time_of_activity": syntax error
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-04 21:00:15,167 - firewallMonitor - ERROR - Failed to initalised Firewall: near "time_of_activity": syntax error
+Traceback (most recent call last):
+  File "C:\Users\elsad\TSE\TSE\firewallMonitor.py", line 16, in __init__
+    self.db = Database()
+              ~~~~~~~~^^
+  File "C:\Users\elsad\TSE\TSE\database\databaseScript.py", line 21, in __init__
+    self.__setup_db()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\elsad\TSE\TSE\database\databaseScript.py", line 88, in __setup_db
+    self._c.execute('''
+    ~~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS flagged_metrics (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        )
+        ^
+    ''')
+    ^^^^
+sqlite3.OperationalError: near "time_of_activity": syntax error
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 21:07:19,818 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-04 21:07:19,819 - __main__ - INFO - Starting network monitoring system
+
+2025-05-04 21:07:19,820 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-04 21:07:19,827 - firewallMonitor - INFO - Periodic cleanup complete
+
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-04 21:11:05,801 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-04 21:11:36,612 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-04 21:11:36,614 - firewallMonitor - ERROR - Blocker failed to unblock IP: 192.168.10.1
+
+2025-05-04 21:11:36,617 - firewallMonitor - INFO - Successfully logged the unblocking of IP 192.168.10.1 to the database
+
+2025-05-04 21:11:36,626 - firewallMonitor - INFO - Successfully initalised Firewall
+
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 21:50:02,762 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-04 21:50:02,764 - __main__ - INFO - Starting network monitoring system
+
+2025-05-04 21:50:02,764 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-04 21:50:02,766 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-04 21:52:33,077 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-04 21:55:02,767 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-04 21:55:02,776 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-04 22:00:02,777 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-04 22:00:02,795 - firewallMonitor - INFO - Periodic cleanup complete
+
+LOG STREAM OPENED
