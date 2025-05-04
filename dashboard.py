@@ -1,12 +1,15 @@
 from datetime import datetime
 import os
 import time
-from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
-import sqlite3
-from firewallMonitor import Firewall
-from database.databaseScript import Database
 import subprocess
 import threading
+import sqlite3
+import re
+
+from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
+from firewallMonitor import Firewall
+from database.databaseScript import Database
+
 
 # Path to central log file
 LOG_FILE = 'logs/app.log'
@@ -48,6 +51,12 @@ def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db._conn.close()
+
+def is_valid_ip(ip_address):
+    pattern = r'^(\d[1,3]\.){3}\d{1,3}$'
+    if not re.match(pattern, ip_address):
+        return False
+    return True
 
 def run_attack(attack_script):
     """
@@ -97,24 +106,49 @@ def defense_settings():
 
             # Block/Unblock 
             if ip_address: 
-                if action == 'block': 
-                    if not firewall.block_ip(ip_address, reason="Blocked manually by admin"):
-                        flash("Failed to block IP", "error")
-                elif action == 'unblock': 
-                    if not firewall.unblock_ip(ip_address):
-                        flash("Failed to unblock IP", "error")
+                try:
+                    if is_valid_ip(ip_address):
+                        if action == 'block': 
+                            if not firewall.block_ip(ip_address, reason="Blocked manually by admin"):
+                                flash("Failed to block IP", "error")
+                            else:
+                                flash("IP successfully blocked", "success")
+
+                        elif action == 'unblock': 
+                            if not firewall.unblock_ip(ip_address):
+                                flash("Failed to unblock IP", "error")
+                            else:
+                                flash("IP successfully unblocked", "success")
+                except ValueError:
+                    flash("Invalid IP address format", "error")
+                    return redirect(url_for('defense_settings'))
+                
             elif action in ['add_rate_limit', 'remove_rate_limit'] and protocol:
+                if not per_second or not burst_limit:
+                    flash("Per second and Burst limit values are required", "error")
+                    return redirect(url_for('defense_settings'))
                 try:
                     per_second = int(per_second)
                     burst_limit = int(burst_limit)
                     port = int(port) if port else None
-                    # Validate protocol
+
+                    if per_second <=0 or burst_limit <=0:
+                        flash("Rate limits must be positive integers", "error")
+                        return redirect(url_for('defense_settings'))
+
                     if action == 'add_rate_limit':
-                        firewall.add_rate_limit(protocol, port, per_second, burst_limit)
+                        if firewall.add_rate_limit(protocol, port, per_second, burst_limit):
+                            flash("Rate limit added", "success")
+                        else:
+                            flash("Failed to add rate limit", "error")
+
                     elif action == 'remove_rate_limit':
-                        firewall.remove_rate_limit(protocol, port, per_second, burst_limit)
-                except Exception as e:
-                    flash(f"Error parsing rate limit values: {e}", "error")
+                        if firewall.remove_rate_limit(protocol, port, per_second, burst_limit):
+                            flash("Rate limit removed", "success")
+                        else:
+                            flash("Failed to remove rate limit", "error")
+                except ValueError:
+                    flash(f"Rate limit values must be integers", "error")
                     return redirect(url_for('defense_settings'))
             return redirect(url_for('defense_settings'))
 
