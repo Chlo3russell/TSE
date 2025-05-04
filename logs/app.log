@@ -83,4 +83,9 @@ LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 21:50:02,762 - firewallMonitor - IN
 
 2025-05-04 22:00:02,795 - firewallMonitor - INFO - Periodic cleanup complete
 
-LOG STREAM OPENED
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 22:05:02,796 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-04 22:05:02,798 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-04 22:07:36,399 - firewallMonitor - INFO - Successfully initalised Firewall
+

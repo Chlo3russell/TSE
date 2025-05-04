@@ -167,3 +167,33 @@ pre {
     font-size: 13px;
     line-height: 1.4;
 }
+
+#flash-messages {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.flash-message {
+    background-color: #e4d9ff;
+    color: #2c3e50;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px #000000;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.flash-message.error{
+    background-color: #d9534f;
+}
+
+.flash-message.success{
+    background-color: #5cb85c;
+}
+
+@keyframes fadeInUp {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}

@@ -42,6 +42,24 @@
     <!-- Rate Limit Table -->
     <h3>Current Rate Limits (Linux Only)</h3>
     <div id="rate-limits-table"></div>
+    
+    <!-- Flash Messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div id="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                const flash_box = document.getElementById("flash-message");
+                if (flash_box) flash_box.remove();
+            }, 5000)
+        </script>
+        {% endif %}
+    {% endwith %}
 </div>
 
 <script>
