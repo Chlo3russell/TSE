@@ -150,8 +150,8 @@ def defense_settings():
                 except ValueError:
                     flash(f"Rate limit values must be integers", "error")
                     return redirect(url_for('defense_settings'))
-            return redirect(url_for('defense_settings'))
-
+            return redirect(url_for('defense_settings')) 
+        
         blocked_ips = db._get_blocked_ips()
         return render_template('defense.html', blocked_ips=blocked_ips)
     except Exception as e:
