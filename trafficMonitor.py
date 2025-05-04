@@ -192,14 +192,14 @@ def process_packets(packet):
                 np.mean(ip_data["history"]) if ip_data["history"] else 0
             ])
         
-        # Real-time protection (using your firewall)
+        # Real-time protection (using the firewall)
         if not db._get_blocked_ips(src_ip):
             # DoS/Burst detection
             if ip_data["count"] > THRESHOLD:
                 alert_type = "Burst Attack" if ip_data["count"] > BURST_THRESHOLD else "High Traffic"
                 flag_metric(src_ip, ip_data["count"], alert_type)
                 
-                # TODO: Uncomment when firewall is ready
+                # Blocks the IP
                 defense.block_ip(src_ip, alert_type)
                 logger.warning(f"Would block {src_ip} for {alert_type}")
             
@@ -209,6 +209,16 @@ def process_packets(packet):
                 defense.block_ip(src_ip, "DNS Amplification")
                 logger.warning(f"Would block {src_ip} for DNS Amplification")
 
+def cleanup():
+    while True:
+        try:
+            defense.unblock_list() # Firewall unblocking
+            db._clear_records(days_to_keep=30) # DB cleanup
+            logger.info("Periodic cleanup complete")
+        except Exception as e:
+            logger.exception(f"Unexpected exception when cleaning records: {e}") 
+        time.sleep(300) # Run every 5 mins
+
 def start_sniffing():
     """Main entry point with logging"""
     logger.info("Starting network monitoring system")
@@ -217,7 +227,8 @@ def start_sniffing():
     threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
     threading.Thread(target=train_ml_model, daemon=True).start()
     threading.Thread(target=generate_traffic_report, daemon=True).start()
-    
+    threading.Thread(target=cleanup, daemon=True).start()
+
     # Start sniffing with BPF filter
     sniff(
         prn=process_packets,

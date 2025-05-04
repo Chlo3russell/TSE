@@ -133,7 +133,7 @@ class Blocker:
             logger.exception(f"Unexpected error whilst checking firewall rules: {' '.join(command)} | {e}")
         return ""
 
-    def add_rate_limit(self, protocol, port=None, per_second = 25, burst_limit = 50):
+    def add_rate_limit(self, protocol, port=None, per_second = 25, burst_limit = 50) -> bool:
         '''
         Adds the rate limit based on user's or default inputs\n
         Args:
@@ -151,6 +151,7 @@ class Blocker:
                 self._run_command("-A", "INPUT", "-p", protocol, "-j", "DROP")) # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT), (-p tcp) apply to tcp packets, (--syn) target syn packets, (-m limit) use limit module for rate limiting, (--limit ) allow a certain amount of packets per second - default 25, (-- limit- burst ) allow a burst of 50 packets before enforcing the rule, (-j ACCEPT) now accept traffic that was once blocked. 
         except Exception as e:
             logger.exception(f"Error adding rate limit: {e}")
+            return False
 
     def remove_rate_limit(self, protocol, port= None, per_second = 25, burst_limit = 50):
         '''
