@@ -569,7 +569,7 @@ class Database:
             return None
         
     # Query to get the changes/ actions taken on rate limits
-    def _get_rate_limit_actions(self):
+    def _get_rate_limit_actions(self) -> list:
         '''
         Gets all rate limit actions from the database
         Returns: 
@@ -595,18 +595,19 @@ class Database:
             return []
 
     # Query to get a records of the admins actions/ changes they've made 
-    def _get_admin_actions(self, start_date=None, end_date=None, ip_id=None, limit=100):
-        # Get all admin actions (limited to 100)
-        #actions = db._get_admin_actions()
+    def _get_admin_actions(self, start_date=None, end_date=None, ip_id=None, limit=100) -> list:
+        '''
+        Get all admin actions (limited to 100)\n
+        actions = db._get_admin_actions()
 
-        # Get actions for a specific IP
-        #actions = db._get_admin_actions(ip_id='123')
+        Get actions for a specific IP\n
+        actions = db._get_admin_actions(ip_id='123')
 
-        # Get actions within a date range
-        #from datetime import datetime, timedelta
-        #start = datetime.now() - timedelta(days=7)  # Last 7 days
-        #actions = db._get_admin_actions(start_date=start)
-        
+        Get actions within a date range\n
+        from datetime import datetime, timedelta
+        start = datetime.now() - timedelta(days=7)  # Last 7 days
+        actions = db._get_admin_actions(start_date=start)
+        '''
         try:
             query = """
                 SELECT al.id, al.ip_id, al.timestamp, al.action, ip.ip_address
@@ -659,7 +660,7 @@ class Database:
 
 ### DELETE FUNCTION
 
-    def _clear_records(self, days_to_keep=30):
+    def _clear_records(self, days_to_keep=30) -> dict:
         """
         Sets up automatic cleanup of old records and performs immediate cleanup.
         Args:
@@ -757,8 +758,8 @@ class Database:
         except sqlite3.Error as e:
             self._conn.rollback()
             print(f"Error in _clear_records: {e}")
-            return None
+            return {}
         except Exception as e:
             self._conn.rollback()
             print(f"Unexpected error in _clear_records: {e}")
-            return None
+            return {}

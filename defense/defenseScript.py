@@ -71,14 +71,17 @@ class Blocker:
             return True
         return False
 
-    ### TODO: This may be redundant depending on how the database has been handled.
-    def unblock_list(self):
+    def unblock_list(self) -> int:
         '''
         Unblocks all IP Addresses where their block time has expired
         '''
+        count = 0 # Count of IPs that have been unblocked
         for ip_address, block_time in list(self.blocked_ips.items()):
             if time.time() >= block_time:
-                self.unblock_ip(ip_address)
+                if self.unblock_ip(ip_address):
+                    count += 1
+        logger.info(f"Cleaning IPs from firewall, Unblocked: {count} IP addresses")
+        return count 
 
     def get_blocked_ips(self):
         '''

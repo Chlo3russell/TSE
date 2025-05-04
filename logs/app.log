@@ -6,3 +6,6 @@ Traceback (most recent call last):
     defense.unblock_list() # Firewall unblocking
     ^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Firewall' object has no attribute 'unblock_list'. Did you mean: 'unblock_ip'?
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-04 12:37:38,023 - firewallMonitor - INFO - Successfully initalised Firewall
+2025-05-04 12:37:38,027 - __main__ - INFO - Starting network monitoring system
+2025-05-04 12:37:38,035 - firewallMonitor - INFO - Periodic cleanup complete
