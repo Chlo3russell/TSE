@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import time
 from defense.defenseScript import Blocker
 from database.databaseScript import Database
 from logs.logger import setup_logger
@@ -160,3 +161,13 @@ class Firewall:
         except Exception as e:
             logger.exception(f"Error removing rate limit for Protocol: {protocol}, Port: {port} | {e}")
             return False
+    
+    def cleanup_loop(self, interval=300, days_to_keep=30):
+        while True:
+            try:
+                self.blocker.unblock_list() # Firewall unblocking
+                self.db._clear_records(days_to_keep=days_to_keep) # DB cleanup
+                logger.info("Periodic cleanup complete")
+            except Exception as e:
+                logger.exception(f"Unexpected exception when cleaning records: {e}") 
+            time.sleep(interval) # Run every 5 mins

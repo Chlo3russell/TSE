@@ -209,16 +209,6 @@ def process_packets(packet):
                 defense.block_ip(src_ip, "DNS Amplification")
                 logger.warning(f"Would block {src_ip} for DNS Amplification")
 
-def cleanup():
-    while True:
-        try:
-            defense.unblock_list() # Firewall unblocking
-            db._clear_records(days_to_keep=30) # DB cleanup
-            logger.info("Periodic cleanup complete")
-        except Exception as e:
-            logger.exception(f"Unexpected exception when cleaning records: {e}") 
-        time.sleep(300) # Run every 5 mins
-
 def start_sniffing():
     """Main entry point with logging"""
     logger.info("Starting network monitoring system")
@@ -227,7 +217,7 @@ def start_sniffing():
     threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
     threading.Thread(target=train_ml_model, daemon=True).start()
     threading.Thread(target=generate_traffic_report, daemon=True).start()
-    threading.Thread(target=cleanup, daemon=True).start()
+    threading.Thread(target=defense.cleanup_loop(), daemon=True).start()
 
     # Start sniffing with BPF filter
     sniff(
