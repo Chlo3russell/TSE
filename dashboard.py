@@ -8,7 +8,11 @@ import ipaddress
 
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
-from database.databaseScript import Database
+from Database.databaseScript import Database
+
+from flask import session
+from functools import wraps
+ 
 
 
 # Path to central log file
@@ -24,6 +28,18 @@ def get_firewall():
     if 'firewall' not in g:
         g.firewall = Firewall()
     return g.firewall
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route("/login", methods=['GET'])
+def login():
+    return render_template('login/login.html')
 
 @app.teardown_appcontext
 def close_firewall(exception):
@@ -68,6 +84,7 @@ def run_attack(attack_script):
     threading.Thread(target=attack_thread).start()
 
 @app.route("/")
+@login_required
 def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.

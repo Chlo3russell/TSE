@@ -234,3 +234,171 @@ LOG STREAM OPENED2025-05-05 15:01:54,027 - firewallMonitor - INFO - Successfully
 
 2025-05-05 16:25:22,461 - firewallMonitor - INFO - Successfully initalised Firewall
 
+2025-05-05 23:45:16,957 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:45:16,963 - trafficMonitor - INFO - Starting network monitoring system
+
+2025-05-05 23:45:44,143 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:46:05,833 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:46:05,995 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 12.0.0.1 DOMAIN dir=in action=block remoteip=12.0.0.1 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 12.0.0.1 DOMAIN', 'dir=in', 'action=block', 'remoteip=12.0.0.1', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,050 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 12.0.0.1 PRIVATE dir=in action=block remoteip=12.0.0.1 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 12.0.0.1 PRIVATE', 'dir=in', 'action=block', 'remoteip=12.0.0.1', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,102 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 12.0.0.1 PUBLIC dir=in action=block remoteip=12.0.0.1 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 12.0.0.1 PUBLIC', 'dir=in', 'action=block', 'remoteip=12.0.0.1', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,104 - firewallMonitor - ERROR - Failed to log the block of IP 12.0.0.1 to the database
+
+2025-05-05 23:46:06,169 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 12.0.0.1 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 12.0.0.1 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,232 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 12.0.0.1 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 12.0.0.1 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,291 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 12.0.0.1 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 12.0.0.1 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-05 23:46:06,304 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:46:55,470 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:46:55,473 - trafficMonitor - INFO - Starting network monitoring system
+
+2025-05-05 23:48:33,153 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:48:33,156 - trafficMonitor - INFO - Starting network monitoring system
+
+2025-05-05 23:48:34,107 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:49:26,924 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:49:26,925 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:50:02,964 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:50:16,952 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:50:17,072 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.2 DOMAIN dir=in action=block remoteip=192.168.10.2 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.2 DOMAIN', 'dir=in', 'action=block', 'remoteip=192.168.10.2', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,134 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.2 PRIVATE dir=in action=block remoteip=192.168.10.2 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.2 PRIVATE', 'dir=in', 'action=block', 'remoteip=192.168.10.2', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,188 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.2 PUBLIC dir=in action=block remoteip=192.168.10.2 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.2 PUBLIC', 'dir=in', 'action=block', 'remoteip=192.168.10.2', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,189 - firewallMonitor - ERROR - Failed to log the block of IP 192.168.10.2 to the database
+
+2025-05-05 23:50:17,265 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.10.2 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.10.2 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,335 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.10.2 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.10.2 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,399 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.10.2 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.10.2 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-05 23:50:17,413 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:51:30,793 - __main__ - WARNING - Flagged High Traffic from 192.168.1.140 (Unknown) - Value: 151
+
+2025-05-05 23:51:30,846 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.140 DOMAIN dir=in action=block remoteip=192.168.1.140 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.140 DOMAIN', 'dir=in', 'action=block', 'remoteip=192.168.1.140', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:51:30,901 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.140 PRIVATE dir=in action=block remoteip=192.168.1.140 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.140 PRIVATE', 'dir=in', 'action=block', 'remoteip=192.168.1.140', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:51:30,954 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.140 PUBLIC dir=in action=block remoteip=192.168.1.140 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.140 PUBLIC', 'dir=in', 'action=block', 'remoteip=192.168.1.140', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 23:55:55,676 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:55:55,678 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:56:37,462 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:56:37,464 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:57:48,517 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:57:48,519 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:58:05,246 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:58:05,248 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:59:20,747 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:59:20,749 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 23:59:42,412 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 23:59:42,413 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 00:00:00,963 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 00:00:00,965 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 00:00:12,090 - __main__ - WARNING - Flagged High Traffic from 142.250.178.3 (US) - Value: 151
+
+2025-05-06 00:00:12,144 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 142.250.178.3 DOMAIN dir=in action=block remoteip=142.250.178.3 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 142.250.178.3 DOMAIN', 'dir=in', 'action=block', 'remoteip=142.250.178.3', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:00:12,194 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 142.250.178.3 PRIVATE dir=in action=block remoteip=142.250.178.3 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 142.250.178.3 PRIVATE', 'dir=in', 'action=block', 'remoteip=142.250.178.3', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:00:12,246 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 142.250.178.3 PUBLIC dir=in action=block remoteip=142.250.178.3 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 142.250.178.3 PUBLIC', 'dir=in', 'action=block', 'remoteip=142.250.178.3', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:01:34,623 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 00:01:34,624 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 00:02:03,905 - __main__ - WARNING - Flagged High Traffic from 140.82.112.21 (US) - Value: 151
+
+2025-05-06 00:02:03,981 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.112.21 DOMAIN dir=in action=block remoteip=140.82.112.21 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.112.21 DOMAIN', 'dir=in', 'action=block', 'remoteip=140.82.112.21', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:02:04,052 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.112.21 PRIVATE dir=in action=block remoteip=140.82.112.21 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.112.21 PRIVATE', 'dir=in', 'action=block', 'remoteip=140.82.112.21', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:02:04,102 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.112.21 PUBLIC dir=in action=block remoteip=140.82.112.21 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.112.21 PUBLIC', 'dir=in', 'action=block', 'remoteip=140.82.112.21', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:02:09,618 - firewallMonitor - ERROR - Failed to log the block of IP 140.82.112.21 to the database
+
+2025-05-06 00:02:09,699 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 140.82.112.21 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 140.82.112.21 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 00:02:09,776 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 140.82.112.21 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 140.82.112.21 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 00:02:09,839 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 140.82.112.21 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 140.82.112.21 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 00:02:09,839 - __main__ - WARNING - Would block 140.82.112.21 for High Traffic
+
+2025-05-06 00:02:54,807 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 00:02:54,808 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 00:03:23,254 - __main__ - WARNING - Flagged High Traffic from 104.16.25.34 (Unknown) - Value: 151
+
+2025-05-06 00:03:23,339 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 DOMAIN dir=in action=block remoteip=104.16.25.34 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 DOMAIN', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:23,412 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 PRIVATE dir=in action=block remoteip=104.16.25.34 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 PRIVATE', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:23,464 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 PUBLIC dir=in action=block remoteip=104.16.25.34 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 PUBLIC', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:28,962 - firewallMonitor - ERROR - Failed to log the block of IP 104.16.25.34 to the database
+
+2025-05-06 00:03:29,062 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 104.16.25.34 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 104.16.25.34 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 00:03:29,128 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 104.16.25.34 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 104.16.25.34 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 00:03:29,191 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 104.16.25.34 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 104.16.25.34 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 00:03:29,191 - __main__ - WARNING - Would block 104.16.25.34 for High Traffic
+
+2025-05-06 00:03:34,089 - __main__ - WARNING - Flagged High Traffic from 104.16.25.34 (Unknown) - Value: 151
+
+2025-05-06 00:03:34,171 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 DOMAIN dir=in action=block remoteip=104.16.25.34 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 DOMAIN', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:34,245 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 PRIVATE dir=in action=block remoteip=104.16.25.34 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 PRIVATE', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:34,305 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 104.16.25.34 PUBLIC dir=in action=block remoteip=104.16.25.34 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 104.16.25.34 PUBLIC', 'dir=in', 'action=block', 'remoteip=104.16.25.34', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 00:03:34,311 - firewallMonitor - INFO - Successfully logged the block of IP 104.16.25.34 to the database
+
+2025-05-06 00:03:34,311 - __main__ - WARNING - Would block 104.16.25.34 for High Traffic
+
+2025-05-06 00:03:39,242 - __main__ - WARNING - Flagged High Traffic from 104.16.25.34 (Unknown) - Value: 151
+
+2025-05-06 00:03:39,244 - firewallMonitor - ERROR - Error blocking IP: 104.16.25.34 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 00:03:39,245 - __main__ - WARNING - Would block 104.16.25.34 for High Traffic
+
