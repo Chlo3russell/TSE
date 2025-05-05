@@ -13,6 +13,8 @@ from Database.databaseScript import Database
 from logs.logger import setup_logger
 from firewallMonitor import Firewall
 from config import Config
+from Database.databaseScript import Database
+from logs.logger import setup_logger
 
 import warnings
 from cryptography.utils import CryptographyDeprecationWarning
@@ -189,6 +191,57 @@ def start_sniffing():
         )
     except Exception as e:
         logger.error(f"Sniffing failed: {str(e)}")
+
+# Initialize components
+db = Database()
+logger = setup_logger('traffic_monitor')
+
+def flag_metric(ip_address, value, metric_type="DoS Detected"):
+    """Record flagged metrics to database and log security events.
+    
+    Args:
+        ip_address (str): Suspicious IP address
+        value (int/float/str): Measured threat value (e.g., packet count)
+        metric_type (str): Threat classification
+    """
+    try:
+        # Get IP info from WHOIS or set defaults
+        ip_info = db._get_ip_info_whois(ip_address) or {
+            'country': 'Unknown',
+            'city': 'Unknown',
+            'isp_name': 'Unknown'
+        }
+
+        # Add IP to database
+        ip_id = db._add_ip(
+            ip_address,
+            location_id=db._add_location(
+                ip_info.get('country', 'Unknown'),
+                ip_info.get('city', 'Unknown'),
+                ip_info.get('region', 'Unknown')
+            ),
+            isp_id=db._add_isp(
+                ip_info.get('isp_name', 'Unknown'),
+                ip_info.get('contact', 'No contact')
+            )
+        )
+
+        # Store the flagged metric
+        db._add_flagged_metric(ip_id, metric_type, value)
+
+        # Log warning
+        logger.warning(
+            f"Flagged {metric_type} from {ip_address} "
+            f"({ip_info.get('country', 'Unknown')}) - Value: {value}"
+        )
+
+        # Optional: Auto-block if threshold exceeded
+        if metric_type in ["DoS Detected", "Port Scan Detected"]:
+            defense = Firewall()
+            defense.block_ip(ip_address, f"Autoblock: {metric_type}")
+
+    except Exception as e:
+        logger.error(f"Error in flag_metric: {str(e)}")
 
 if __name__ == "__main__":
     start_sniffing()
