@@ -145,6 +145,9 @@ class Blocker:
             per_second: Packets that a connection is permitted to transmit per second
             burst_limit: Packets in a burst that are allowed to transmit before limits are applied
         '''
+        if os.name != "posix":
+            logger.error("Cannot perform rate limiting via Iptables on non-linux systems")
+            return False
         try:
             if port:
                 return (self._run_command("-A", "INPUT", "-p", protocol, "--dport", str(port), "-m", "limit", "--limit", f"{per_second}/s", "--limit-burst", f"{burst_limit}", "-j", "ACCEPT") and 
@@ -165,6 +168,9 @@ class Blocker:
             per_second: Packets that a connection is permitted to transmit per second
             burst_limit: Packets in a burst that are allowed to transmit before limits are applied
         '''
+        if os.name != "posix":
+            logger.error("Cannot perform rate limiting via Iptables on non-linux systems")
+            return False
         try:
             if port: 
                 return (self._run_command("-D", "INPUT", "-p", protocol, "--dport", str(port), "-j", "DROP") and
