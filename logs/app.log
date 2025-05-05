@@ -1,0 +1,58 @@
+2025-05-05 14:17:59,298 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:18:12,386 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:18:13,774 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:18:13,775 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 14:18:13,776 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-05 14:18:13,782 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-05 14:18:14,387 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:18:27,718 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:19:36,735 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:19:36,736 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 14:19:36,736 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-05 14:19:36,740 - firewallMonitor - INFO - Periodic cleanup complete
+
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:20:55,610 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:20:55,611 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 14:20:55,612 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-05 14:20:55,614 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-05 14:20:56,254 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:20:56,273 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:21:08,536 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:23:47,668 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:23:47,669 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 14:23:47,771 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
+
+2025-05-05 14:23:48,197 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:23:49,164 - firewallMonitor - INFO - Periodic cleanup complete
+
+2025-05-05 14:24:00,403 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:26:40,737 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:26:54,640 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:26:56,156 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:26:56,158 - __main__ - INFO - Starting network monitoring system
+

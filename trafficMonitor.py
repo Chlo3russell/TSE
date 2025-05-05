@@ -78,7 +78,7 @@ def flag_metric(ip_address, value, metric_type="DoS Detected"):
 def analyze_traffic_patterns():
     """Periodic analysis using database for storage"""
     while True:
-        time.sleep(300)  # 5 minutes
+        #time.sleep(300)  # 5 minutes
         try:
             current_time = time.time()
             for ip, data in packet_counts.items():
@@ -214,10 +214,10 @@ def start_sniffing():
     logger.info("Starting network monitoring system")
     
     # Start background threads
-    threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
-    threading.Thread(target=train_ml_model, daemon=True).start()
-    threading.Thread(target=generate_traffic_report, daemon=True).start()
-    threading.Thread(target=defense.cleanup_loop(), daemon=True).start()
+    #threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
+    #threading.Thread(target=train_ml_model, daemon=True).start()
+    #threading.Thread(target=generate_traffic_report, daemon=True).start()
+    #threading.Thread(target=defense.cleanup_loop(), daemon=True).start()
 
     # Start sniffing with BPF filter
     sniff(

