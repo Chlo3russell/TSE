@@ -12,7 +12,7 @@ import config
 from auth import login_required, admin_required
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
-from Database.databaseScript import Database
+from database.databaseScript import Database
 
 
 # Path to central log file
