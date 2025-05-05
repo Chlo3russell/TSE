@@ -9,11 +9,11 @@ import subprocess
 import shlex
 import os
 
-from database.databaseScript import Database
+from Database.databaseScript import Database
 from logs.logger import setup_logger
 from firewallMonitor import Firewall
 from config import Config
-from database.databaseScript import Database
+from Database.databaseScript import Database
 from logs.logger import setup_logger
 
 import warnings
@@ -154,25 +154,47 @@ def log_packet(packet):
         logger.info(f"Packet: {src_ip}:{sport} -> {dst_ip}:{dport} {protocol} {flags}")
 
 def process_packets(packet):
-    """Packet processing with logging"""
-    log_packet(packet)
-    
-    if packet.haslayer(IP):
-        src_ip = packet[IP].src
-        current_time = time.time()
-        ip_data = packet_counts[src_ip]
-        
-        # Update counters
-        ip_data["count"] += 1
-        ip_data["hourly_count"] += 1
-        
-        # Rest of the processing logic...
-        # [Keep all your existing processing code]
-        
-        # Example logging for detected events
-        if ip_data["count"] > THRESHOLD:
-            logger.warning(f"High traffic detected from {src_ip}: {ip_data['count']} packets/sec")
+    """Analyze network packets for security threats in real-time"""
+    if not packet.haslayer(IP):
+        return
 
+    src_ip = packet[IP].src
+    ip_data = packet_counts[src_ip]
+    ip_data["count"] += 1
+    ip_data["hourly_count"] += 1
+
+    # Protocol analysis
+    if packet.haslayer(TCP):
+        ip_data["tcp_count"] += 1
+        if packet[TCP].flags == "S":
+            ip_data["syn_count"] += 1
+        ip_data["ports"].add(packet[TCP].dport)
+    elif packet.haslayer(UDP):
+        ip_data["ports"].add(packet[UDP].dport)
+
+    # Threat detection
+    if not db._get_blocked_ips(src_ip):
+        # Burst/DoS detection
+        if ip_data["count"] > BURST_THRESHOLD:
+            flag_metric(src_ip, ip_data["count"], "Burst Attack")
+            Firewall().block_ip(src_ip, "Burst Attack")
+
+        # Port scan detection
+        elif len(ip_data["ports"]) > PORT_SCAN_THRESHOLD:
+            flag_metric(src_ip, len(ip_data["ports"]), "Port Scan Detected")
+            ip_data["ports"].clear()
+
+        # SYN flood detection
+        elif (ip_data["tcp_count"] > 50 and 
+              (ip_data["syn_count"] / ip_data["tcp_count"]) > SYN_FLOOD_RATIO):
+            flag_metric(src_ip, ip_data["syn_count"] / ip_data["tcp_count"], "SYN Flood Detected")
+
+        # DNS amplification
+        elif (packet.haslayer(UDP) and packet[UDP].sport == 53 and len(packet) > 1000):
+            flag_metric(src_ip, len(packet), "DNS Amplification")
+            Firewall().block_ip(src_ip, "DNS Amplification")
+
+            
 def start_sniffing():
     """Main entry point with logging"""
     logger.info("Starting network monitoring system")
