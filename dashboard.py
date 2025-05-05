@@ -286,6 +286,4 @@ def attack_simulation():
 if __name__ == "__main__":
     if not os.path.exists("logs"):
         os.makedirs("logs")
-    with open(LOG_FILE, "a") as file:
-        file.write("LOG STREAM OPENED")
     app.run(debug=True, port=5001)

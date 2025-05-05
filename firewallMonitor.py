@@ -150,7 +150,7 @@ class Firewall:
             if not self.blocker.remove_rate_limit(protocol, port, per_second, burst_limit):
                 logger.error(f"Blocker failed to remove rate limit for Protocol: {protocol}, Port: {port}")
                 return False
-            self.db._add_rate_limit_action("Add rate limit", {
+            self.db._add_rate_limit_action("Remove rate limit", {
                 'protocol': protocol,
                 'port': port,
                 'limit': per_second,

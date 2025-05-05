@@ -56,3 +56,91 @@ LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:26:56,156 - firewallMonitor - IN
 
 2025-05-05 14:26:56,158 - __main__ - INFO - Starting network monitoring system
 
+LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:54:15,464 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 14:54:15,465 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 14:54:34,056 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 14:54:47,618 - attacks.synack - INFO - Attack completed.
+
+LOG STREAM OPENED2025-05-05 15:01:54,027 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:01:54,028 - __main__ - INFO - Starting network monitoring system
+
+2025-05-05 15:02:12,582 - attacks.synack - INFO - Starting SYN flood attack on :80
+
+2025-05-05 15:35:00,593 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:35:34,004 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:35:34,015 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:35:42,740 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:37:32,468 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:37:32,476 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:37:38,765 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:37:38,815 - defense.defenseScript - ERROR - Failed to execute command: netsh -A INPUT -p tcp --dport 80 -m limit --limit 125/s --limit-burst 105 -j ACCEPT | Command '['netsh', '-A', 'INPUT', '-p', 'tcp', '--dport', '80', '-m', 'limit', '--limit', '125/s', '--limit-burst', '105', '-j', 'ACCEPT']' returned non-zero exit status 1.
+
+2025-05-05 15:37:38,816 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 15:37:39,018 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:15,183 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:29,694 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:32,792 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:32,801 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:46,465 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:51,240 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:51,275 - defense.defenseScript - ERROR - Failed to execute command: netsh -D INPUT -p tcp --dport 80 -j DROP | Command '['netsh', '-D', 'INPUT', '-p', 'tcp', '--dport', '80', '-j', 'DROP']' returned non-zero exit status 1.
+
+2025-05-05 15:38:51,276 - firewallMonitor - ERROR - Blocker failed to remove rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 15:38:51,284 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:57,411 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:38:57,443 - defense.defenseScript - ERROR - Failed to execute command: netsh -A INPUT -p tcp --dport 80 -m limit --limit 125/s --limit-burst 105 -j ACCEPT | Command '['netsh', '-A', 'INPUT', '-p', 'tcp', '--dport', '80', '-m', 'limit', '--limit', '125/s', '--limit-burst', '105', '-j', 'ACCEPT']' returned non-zero exit status 1.
+
+2025-05-05 15:38:57,444 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 15:38:57,451 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:39:01,186 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:39:01,195 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:39:04,454 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:39:04,461 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:39:16,101 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:15,529 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:19,609 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:19,623 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:30,764 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:34,472 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:34,482 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:47,430 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:48,089 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 15:57:56,418 - firewallMonitor - INFO - Successfully initalised Firewall
+

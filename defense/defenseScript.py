@@ -110,7 +110,7 @@ class Blocker:
                 
                 if current_rule.get("action") == "Block" and current_rule.get("remoteip"):
                     blocked.extend(current_rule["remoteip"].split(','))
-                return line(set(blocked))
+                return list(set(blocked))
             
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to retrieve blocked IPs from Firewall: {e}")
@@ -173,4 +173,5 @@ class Blocker:
                 return (self._run_command("-D", "INPUT", "-p", protocol, "-j", "DROP") and 
                 self._run_command("-D", "INPUT", "-p", protocol, "-m", "limit", "--limit", f"{per_second}/s", "--limit-burst", f"{burst_limit}", "-j", "ACCEPT")) # Command to change the firewall rules (iptables), delete the rule (-D) to the incoming traffic (INPUT).
         except Exception as e:
-            logger.exception(f"Error adding rate limit: {e}")
+            logger.exception(f"Error removing rate limit: {e}")
+            return False

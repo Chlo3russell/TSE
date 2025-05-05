@@ -182,6 +182,19 @@ class Database:
             return None
 
 ### SETTER FUNCTIONS
+    def _add_flagged_metric(self, ip_id, metric_type, value):
+        try:
+            self._c.execute('''
+                INSERT INTO flagged_metrics (ip_id, metric_type, value)
+                VALUES (?,?,?)
+            ''', (ip_id, metric_type, value))
+            self._conn.commit()
+            return True
+        except sqlite3.Error as e:
+            print(f"Error adding flagged metric: {e}")
+            self._conn.rollback
+            return False
+
     def _add_location(self, country, city, region):
         
         #Add location information to the database. Can be called directly or used with IP lookup.
