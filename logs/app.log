@@ -1,236 +1,164 @@
-2025-05-05 14:17:59,298 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:18:12,386 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:18:13,774 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:18:13,775 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 14:18:13,776 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
-
-2025-05-05 14:18:13,782 - firewallMonitor - INFO - Periodic cleanup complete
-
-2025-05-05 14:18:14,387 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:18:27,718 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:19:36,735 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:19:36,736 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 14:19:36,736 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
-
-2025-05-05 14:19:36,740 - firewallMonitor - INFO - Periodic cleanup complete
-
-LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:20:55,610 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:20:55,611 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 14:20:55,612 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
-
-2025-05-05 14:20:55,614 - firewallMonitor - INFO - Periodic cleanup complete
-
-2025-05-05 14:20:56,254 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:20:56,273 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:21:08,536 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:23:47,668 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:23:47,669 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 14:23:47,771 - defense.defenseScript - INFO - Cleaning IPs from firewall, Unblocked: 0 IP addresses
-
-2025-05-05 14:23:48,197 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:23:49,164 - firewallMonitor - INFO - Periodic cleanup complete
-
-2025-05-05 14:24:00,403 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:26:40,737 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:26:54,640 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:26:56,156 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:26:56,158 - __main__ - INFO - Starting network monitoring system
-
-LOG STREAM OPENEDLOG STREAM OPENED2025-05-05 14:54:15,464 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 14:54:15,465 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 14:54:34,056 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 14:54:47,618 - attacks.synack - INFO - Attack completed.
-
-LOG STREAM OPENED2025-05-05 15:01:54,027 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:01:54,028 - __main__ - INFO - Starting network monitoring system
-
-2025-05-05 15:02:12,582 - attacks.synack - INFO - Starting SYN flood attack on :80
-
-2025-05-05 15:35:00,593 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:35:34,004 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:35:34,015 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:35:42,740 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:37:32,468 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:37:32,476 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:37:38,765 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:37:38,815 - defense.defenseScript - ERROR - Failed to execute command: netsh -A INPUT -p tcp --dport 80 -m limit --limit 125/s --limit-burst 105 -j ACCEPT | Command '['netsh', '-A', 'INPUT', '-p', 'tcp', '--dport', '80', '-m', 'limit', '--limit', '125/s', '--limit-burst', '105', '-j', 'ACCEPT']' returned non-zero exit status 1.
-
-2025-05-05 15:37:38,816 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 15:37:39,018 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:15,183 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:29,694 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:32,792 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:32,801 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:46,465 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:51,240 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:51,275 - defense.defenseScript - ERROR - Failed to execute command: netsh -D INPUT -p tcp --dport 80 -j DROP | Command '['netsh', '-D', 'INPUT', '-p', 'tcp', '--dport', '80', '-j', 'DROP']' returned non-zero exit status 1.
-
-2025-05-05 15:38:51,276 - firewallMonitor - ERROR - Blocker failed to remove rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 15:38:51,284 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:57,411 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:38:57,443 - defense.defenseScript - ERROR - Failed to execute command: netsh -A INPUT -p tcp --dport 80 -m limit --limit 125/s --limit-burst 105 -j ACCEPT | Command '['netsh', '-A', 'INPUT', '-p', 'tcp', '--dport', '80', '-m', 'limit', '--limit', '125/s', '--limit-burst', '105', '-j', 'ACCEPT']' returned non-zero exit status 1.
-
-2025-05-05 15:38:57,444 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 15:38:57,451 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:39:01,186 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:39:01,195 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:39:04,454 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:39:04,461 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:39:16,101 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:15,529 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:19,609 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:19,623 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:30,764 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:34,472 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:34,482 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:47,430 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:48,089 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 15:57:56,418 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:18:43,371 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:18:43,374 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
-
-2025-05-05 16:18:43,374 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 16:18:43,387 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:18:57,878 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:00,750 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:00,761 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:08,245 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:11,735 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:11,745 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:19:47,887 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:20:21,946 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:22:12,646 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:22:32,341 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:23:50,488 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:04,172 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:08,936 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 DOMAIN dir=in action=block remoteip=13.107.246.64 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:08,972 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 PRIVATE dir=in action=block remoteip=13.107.246.64 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 PRIVATE', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:09,009 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 PUBLIC dir=in action=block remoteip=13.107.246.64 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 PUBLIC', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:09,021 - firewallMonitor - INFO - Successfully logged the block of IP 13.107.246.64 to the database
-
-2025-05-05 16:24:09,032 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:20,678 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:20,714 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 DOMAIN dir=in action=block remoteip=192.168.10.1 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 DOMAIN', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:20,747 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 PRIVATE dir=in action=block remoteip=192.168.10.1 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 PRIVATE', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:20,782 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 PUBLIC dir=in action=block remoteip=192.168.10.1 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 PUBLIC', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
-
-2025-05-05 16:24:20,787 - firewallMonitor - INFO - Successfully logged the block of IP 192.168.10.1 to the database
-
-2025-05-05 16:24:20,794 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:29,310 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:29,311 - firewallMonitor - ERROR - Blocker failed to unblock IP: 192.168.10.1
-
-2025-05-05 16:24:29,314 - firewallMonitor - INFO - Successfully logged the unblocking of IP 192.168.10.1 to the database
-
-2025-05-05 16:24:29,325 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:31,635 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:52,264 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:52,264 - firewallMonitor - ERROR - Blocker failed to unblock IP: 13.107.246.64
-
-2025-05-05 16:24:52,268 - firewallMonitor - INFO - Successfully logged the unblocking of IP 13.107.246.64 to the database
-
-2025-05-05 16:24:52,276 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:57,339 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:24:57,339 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
-
-2025-05-05 16:24:57,339 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 16:24:57,346 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:25:07,580 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:25:07,581 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
-
-2025-05-05 16:25:07,581 - firewallMonitor - ERROR - Blocker failed to remove rate limit for Protocol: tcp, Port: 80
-
-2025-05-05 16:25:07,588 - firewallMonitor - INFO - Successfully initalised Firewall
-
-2025-05-05 16:25:22,461 - firewallMonitor - INFO - Successfully initalised Firewall
-
+2025-04-24 13:57:06,893 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-24 13:57:07,523 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENED2025-04-24 13:59:24,314 - firewallMonitor - ERROR - Error blocking IP 192.168.10.1 | SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 28424 and this is thread id 11956.
+2025-04-24 14:04:19,203 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 14:45:08,826 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 14:45:11,709 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 14:45:11,722 - firewallMonitor - ERROR - Error blocking IP 192.168.10.1 | [WinError 2] The system cannot find the file specified
+2025-04-24 14:45:11,733 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENEDLOG STREAM OPENED2025-04-24 15:04:59,193 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 15:04:59,195 - __main__ - INFO - Starting network monitoring system
+LOG STREAM OPENED2025-04-24 15:05:36,279 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 151
+2025-04-24 15:05:36,279 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,280 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 152
+2025-04-24 15:05:36,280 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,280 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 153
+2025-04-24 15:05:36,280 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,281 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 154
+2025-04-24 15:05:36,281 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,282 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 155
+2025-04-24 15:05:36,282 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,282 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 156
+2025-04-24 15:05:36,283 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,283 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 157
+2025-04-24 15:05:36,283 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,284 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 158
+2025-04-24 15:05:36,284 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,284 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 159
+2025-04-24 15:05:36,285 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,285 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 160
+2025-04-24 15:05:36,285 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,286 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 161
+2025-04-24 15:05:36,286 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,287 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 162
+2025-04-24 15:05:36,287 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,287 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 163
+2025-04-24 15:05:36,287 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,288 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 164
+2025-04-24 15:05:36,288 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,288 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 165
+2025-04-24 15:05:36,289 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,291 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 166
+2025-04-24 15:05:36,291 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,292 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 167
+2025-04-24 15:05:36,292 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,293 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 168
+2025-04-24 15:05:36,293 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,293 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 169
+2025-04-24 15:05:36,294 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,294 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 170
+2025-04-24 15:05:36,294 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,295 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 171
+2025-04-24 15:05:36,295 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,295 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 172
+2025-04-24 15:05:36,295 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,296 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 173
+2025-04-24 15:05:36,296 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,297 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 174
+2025-04-24 15:05:36,297 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,298 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 175
+2025-04-24 15:05:36,298 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,298 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 176
+2025-04-24 15:05:36,298 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,299 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 177
+2025-04-24 15:05:36,299 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,300 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 178
+2025-04-24 15:05:36,301 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,301 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 179
+2025-04-24 15:05:36,302 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,303 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 180
+2025-04-24 15:05:36,303 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,304 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 181
+2025-04-24 15:05:36,304 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,305 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 182
+2025-04-24 15:05:36,305 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,306 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 183
+2025-04-24 15:05:36,306 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,307 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 184
+2025-04-24 15:05:36,307 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,307 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 185
+2025-04-24 15:05:36,307 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,308 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 186
+2025-04-24 15:05:36,308 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,309 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 187
+2025-04-24 15:05:36,309 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,309 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 188
+2025-04-24 15:05:36,309 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,310 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 189
+2025-04-24 15:05:36,310 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,311 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 190
+2025-04-24 15:05:36,311 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,311 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 191
+2025-04-24 15:05:36,311 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,312 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 192
+2025-04-24 15:05:36,312 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,313 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 193
+2025-04-24 15:05:36,313 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,313 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 194
+2025-04-24 15:05:36,313 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,314 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 195
+2025-04-24 15:05:36,314 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,315 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 196
+2025-04-24 15:05:36,315 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,315 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 197
+2025-04-24 15:05:36,315 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,316 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 198
+2025-04-24 15:05:36,316 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,317 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 199
+2025-04-24 15:05:36,317 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,317 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 200
+2025-04-24 15:05:36,317 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,318 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 201
+2025-04-24 15:05:36,318 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,319 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 202
+2025-04-24 15:05:36,319 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 15:05:36,319 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 203
+2025-04-24 15:05:36,319 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+LOG STREAM OPENED2025-04-24 15:06:20,728 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 15:06:29,242 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 15:06:39,074 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 15:06:39,079 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | [WinError 2] The system cannot find the file specified
+2025-04-24 15:06:39,085 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-24 17:17:18,457 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:17:18,459 - __main__ - INFO - Starting network monitoring system
+LOG STREAM OPENED2025-04-24 17:17:34,842 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 151
+2025-04-24 17:17:34,842 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,843 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 152
+2025-04-24 17:17:34,843 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,844 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 153
+2025-04-24 17:17:34,844 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,845 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 154
+2025-04-24 17:17:34,845 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,845 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 155
+2025-04-24 17:17:34,845 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,847 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 156
+2025-04-24 17:17:34,847 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,848 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 157
+2025-04-24 17:17:34,848 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,849 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 158
+2025-04-24 17:17:34,849 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,850 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 159
+2025-04-24 17:17:34,850 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,851 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 160
+2025-04-24 17:17:34,851 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,852 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 161
+2025-04-24 17:17:34,852 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,853 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 162
+2025-04-24 17:17:34,853 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,854 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 163
+2025-04-24 17:17:34,854 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,855 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 164
+2025-04-24 17:17:34,855 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,856 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 165
+2025-04-24 17:17:34,856 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,857 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 166
+2025-04-24 17:17:34,857 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:17:34,858 - __main__ - WARNING - Flagged High Traffic from 13.107.246.64 (Unknown) - Value: 167
+2025-04-24 17:17:34,858 - __main__ - WARNING - Would block 13.107.246.64 for High Traffic
+2025-04-24 17:18:00,623 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:31,571 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:34,147 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:18:34,198 - firewallMonitor - ERROR - Error blocking IP 13.107.246.64 | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+2025-04-24 17:18:34,206 - firewallMonitor - INFO - Firewall Class Initalised
+LOG STREAM OPENEDLOG STREAM OPENED2025-04-24 17:35:22,479 - firewallMonitor - INFO - Firewall Class Initalised
+2025-04-24 17:35:49,931 - firewallMonitor - INFO - Firewall Class Initalised
