@@ -9,11 +9,11 @@ import subprocess
 import shlex
 import os
 
-from Database.databaseScript import Database
+from database.databaseScript import Database
 from logs.logger import setup_logger
 from firewallMonitor import Firewall
 from config import Config
-from Database.databaseScript import Database
+from database.databaseScript import Database
 from logs.logger import setup_logger
 
 import warnings
