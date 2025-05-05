@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import IsolationForest
 
 # Import custom components
-from database.databaseScript import Database  #complete database class
+from Database.databaseScript import Database  #complete database class
 from logs.logger import setup_logger  # configured logger
 from firewallMonitor import Firewall  #firewall control
 
