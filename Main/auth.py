@@ -5,7 +5,7 @@ from functools import wraps
 from flask import session, redirect, url_for, flash
 
 import os
-from Database.databaseScript import Database
+from database.databaseScript import Database
 
 auth = Blueprint('auth', __name__)
 db = Database()

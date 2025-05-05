@@ -8,6 +8,7 @@ import threading
 import sqlite3
 import re
 import config
+import ipaddress
 
 from auth import login_required, admin_required
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
@@ -57,10 +58,11 @@ def close_connection(exception):
         db._conn.close()
 
 def is_valid_ip(ip_address):
-    pattern = r'^(\d[1,3]\.){3}\d{1,3}$'
-    if not re.match(pattern, ip_address):
+    try:
+        ipaddress.ip_address(ip_address)
+        return True
+    except ValueError:
         return False
-    return True
 
 def run_attack(attack_script):
     """
