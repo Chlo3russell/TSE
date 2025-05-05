@@ -144,3 +144,93 @@ LOG STREAM OPENED2025-05-05 15:01:54,027 - firewallMonitor - INFO - Successfully
 
 2025-05-05 15:57:56,418 - firewallMonitor - INFO - Successfully initalised Firewall
 
+2025-05-05 16:18:43,371 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:18:43,374 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
+
+2025-05-05 16:18:43,374 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 16:18:43,387 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:18:57,878 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:00,750 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:00,761 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:08,245 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:11,735 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:11,745 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:19:47,887 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:20:21,946 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:22:12,646 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:22:32,341 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:23:50,488 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:04,172 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:08,936 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 DOMAIN dir=in action=block remoteip=13.107.246.64 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 DOMAIN', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:08,972 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 PRIVATE dir=in action=block remoteip=13.107.246.64 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 PRIVATE', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:09,009 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 13.107.246.64 PUBLIC dir=in action=block remoteip=13.107.246.64 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 13.107.246.64 PUBLIC', 'dir=in', 'action=block', 'remoteip=13.107.246.64', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:09,021 - firewallMonitor - INFO - Successfully logged the block of IP 13.107.246.64 to the database
+
+2025-05-05 16:24:09,032 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:20,678 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:20,714 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 DOMAIN dir=in action=block remoteip=192.168.10.1 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 DOMAIN', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:20,747 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 PRIVATE dir=in action=block remoteip=192.168.10.1 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 PRIVATE', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:20,782 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.10.1 PUBLIC dir=in action=block remoteip=192.168.10.1 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.10.1 PUBLIC', 'dir=in', 'action=block', 'remoteip=192.168.10.1', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-05 16:24:20,787 - firewallMonitor - INFO - Successfully logged the block of IP 192.168.10.1 to the database
+
+2025-05-05 16:24:20,794 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:29,310 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:29,311 - firewallMonitor - ERROR - Blocker failed to unblock IP: 192.168.10.1
+
+2025-05-05 16:24:29,314 - firewallMonitor - INFO - Successfully logged the unblocking of IP 192.168.10.1 to the database
+
+2025-05-05 16:24:29,325 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:31,635 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:52,264 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:52,264 - firewallMonitor - ERROR - Blocker failed to unblock IP: 13.107.246.64
+
+2025-05-05 16:24:52,268 - firewallMonitor - INFO - Successfully logged the unblocking of IP 13.107.246.64 to the database
+
+2025-05-05 16:24:52,276 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:57,339 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:24:57,339 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
+
+2025-05-05 16:24:57,339 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 16:24:57,346 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:25:07,580 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:25:07,581 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
+
+2025-05-05 16:25:07,581 - firewallMonitor - ERROR - Blocker failed to remove rate limit for Protocol: tcp, Port: 80
+
+2025-05-05 16:25:07,588 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-05 16:25:22,461 - firewallMonitor - INFO - Successfully initalised Firewall
+

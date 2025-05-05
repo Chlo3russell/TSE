@@ -4,7 +4,7 @@ import time
 import subprocess
 import threading
 import sqlite3
-import re
+import ipaddress
 
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
@@ -53,10 +53,11 @@ def close_connection(exception):
         db._conn.close()
 
 def is_valid_ip(ip_address):
-    pattern = r'^(\d[1,3]\.){3}\d{1,3}$'
-    if not re.match(pattern, ip_address):
+    try:
+        ipaddress.ip_address(ip_address)
+        return True
+    except ValueError:
         return False
-    return True
 
 def run_attack(attack_script):
     """
@@ -119,8 +120,11 @@ def defense_settings():
                                 flash("Failed to unblock IP", "error")
                             else:
                                 flash("IP successfully unblocked", "success")
-                except ValueError:
-                    flash("Invalid IP address format", "error")
+                    else:
+                        flash("Invalid IP address format", "error")
+                        return redirect(url_for('defense_settings'))
+                except Exception as e:
+                    flash(f"Unexpected error: {e}", "error")
                     return redirect(url_for('defense_settings'))
                 
             elif action in ['add_rate_limit', 'remove_rate_limit'] and protocol:
