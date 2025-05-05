@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Traffic Logs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Protocol</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in traffic_logs %}
+            <tr>
+                <td>{{ log['id'] }}</td>
+                <td>{{ log['source_ip_id'] }}</td>
+                <td>{{ log['destination_ip'] }}</td>
+                <td>{{ log['protocol_type'] }}</td>
+                <td>{{ log['timestamp'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

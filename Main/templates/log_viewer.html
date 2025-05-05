@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="log-view-container">
+    <div id="filters" class="panel">
+        <h2>Filter Logs</h2>
+        <label>Log Source:</label>
+        <select id="source">
+            <option value="">All</option>
+            <option value="traffic_monitor">Traffic Monitor</option>
+            <option value="attack_simulator">Attack Simulator</option>
+            <option value="firewall">Firewall</option>
+        </select>
+
+        <label>Log Level:</label>
+        <select id="level">
+            <option value="">All</option>
+            <option value="INFO">INFO</option>
+            <option value="WARNING">WARNING</option>
+            <option value="ERROR">ERROR</option>
+        </select>
+
+        <label>Keyword:</label>
+        <input type="text" id="keyword">
+
+        <button onclick="apply_filters()">Apply</button>
+        <button onclick="clear_logs()">Clear</button>
+    </div>
+ 
+    <div class="panel">
+        <h2>Live Logs</h2>
+        <div id="liveLogs" class="log-container"></div>
+    </div>
+</div>
+ 
+<script>
+    let live_stream;
+    let current_filters = {};
+
+    function start_live(filters = {}) {
+        if (live_stream) live_stream.close();
+        
+        const params = new URLSearchParams();
+        for (const [key, value] of Object.entries(filters)) {
+            if (value) params.append(key, value);
+        }
+        
+        live_stream = new EventSource("/logs?" + params.toString());
+        
+        live_stream.onmessage = function(e) {
+            const log_div = document.getElementById("liveLogs");
+            const logEntry = JSON.parse(e.data);
+            
+            // Create log entry element with color coding
+            const entry = document.createElement("div");
+            entry.className = `log-entry ${logEntry.level.toLowerCase()}`;
+            
+            // Format the timestamp
+            const timestamp = new Date(logEntry.timestamp).toLocaleString();
+            
+            // Create the log message
+            entry.innerHTML = `
+                <span class="timestamp">${timestamp}</span>
+                <span class="source">${logEntry.source}</span>
+                <span class="level">${logEntry.level}</span>
+                <span class="message">${logEntry.message}</span>
+            `;
+            
+            log_div.appendChild(entry);
+            log_div.scrollTop = log_div.scrollHeight;
+        };
+        
+        live_stream.onerror = function(e) {
+            console.error("EventSource failed:", e);
+            // Attempt to reconnect after 5 seconds
+            setTimeout(() => start_live(current_filters), 5000);
+        };
+    }
+ 
+    function apply_filters() {
+        current_filters = {
+            source: document.getElementById("source").value,
+            level: document.getElementById("level").value,
+            keyword: document.getElementById("keyword").value
+        };
+        
+        clear_logs();
+        start_live(current_filters);
+    }
+ 
+    function clear_logs() {
+        document.getElementById("liveLogs").innerHTML = "";
+    }
+    
+    // Start with default filters when page loads
+    start_live();
+</script>
+
+<style>
+    .log-entry {
+        padding: 4px;
+        border-bottom: 1px solid #eee;
+        font-family: monospace;
+    }
+    
+    .timestamp {
+        color: #666;
+        margin-right: 10px;
+    }
+    
+    .source {
+        color: #007bff;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    
+    .level {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    
+    .info .level { color: #28a745; }
+    .warning .level { color: #ffc107; }
+    .error .level { color: #dc3545; }
+</style>
+{% endblock %}
