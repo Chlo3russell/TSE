@@ -2,10 +2,10 @@ from scapy.all import UDP, IP, Raw, send
 import random
 import time
 from datetime import datetime, timedelta
-from logs.logger import setupLogger
+from logs.logger import setup_logger
 
 # Initialize logger for this module
-logger = setupLogger(__name__)
+logger = setup_logger(__name__)
 
 class UDPFloodAttack:
 

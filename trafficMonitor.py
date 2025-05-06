@@ -6,14 +6,13 @@ import numpy as np
 from datetime import datetime
 from sklearn.ensemble import IsolationForest
 import warnings
-from cryptography.utils import CryptographyDeprecationWarning
 
 from Database.databaseScript import Database
 from logs.logger import setup_logger
 from firewallMonitor import Firewall
 
-# Suppress Scapy deprecation warnings
-warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+# Suppress all warnings since we removed cryptography
+warnings.filterwarnings("ignore")
 
 logger = setup_logger('traffic_monitor')
 
