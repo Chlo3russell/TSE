@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import time
 from defense.defenseScript import Blocker
-from Database.databaseScript import Database
+from database.databaseScript import Database
 from logs.logger import setupLogger
 
 logger = setupLogger(__name__)

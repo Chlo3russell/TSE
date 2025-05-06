@@ -8,7 +8,7 @@ import ipaddress
 
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
-from Database.databaseScript import Database
+from database.databaseScript import Database
 
 from flask import session
 from functools import wraps
