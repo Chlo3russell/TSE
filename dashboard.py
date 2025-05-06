@@ -12,13 +12,13 @@ from Database.databaseScript import Database
 
 from flask import session
 from functools import wraps
- 
-
+from flask_cors import CORS
 
 # Path to central log file
 LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
+CORS(app)  # Add CORS support
 app.secret_key = "defenceBranch"
 
 def get_firewall():
@@ -37,8 +37,28 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-@app.route("/login", methods=['GET'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        try:
+            if not request.is_json:
+                return jsonify({"message": "Missing JSON"}), 400
+                
+            data = request.get_json()
+            username = data.get('username')
+            password = data.get('password')
+            
+            # Check against the Node.js stored credentials
+            if username == 'testuser' and password == 'password123':
+                session['user_id'] = username
+                return jsonify({"message": "success"})
+            
+            return jsonify({"message": "Invalid username or password"}), 401
+            
+        except Exception as e:
+            print(f"Login error: {str(e)}")  # Debug logging
+            return jsonify({"message": "Server error"}), 500
+            
     return render_template('login/login.html')
 
 @app.teardown_appcontext
