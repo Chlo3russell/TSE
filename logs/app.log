@@ -858,3 +858,63 @@ UnboundLocalError: cannot access local variable 'e' where it is not associated w
 
 2025-05-06 08:50:27,770 - firewallMonitor - INFO - Successfully initalised Firewall
 
+2025-05-06 10:45:05,142 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 10:45:05,145 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 10:46:28,202 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 10:46:28,204 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 10:53:19,579 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:53:25,502 - firewallMonitor - ERROR - Failed to log the block of IP 162.159.129.232 to the database
+
+2025-05-06 10:53:25,905 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
+2025-05-06 10:53:42,131 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:53:42,490 - firewallMonitor - INFO - Successfully logged the block of IP 162.159.129.232 to the database
+
+2025-05-06 10:53:42,490 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
+2025-05-06 10:53:47,632 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:53:47,633 - firewallMonitor - ERROR - Error blocking IP: 162.159.129.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 10:53:47,635 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
+2025-05-06 10:53:52,840 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:53:52,840 - firewallMonitor - ERROR - Error blocking IP: 162.159.129.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 10:53:52,842 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
+2025-05-06 10:53:57,970 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:53:57,971 - firewallMonitor - ERROR - Error blocking IP: 162.159.129.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 10:53:57,972 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
+2025-05-06 10:54:03,100 - __main__ - WARNING - Flagged High Traffic from 162.159.129.232 (Unknown) - Value: 151
+
+2025-05-06 10:54:03,101 - firewallMonitor - ERROR - Error blocking IP: 162.159.129.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 10:54:03,101 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
+
