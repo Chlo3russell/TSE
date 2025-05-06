@@ -1,9 +1,10 @@
+import re
 import time
 import subprocess
 import os
-from logs.logger import setupLogger
+from logs.logger import setup_logger  # Changed from setupLogger
 
-logger = setupLogger(__name__)
+logger = setup_logger(__name__)  # Changed from setupLogger
 
 ## Class for blocking & unblocking IPs using iptables
 class Blocker:
@@ -91,10 +92,10 @@ class Blocker:
         '''
         try:
             if os.name == "posix":
-                command = subprocess.check_output(["iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
+                command = subprocess.run(["iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
                 return [line.split()[3] for line in command.stdout.splitlines() if "DROP" in line]
             elif os.name == "nt":
-                command = subprocess.check_output(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
+                command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
                 blocked = []
                 current_rule = {}
 
