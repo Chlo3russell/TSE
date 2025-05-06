@@ -32,11 +32,11 @@ class Blocker:
             return True
         
         except subprocess.CalledProcessError as e:
-            logger.error(f"Failed to execute command: {' '.join(command)} | {e}")
+            logger.error(f"Failed to execute command {' '.join(command)}: {e}")
         except FileNotFoundError:
             logger.error(f"Firewall file not found | {e}")
         except Exception as e:
-            logger.exception(f"Unexpected error while executing command: {' '.join(command)} | {e}")
+            logger.exception(f"Unexpected error while executing command {' '.join(command)}: {e}")
         return False
 
     def block_ip(self, ip_address) -> bool:
@@ -112,12 +112,28 @@ class Blocker:
                 if current_rule.get("action") == "Block" and current_rule.get("remoteip"):
                     blocked.extend(current_rule["remoteip"].split(','))
                 return list(set(blocked))
-            
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to retrieve blocked IPs from Firewall: {e}")
         except Exception as e:
-            logger.exception(f"Unexpected error whilst fetching blocked IPs: {' '.join(command)} | {e}")
+            logger.exception(f"Unexpected error whilst fetching blocked IPs: {e}")
         return []
+    
+    def check_if_ip_blocked(self, ip_address):
+        '''
+        Checks if an IP is stored within a firewall\n
+        Args:
+            ip_address: IP address to check\n
+        Returns:
+            bool: Whether an IP is indeed blocked by the firewall
+        '''
+        try:
+            blocked_ips = self.get_blocked_ips()
+            if ip_address in blocked_ips:
+                return True
+            else:
+                return False
+        except Exception as e:
+            logger.exception(f"Unexpected error whilst checking for IP in blocked IPs: {e}")
 
     def check_firewall_rules(self):
         '''
@@ -125,17 +141,22 @@ class Blocker:
         Returns:
             string: Firewall rules
         '''
+        rules = []
         try:
             if os.name == "posix":
                 command = subprocess.run(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
             elif os.name == "nt":
-                command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check=True, text=True)
-            return command.stdout 
+                command = subprocess.check_output("netsh advfirewall firewall show rule name=all", shell=True, text=True)
+                rule_names = re.findall(r"Rule Name:\s+(.*)", command)
+                for name in rule_names:
+                    if "block" in name.lower():
+                        rules.append(name.strip())
+                return list(set(rules))
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to check firewall rules: {e}")
         except Exception as e:
-            logger.exception(f"Unexpected error whilst checking firewall rules: {' '.join(command)} | {e}")
-        return ""
+            logger.exception(f"Unexpected error whilst checking firewall rules: {e}")
+        return []
 
     def add_rate_limit(self, protocol, port=None, per_second = 25, burst_limit = 50) -> bool:
         '''
