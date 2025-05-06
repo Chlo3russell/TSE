@@ -79,7 +79,7 @@ def login():
             print(f"Login error: {str(e)}")  # Debug logging
             return jsonify({"message": "Server error"}), 500
             
-    return render_template('login/login.html')
+    return render_template('login.html')
 
 @app.teardown_appcontext
 def close_firewall(exception):
