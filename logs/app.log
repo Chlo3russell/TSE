@@ -1284,3 +1284,15 @@ UnboundLocalError: cannot access local variable 'e' where it is not associated w
 
 2025-05-06 16:42:54,290 - __main__ - INFO - Starting network monitoring system for web application on port 5000
 
+2025-05-06 17:34:35,939 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 17:34:45,408 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 17:34:56,842 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 17:35:14,800 - Attacks.synack - INFO - Starting SYN flood attack on 127.0.0.1:5001
+
+2025-05-06 17:35:23,519 - Attacks.synack - INFO - Attack stopped by user
+
+2025-05-06 17:35:23,519 - Attacks.synack - INFO - Attack completed. Sent 82 packets
+

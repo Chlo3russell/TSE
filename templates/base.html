@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='js/attack_simulation.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
     <title>Base</title>
 </head>
 <body>
@@ -24,20 +26,5 @@
     <div class="content">
         {% block content %}{% endblock %}
     </div>
-
-    <script>
-    function handleLogout(event) {
-        event.preventDefault();
-        fetch('/logout')
-            .then(response => response.json())
-            .then(data => {
-                if (data.message === 'success') {
-                    // Reload the current page
-                    window.location.reload();  
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    }
-    </script>
 </body>
 </html>
