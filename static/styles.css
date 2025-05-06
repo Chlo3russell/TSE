@@ -231,3 +231,20 @@ background: #0056b3;
     min-height: 20px;
     transition: all 0.3s ease;
 }
+
+.attack-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.status {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+button {
+    margin-right: 10px;
+}

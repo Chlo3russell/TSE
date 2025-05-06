@@ -156,74 +156,40 @@ def generate_traffic_report():
             logger.error(f"Report generation failed: {str(e)}")
 
 def process_packets(packet):
-    """Packet processing with firewall integration points"""
-    if packet.haslayer(IP):
+    """Packet processing focused on web application security"""
+    if packet.haslayer(IP) and packet.haslayer(TCP):
         src_ip = packet[IP].src
-        current_time = time.time()
-        ip_data = packet_counts[src_ip]
+        dst_port = packet[TCP].dport
         
-        # Update counters
-        ip_data["count"] += 1
-        ip_data["hourly_count"] += 1
-        
-        # Reset per-second counters
-        if current_time - ip_data["timestamp"] > 1:
-            ip_data["history"].append(ip_data["count"])
-            ip_data["count"] = 0
-            ip_data["timestamp"] = current_time
-        
-        # Protocol analysis
-        if packet.haslayer(TCP):
-            ip_data["tcp_count"] += 1
-            if packet[TCP].flags == "S":
-                ip_data["syn_count"] += 1
-            if packet[TCP].dport:
-                ip_data["ports"].add(packet[TCP].dport)
-                
-        elif packet.haslayer(UDP) and packet[UDP].dport:
-            ip_data["ports"].add(packet[UDP].dport)
-        
-        # ML feature collection
-        if len(packet_features) < ANOMALY_DETECTION_SAMPLES * 2:
-            packet_features.append([
-                ip_data["count"],
-                len(ip_data["ports"]),
-                ip_data["syn_count"],
-                np.mean(ip_data["history"]) if ip_data["history"] else 0
-            ])
-        
-        # Real-time protection (using the firewall)
-        if not db._get_blocked_ips(src_ip):
-            # DoS/Burst detection
-            if ip_data["count"] > THRESHOLD:
-                alert_type = "Burst Attack" if ip_data["count"] > BURST_THRESHOLD else "High Traffic"
-                flag_metric(src_ip, ip_data["count"], alert_type)
-                
-                # Blocks the IP
-                defense.block_ip(src_ip, alert_type)
-                logger.warning(f"Would block {src_ip} for {alert_type}")
+        # Only process packets destined for our web app
+        if dst_port == 5000:
+            current_time = time.time()
+            ip_data = packet_counts[src_ip]
             
-            # DNS amplification
-            if packet.haslayer(UDP) and packet[UDP].sport == 53 and len(packet) > 1000:
-                flag_metric(src_ip, len(packet), "DNS Amplification")
-                defense.block_ip(src_ip, "DNS Amplification")
-                logger.warning(f"Would block {src_ip} for DNS Amplification")
+            # Update counters
+            ip_data["count"] += 1
+            ip_data["hourly_count"] += 1
+            
+            # Web-specific attack detection
+            if ip_data["count"] > THRESHOLD:
+                # Potential DoS on web server
+                alert_type = "Web DoS Attack" if ip_data["count"] > BURST_THRESHOLD else "High Web Traffic"
+                flag_metric(src_ip, ip_data["count"], alert_type)
+                defense.block_ip(src_ip, alert_type)
+                logger.warning(f"Blocking {src_ip} for {alert_type} on web server")
 
 def start_sniffing():
     """Main entry point with logging"""
-    logger.info("Starting network monitoring system")
+    logger.info("Starting network monitoring system for web application on port 5000")
     
     # Start background threads
-    #threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
-    #threading.Thread(target=train_ml_model, daemon=True).start()
-    #threading.Thread(target=generate_traffic_report, daemon=True).start()
-    #threading.Thread(target=defense.cleanup_loop(), daemon=True).start()
-
-    # Start sniffing with BPF filter
+    threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
+    
+    # Modified filter to capture web traffic on port 5000
     sniff(
         prn=process_packets,
         store=False,
-        filter="ip and (tcp or udp or icmp)"
+        filter="tcp port 5000"  # Only capture traffic to/from port 5000
     )
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ const PORT = 5001;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '../../')));
 
 const users = [
     {
