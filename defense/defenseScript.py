@@ -2,9 +2,9 @@ import re
 import time
 import subprocess
 import os
-from logs.logger import setupLogger
+from logs.logger import setup_logger
 
-logger = setupLogger(__name__)
+logger = setup_logger(__name__)
 
 ## Class for blocking & unblocking IPs using iptables
 class Blocker:
