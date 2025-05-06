@@ -5,50 +5,50 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 5001;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(__dirname)); // Serve static files from current directory
+app.use(express.static(__dirname));
 
 const users = [
     {
         username: 'testuser',
-        passwordHash: '$2b$10$WzIkqXo8Z9vTi/NnkG1JreBX0I36xlKM4IZM/7Xt2dzRBsKU7rLkC' // password123
+        // password123
+        passwordHash: '$2b$10$WzIkqXo8Z9vTi/NnkG1JreBX0I36xlKM4IZM/7Xt2dzRBsKU7rLkC' 
     }
 ];
 
-// Login route
+// login route
 app.post('/login', async (req, res) => {
+    // extract the username and password from request body
     const { username, password } = req.body;
+    
+    // search for users in the array in Server.js 
     const user = users.find(u => u.username === username);
 
+    // If  not found, return 401 
     if (!user) {
         return res.status(401).json({ message: 'Invalid username or password' });
     }
 
+    // make sure it matches the password hash
     const validPassword = await bcrypt.compare(password, user.passwordHash);
+    
+    // If doesn't match, return 401 
     if (!validPassword) {
         return res.status(401).json({ message: 'Invalid username or password' });
     }
 
+    // If valid, send success response
     res.json({ message: 'success' });
 });
 
-// Signup route
-app.post('/signup', async (req, res) => {
-    const { username, password } = req.body;
+// Start the server and listen on specified port
+// listening referes to the proocess of waiting for network requests on a specific port
+// The example is 'having a doorman who watches a specific door (port) for visitors (requests)'
 
-    if (users.find(u => u.username === username)) {
-        return res.status(400).json({ message: 'Username already taken' });
-    }
-
-    const passwordHash = await bcrypt.hash(password, 10);
-    users.push({ username, passwordHash });
-
-    res.json({ message: 'User registered successfully' });
-});
-
+// opens a port for the server to listen and starts accepting requests
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

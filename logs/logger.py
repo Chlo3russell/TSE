@@ -9,7 +9,7 @@ LOG_DIRECTORY = "logs"
 LOG_FILE = os.path.join(LOG_DIRECTORY, "app.log")
 
 
-def setup_logger(name=__name__):
+def setupLogger(name=__name__):
     '''
     Setter function to configure and ensure backups for the shared log file.
     '''

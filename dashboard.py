@@ -8,13 +8,17 @@ import ipaddress
 
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
-from database.databaseScript import Database
+from Database.databaseScript import Database
 
+from flask import session
+from functools import wraps
+from flask_cors import CORS
 
 # Path to central log file
 LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
+CORS(app)  # Add CORS support
 app.secret_key = "defenceBranch"
 
 def get_firewall():
@@ -24,6 +28,38 @@ def get_firewall():
     if 'firewall' not in g:
         g.firewall = Firewall()
     return g.firewall
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        try:
+            if not request.is_json:
+                return jsonify({"message": "Missing JSON"}), 400
+                
+            data = request.get_json()
+            username = data.get('username')
+            password = data.get('password')
+            
+            # Check against the Node.js stored credentials
+            if username == 'testuser' and password == 'password123':
+                session['user_id'] = username
+                return jsonify({"message": "success"})
+            
+            return jsonify({"message": "Invalid username or password"}), 401
+            
+        except Exception as e:
+            print(f"Login error: {str(e)}")  # Debug logging
+            return jsonify({"message": "Server error"}), 500
+            
+    return render_template('login/login.html')
 
 @app.teardown_appcontext
 def close_firewall(exception):
@@ -68,6 +104,7 @@ def run_attack(attack_script):
     threading.Thread(target=attack_thread).start()
 
 @app.route("/")
+@login_required
 def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.

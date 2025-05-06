@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import IsolationForest
 
 # Import custom components
-from database.databaseScript import Database  #complete database class
-from logs.logger import setup_logger  # configured logger
+from Database.databaseScript import Database  #complete database class
+from logs.logger import setupLogger  # configured logger
 from firewallMonitor import Firewall  #firewall control
 
 # Configuration
@@ -22,7 +22,7 @@ ANOMALY_DETECTION_SAMPLES = 1000
 # Initialize components
 defense = Firewall()
 db = Database()
-logger = setup_logger(__name__)  # Using logger setup
+logger = setupLogger(__name__)  # Using logger setup
 
 # Packet tracking structure
 packet_counts = defaultdict(lambda: {

@@ -1,0 +1,132 @@
+# Traffic Security Enhancement (TSE) System
+
+A real-time network traffic monitoring and defense system that protects against various network attacks including DDoS, port scanning, and SYN floods.
+
+## Features
+
+- Real-time traffic monitoring using Scapy
+- Machine learning-based anomaly detection
+- Protection against common attacks:
+  - DDoS/DoS attacks
+  - SYN floods
+  - Port scanning
+  - DNS amplification
+- Web-based dashboard for monitoring and control
+- Automated IP blocking and rate limiting
+- Comprehensive logging system
+- Database-backed persistence
+
+## Prerequesities 
+
+Python packages
+
+scapy
+flask
+numpy
+sklearn
+whois
+sqlite3
+
+## Project Structure
+
+- `dashboard.py` - Web interface and control panel
+
+.Implements the web interface
+.Provides real-time monitoring views
+.Handles defense settings
+.Manages log viewing
+.Processes user interactions
+
+- `trafficMonitor.py` - Core traffic monitoring system
+
+.Handles real-time packet capture and analysis
+.Implements machine learning-based anomaly detection
+.Processes and analyzes network packets
+.Detects various types of attacks
+.Triggers defensive actions
+
+
+- `firewallMonitor.py` - Firewall management
+
+.Manages firewall rules
+.Handles IP blocking/unblocking
+.Implements rate limiting
+.Maintains blocked IP list
+.Performs periodic cleanup
+
+- `Attacks/` - Sample attack scripts for testing
+- `/synack.py`
+
+.Simulates SYN flood attacks
+.Configurable packet count
+.Random source IP generation
+
+- `/httpflood.py`
+
+.Simulates HTTP flood attacks
+.Multi-threaded request flooding
+.Configurable target settings
+
+- `/UDPFlood.py`
+
+.Simulates UDP flood attacks
+.Configurable packet parameters
+.Random source port generation
+
+- `Database/` - Database management and persistence
+- `/databaseScript.py` 
+
+.Manages SQLite database operations
+.Stores traffic logs, blocked IPs, and metrics
+.Handles data retention and cleanup
+.Manages IP information and metrics
+
+- `defense/` - Defense mechanisms
+- `logs/` - Logging system
+- `/logger.py`
+
+.Centralises logging functionality
+.Manages log rotation
+.Provided formatted logging
+.Handles log retrieval and filterin
+
+- `static/` - Static web assets
+
+. This is the CSS styling
+
+- `templates/` - HTML templates
+
+. Contains all the templates
+
+
+- `login/` - Authentication system
+
+- `run.py`
+
+.Main entry point
+.Launches all system components in separate threads
+.Manages the Flask website and traffic monitor
+.Initiates attack simulations
+
+
+
+
+## Setup
+
+1. Create a virtual enviroment OR install all of the depenancies:
+(like in cloud with the API)
+
+2. Start the system:
+Run the run.py as normal
+
+```
+python run.py
+```
+
+## Usage
+
+1. Access the dashboard at `http://localhost:5001`
+2. Login with your credentials (testuser / password123)
+3. Monitor traffic through the web interface
+4. Configure defense settings as needed
+

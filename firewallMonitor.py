@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 import time
 from defense.defenseScript import Blocker
-from database.databaseScript import Database
-from logs.logger import setup_logger
+from Database.databaseScript import Database
+from logs.logger import setupLogger
 
-logger = setup_logger(__name__)
+logger = setupLogger(__name__)
 BLOCK_DURATION = 300
 
 class Firewall: 
