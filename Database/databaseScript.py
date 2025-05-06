@@ -3,19 +3,21 @@ import sqlite3
 from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
 import hashlib
+import os
 
 # Create/connect to a database
-conn = sqlite3.connect('database/database.db')
-cursor = conn.cursor()
+#conn = sqlite3.connect('database/database.db')
+#cursor = conn.cursor()
 
 # Create a simple table
 class Database:
     def __init__(self):
         # Protected methods
-        self._conn = sqlite3.connect("database/database.db")
+        db_path = os.path.join(os.path.dirname(__file__), 'database.db')
+        self._conn = sqlite3.connect(db_path)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute('PRAGMA foreign_keys = ON')
-        self._c = self._conn.cursor() 
+        self._c = self._conn.cursor()
 
         # Call private method to setup db & create indexes
         self.__setup_db()

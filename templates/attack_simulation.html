@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="defense-container">
     <h1>Attack Simulation</h1>
 
     <div>
@@ -20,4 +21,5 @@
         <p>This attack floods the target server with UDP packets, overwhelming its network and causing a denial of service.</p>
         <button onclick="location.href='/udp_attack'">Run UDP Flood Attack</button>
     </div>
+</div>
 {% endblock %}

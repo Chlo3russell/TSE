@@ -918,3 +918,369 @@ Traceback (most recent call last):
 UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
 2025-05-06 10:54:03,101 - __main__ - WARNING - Would block 162.159.129.232 for High Traffic
 
+2025-05-06 15:56:41,431 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 15:56:42,529 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 15:56:42,531 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 16:05:36,772 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:05:36,940 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 DOMAIN dir=in action=block remoteip=140.82.114.22 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 DOMAIN', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:37,030 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 PRIVATE dir=in action=block remoteip=140.82.114.22 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 PRIVATE', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:37,085 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 PUBLIC dir=in action=block remoteip=140.82.114.22 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 PUBLIC', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:37,089 - firewallMonitor - INFO - Successfully logged the block of IP 140.82.114.22 to the database
+
+2025-05-06 16:05:37,089 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:38,028 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:05:38,029 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:38,030 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:38,722 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:05:38,722 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:38,723 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:39,689 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 151
+
+2025-05-06 16:05:39,690 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:39,691 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:40,309 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:05:40,309 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:40,310 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:40,985 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 151
+
+2025-05-06 16:05:40,985 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:40,986 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:41,632 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:05:41,633 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:05:41,633 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:05:41,758 - __main__ - WARNING - Flagged High Traffic from 192.168.1.7 (Unknown) - Value: 151
+
+2025-05-06 16:05:41,818 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.7 DOMAIN dir=in action=block remoteip=192.168.1.7 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.7 DOMAIN', 'dir=in', 'action=block', 'remoteip=192.168.1.7', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:41,895 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.7 PRIVATE dir=in action=block remoteip=192.168.1.7 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.7 PRIVATE', 'dir=in', 'action=block', 'remoteip=192.168.1.7', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:41,959 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 192.168.1.7 PUBLIC dir=in action=block remoteip=192.168.1.7 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 192.168.1.7 PUBLIC', 'dir=in', 'action=block', 'remoteip=192.168.1.7', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:05:47,484 - firewallMonitor - ERROR - Failed to log the block of IP 192.168.1.7 to the database
+
+2025-05-06 16:05:47,666 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.1.7 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.1.7 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 16:05:47,738 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.1.7 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.1.7 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 16:05:47,854 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 192.168.1.7 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 192.168.1.7 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 16:05:47,854 - __main__ - WARNING - Would block 192.168.1.7 for High Traffic
+
+2025-05-06 16:08:19,458 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:08:19,460 - __main__ - INFO - Starting network monitoring system
+
+2025-05-06 16:09:01,365 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:10:03,549 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:10:54,920 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:10:55,002 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 DOMAIN dir=in action=block remoteip=140.82.114.22 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 DOMAIN', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:10:55,134 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 PRIVATE dir=in action=block remoteip=140.82.114.22 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 PRIVATE', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:10:55,195 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 140.82.114.22 PUBLIC dir=in action=block remoteip=140.82.114.22 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 140.82.114.22 PUBLIC', 'dir=in', 'action=block', 'remoteip=140.82.114.22', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:10:55,200 - firewallMonitor - INFO - Successfully logged the block of IP 140.82.114.22 to the database
+
+2025-05-06 16:10:55,200 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:10:56,130 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:10:56,131 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:10:56,132 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:10:56,805 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:10:56,806 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:10:56,806 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:11:09,739 - __main__ - WARNING - Flagged High Traffic from 162.159.134.232 (Unknown) - Value: 151
+
+2025-05-06 16:11:09,829 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 DOMAIN dir=in action=block remoteip=162.159.134.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:09,908 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 PRIVATE dir=in action=block remoteip=162.159.134.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:09,964 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 PUBLIC dir=in action=block remoteip=162.159.134.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:15,476 - firewallMonitor - ERROR - Failed to log the block of IP 162.159.134.232 to the database
+
+2025-05-06 16:11:15,575 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.134.232 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.134.232 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 16:11:15,648 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.134.232 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.134.232 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 16:11:15,710 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.134.232 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.134.232 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 16:11:15,711 - __main__ - WARNING - Would block 162.159.134.232 for High Traffic
+
+2025-05-06 16:11:20,792 - __main__ - WARNING - Flagged High Traffic from 162.159.134.232 (Unknown) - Value: 151
+
+2025-05-06 16:11:20,851 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 DOMAIN dir=in action=block remoteip=162.159.134.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:20,905 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 PRIVATE dir=in action=block remoteip=162.159.134.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:20,956 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.134.232 PUBLIC dir=in action=block remoteip=162.159.134.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.134.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.134.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:11:20,960 - firewallMonitor - INFO - Successfully logged the block of IP 162.159.134.232 to the database
+
+2025-05-06 16:11:20,961 - __main__ - WARNING - Would block 162.159.134.232 for High Traffic
+
+2025-05-06 16:11:25,853 - __main__ - WARNING - Flagged High Traffic from 162.159.134.232 (Unknown) - Value: 151
+
+2025-05-06 16:11:25,854 - firewallMonitor - ERROR - Error blocking IP: 162.159.134.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:11:25,855 - __main__ - WARNING - Would block 162.159.134.232 for High Traffic
+
+2025-05-06 16:12:03,309 - __main__ - WARNING - Flagged High Traffic from 162.159.134.232 (Unknown) - Value: 151
+
+2025-05-06 16:12:03,310 - firewallMonitor - ERROR - Error blocking IP: 162.159.134.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:12:03,311 - __main__ - WARNING - Would block 162.159.134.232 for High Traffic
+
+2025-05-06 16:13:07,090 - __main__ - WARNING - Flagged High Traffic from 162.159.128.232 (Unknown) - Value: 151
+
+2025-05-06 16:13:07,155 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 DOMAIN dir=in action=block remoteip=162.159.128.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:13:07,219 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 PRIVATE dir=in action=block remoteip=162.159.128.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:13:07,282 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 PUBLIC dir=in action=block remoteip=162.159.128.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:13:12,776 - firewallMonitor - ERROR - Failed to log the block of IP 162.159.128.232 to the database
+
+2025-05-06 16:13:12,838 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.128.232 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.128.232 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 16:13:12,909 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.128.232 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.128.232 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 16:13:12,981 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.128.232 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.128.232 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 16:13:12,982 - __main__ - WARNING - Would block 162.159.128.232 for High Traffic
+
+2025-05-06 16:13:48,511 - __main__ - WARNING - Flagged High Traffic from 162.159.134.232 (Unknown) - Value: 151
+
+2025-05-06 16:13:48,512 - firewallMonitor - ERROR - Error blocking IP: 162.159.134.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:13:48,513 - __main__ - WARNING - Would block 162.159.134.232 for High Traffic
+
+2025-05-06 16:14:08,043 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:14:08,044 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:14:08,044 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:14:08,858 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 151
+
+2025-05-06 16:14:08,859 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:14:08,860 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:14:09,580 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:14:09,580 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:14:09,581 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:14:10,371 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 151
+
+2025-05-06 16:14:10,372 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:14:10,373 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:14:11,064 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:14:11,064 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:14:11,065 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:16:24,619 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (US) - Value: 151
+
+2025-05-06 16:16:24,620 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:16:24,620 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:16:25,494 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 151
+
+2025-05-06 16:16:25,494 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:16:25,494 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:16:26,105 - __main__ - WARNING - Flagged High Traffic from 140.82.114.22 (Unknown) - Value: 152
+
+2025-05-06 16:16:26,106 - firewallMonitor - ERROR - Error blocking IP: 140.82.114.22 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                                                               ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:16:26,107 - __main__ - WARNING - Would block 140.82.114.22 for High Traffic
+
+2025-05-06 16:25:33,656 - __main__ - WARNING - Flagged High Traffic from 162.159.128.232 (Unknown) - Value: 151
+
+2025-05-06 16:25:33,741 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 DOMAIN dir=in action=block remoteip=162.159.128.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:25:33,817 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 PRIVATE dir=in action=block remoteip=162.159.128.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:25:33,875 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.128.232 PUBLIC dir=in action=block remoteip=162.159.128.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.128.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.128.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:25:33,881 - firewallMonitor - INFO - Successfully logged the block of IP 162.159.128.232 to the database
+
+2025-05-06 16:25:33,881 - __main__ - WARNING - Would block 162.159.128.232 for High Traffic
+
+2025-05-06 16:28:35,004 - __main__ - WARNING - Flagged High Traffic from 162.159.128.232 (Unknown) - Value: 151
+
+2025-05-06 16:28:35,005 - firewallMonitor - ERROR - Error blocking IP: 162.159.128.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    # removed e
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:28:35,006 - __main__ - WARNING - Would block 162.159.128.232 for High Traffic
+
+2025-05-06 16:34:04,570 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:34:06,944 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:34:08,110 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:37:10,010 - __main__ - WARNING - Flagged High Traffic from 162.159.130.232 (Unknown) - Value: 151
+
+2025-05-06 16:37:10,080 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 DOMAIN dir=in action=block remoteip=162.159.130.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:10,131 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 PRIVATE dir=in action=block remoteip=162.159.130.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:10,182 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 PUBLIC dir=in action=block remoteip=162.159.130.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:15,653 - firewallMonitor - ERROR - Failed to log the block of IP 162.159.130.232 to the database
+
+2025-05-06 16:37:15,803 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.130.232 DOMAIN | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.130.232 DOMAIN']' returned non-zero exit status 1.
+
+2025-05-06 16:37:15,868 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.130.232 PRIVATE | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.130.232 PRIVATE']' returned non-zero exit status 1.
+
+2025-05-06 16:37:15,941 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall delete rule name=Block 162.159.130.232 PUBLIC | Command '['netsh', 'advfirewall', 'firewall', 'delete', 'rule', 'name=Block 162.159.130.232 PUBLIC']' returned non-zero exit status 1.
+
+2025-05-06 16:37:15,941 - __main__ - WARNING - Would block 162.159.130.232 for High Traffic
+
+2025-05-06 16:37:20,876 - __main__ - WARNING - Flagged High Traffic from 162.159.130.232 (Unknown) - Value: 151
+
+2025-05-06 16:37:20,938 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 DOMAIN dir=in action=block remoteip=162.159.130.232 profile=DOMAIN enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 DOMAIN', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=DOMAIN', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:20,989 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 PRIVATE dir=in action=block remoteip=162.159.130.232 profile=PRIVATE enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 PRIVATE', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=PRIVATE', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:21,043 - defense.defenseScript - ERROR - Failed to execute command: netsh advfirewall firewall add rule name=Block 162.159.130.232 PUBLIC dir=in action=block remoteip=162.159.130.232 profile=PUBLIC enable=yes | Command '['netsh', 'advfirewall', 'firewall', 'add', 'rule', 'name=Block 162.159.130.232 PUBLIC', 'dir=in', 'action=block', 'remoteip=162.159.130.232', 'profile=PUBLIC', 'enable=yes']' returned non-zero exit status 1.
+
+2025-05-06 16:37:21,048 - firewallMonitor - INFO - Successfully logged the block of IP 162.159.130.232 to the database
+
+2025-05-06 16:37:21,048 - __main__ - WARNING - Would block 162.159.130.232 for High Traffic
+
+2025-05-06 16:37:26,019 - __main__ - WARNING - Flagged High Traffic from 162.159.130.232 (Unknown) - Value: 151
+
+2025-05-06 16:37:26,020 - firewallMonitor - ERROR - Error blocking IP: 162.159.130.232 | cannot access local variable 'e' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\chloe\source\repos\TSE\firewallMonitor.py", line 45, in block_ip
+    # removed e
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-05-06 16:37:26,020 - __main__ - WARNING - Would block 162.159.130.232 for High Traffic
+
+2025-05-06 16:42:12,313 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:42:54,288 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-06 16:42:54,290 - __main__ - INFO - Starting network monitoring system for web application on port 5000
+

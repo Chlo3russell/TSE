@@ -37,6 +37,14 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+@app.route("/logout")
+def logout():
+    session.pop('user_id', None)
+     # Return JSON response instead of redirect
+    return jsonify({"message": "success"}) 
+
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -104,7 +112,6 @@ def run_attack(attack_script):
     threading.Thread(target=attack_thread).start()
 
 @app.route("/")
-@login_required
 def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.
@@ -112,7 +119,7 @@ def dashboard():
     try:
         db = get_db()
         # Get list of all tables
-        db._c.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        db._c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name != 'sqlite_sequence'")
         tables = [row["name"] for row in db._c.fetchall()]
         
         # Retrieve data from each table
@@ -126,6 +133,7 @@ def dashboard():
         return (f"Database error occurred: {e}", 500)
 
 @app.route("/defense-settings", methods=['GET', 'POST'])
+@login_required
 def defense_settings():
     '''
     Get block or unblock actions from the page.
@@ -317,6 +325,7 @@ def traffic_log_view():
     return render_template('traffic_logs.html', traffic_logs=traffic_logs)
 
 @app.route("/attack_simulation")
+@login_required
 def attack_simulation():
     """
     Render the attack simulation page.
