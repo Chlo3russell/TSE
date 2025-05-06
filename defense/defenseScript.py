@@ -8,10 +8,6 @@ logger = setup_logger(__name__)
 
 ## Class for blocking & unblocking IPs using iptables
 class Blocker:
-    def __init__(self, block_duration):
-        self.block_duration = block_duration # Duration the IPs will be blocked for in seconds
-        self.blocked_ips = {} # Dictionary to track blocked IPs & expiry times 
-
     def _run_command(self, *args) -> bool:
         '''
         Helper function to run given commands\n
@@ -45,16 +41,20 @@ class Blocker:
         Args:
             ip_address: IP Address to block
         '''
-        if ip_address not in self.blocked_ips:
-            if os.name == "posix":
-                self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
-            elif os.name == "nt":
-                # Apply the rule to each profile explicitly
+        if os.name == "posix":
+            self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
+        elif os.name == "nt":
+            if not self.check_if_ip_blocked(ip_address):
+            # Apply the rule to each profile explicitly
                 for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
                     self._run_command("advfirewall", "firewall", "add", "rule", f"name=Block {ip_address} {profile}", "dir=in", "action=block", f"remoteip={ip_address}", f"profile={profile}", "enable=yes")
-            self.blocked_ips[ip_address] = time.time() + self.block_duration # When does that IP block last till
-            return True
-        return False
+                logger.info(f"Blocker successfully blocked IP: {ip_address}")
+                return True
+            logger.warning("Cannot block IP that is already blocked")
+            return False
+        else:
+            logger.error("Invalid OS, cannot run command")
+            return False
     
     def unblock_ip(self, ip_address) -> bool:
         '''
@@ -62,27 +62,16 @@ class Blocker:
         Args:
             ip_address: IP Address to unblock
         '''
-        if ip_address in self.blocked_ips:
+        if self.check_if_ip_blocked(ip_address):
             if os.name == "posix":
                 self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
             elif os.name == "nt":
                 for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
                     self._run_command("advfirewall", "firewall", "delete", "rule", f"name=Block {ip_address} {profile}")
-            del self.blocked_ips[ip_address]
+            logger.info(f"Blocker successfully unblocked IP: {ip_address}")
             return True
+        logger.warning(f"Cannot unblock IP: {ip_address} as it isn't blocked")
         return False
-
-    def unblock_list(self) -> int:
-        '''
-        Unblocks all IP Addresses where their block time has expired
-        '''
-        count = 0 # Count of IPs that have been unblocked
-        for ip_address, block_time in list(self.blocked_ips.items()):
-            if time.time() >= block_time:
-                if self.unblock_ip(ip_address):
-                    count += 1
-        logger.info(f"Cleaning IPs from firewall, Unblocked: {count} IP addresses")
-        return count 
 
     def get_blocked_ips(self):
         '''
@@ -111,7 +100,9 @@ class Blocker:
                 
                 if current_rule.get("action") == "Block" and current_rule.get("remoteip"):
                     blocked.extend(current_rule["remoteip"].split(','))
-                return list(set(blocked))
+                cleaned_ips = [ip.split('/')[0] for ip in blocked]  
+                return cleaned_ips
+            
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to retrieve blocked IPs from Firewall: {e}")
         except Exception as e:
