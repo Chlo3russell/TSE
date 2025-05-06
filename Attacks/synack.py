@@ -2,11 +2,11 @@
 from scapy.all import IP, TCP, Raw, RandShort, send  # Scapy for packet crafting and sending
 from random import randint  # For generating random IP addresses
 import time  # For implementing delays between packets
-from logs.logger import setupLogger  # Custom logging setup
+from logs.logger import setup_logger  # Custom logging setup
 from threading import Event  # For implementing stop mechanism
 
 # Initialize logger for this module
-logger = setupLogger(__name__)
+logger = setup_logger(__name__)
 
 class SYNFlood:
     

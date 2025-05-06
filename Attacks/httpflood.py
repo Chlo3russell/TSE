@@ -1,10 +1,10 @@
 import requests
 import threading
 import time
-from logs.logger import setupLogger
+from logs.logger import setup_logger
 
 # Initialize logger for this module
-logger = setupLogger(__name__)
+logger = setup_logger(__name__)
 
 class HTTPFlood:
 
