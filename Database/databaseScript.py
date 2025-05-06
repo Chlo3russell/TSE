@@ -2,16 +2,17 @@ import whois
 import sqlite3
 from datetime import datetime, timedelta
 from scapy.all import IP, ICMP, sr1
+import hashlib
 
 # Create/connect to a database
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('database/database.db')
 cursor = conn.cursor()
 
 # Create a simple table
 class Database:
     def __init__(self):
         # Protected methods
-        self._conn = sqlite3.connect("database.db")
+        self._conn = sqlite3.connect("database/database.db")
         self._conn.row_factory = sqlite3.Row
         self._conn.execute('PRAGMA foreign_keys = ON')
         self._c = self._conn.cursor() 
@@ -31,8 +32,8 @@ class Database:
                 ip_address VARCHAR(40) UNIQUE NOT NULL,
                 location_id INTEGER,
                 isp_id INTEGER,
-                FOREIGN KEY (location_id) REFERENCES location(id),
-                FOREIGN KEY (isp_id) REFERENCES isp(id)
+                FOREIGN KEY (location_id) REFERENCES location(id) ON DELETE SET NULL,
+                FOREIGN KEY (isp_id) REFERENCES isp(id) ON DELETE SET NULL
             )
         ''')
 
@@ -54,7 +55,7 @@ class Database:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 source_ip_id INTEGER NOT NULL,
                 destination_ip VARCHAR(40) NOT NULL,
-                protocol_type INTEGER NOT NULL,
+                protocol_type VARCHAR(10) NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
                 FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
             )
@@ -87,11 +88,11 @@ class Database:
         self._c.execute('''
             CREATE TABLE IF NOT EXISTS flagged_metrics (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ip_id INTEGER NOT NULL,
+                ip_id VARCHAR(40) NOT NULL,
                 metric_type TEXT NOT NULL,
                 value FLOAT NOT NULL,
                 time_of_activity DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
+                FOREIGN KEY (ip_id) REFERENCES ip_list(id)
             )
         ''')
 
@@ -181,6 +182,19 @@ class Database:
             return None
 
 ### SETTER FUNCTIONS
+    def _add_flagged_metric(self, ip_id, metric_type, value):
+        try:
+            self._c.execute('''
+                INSERT INTO flagged_metrics (ip_id, metric_type, value)
+                VALUES (?,?,?)
+            ''', (ip_id, metric_type, value))
+            self._conn.commit()
+            return True
+        except sqlite3.Error as e:
+            print(f"Error adding flagged metric: {e}")
+            self._conn.rollback
+            return False
+
     def _add_location(self, country, city, region):
         
         #Add location information to the database. Can be called directly or used with IP lookup.
@@ -230,6 +244,9 @@ class Database:
         #    int: ISP ID
         
         try:
+            # Hash the contact information using SHA256
+            hashed_contact = hashlib.sha256(contact_information.encode()).hexdigest()
+
             # Check if ISP exists
             self._c.execute('''
                 SELECT id FROM isp 
@@ -240,11 +257,11 @@ class Database:
             if existing_isp:
                 return existing_isp[0]
             
-            # Insert new ISP
+            # Insert new ISP with hashed contact information
             self._c.execute('''
                 INSERT INTO isp (isp_name, contact_information)
                 VALUES (?, ?)
-            ''', (isp_name, contact_information))
+            ''', (isp_name, hashed_contact))
             
             self._conn.commit()
             return self._c.lastrowid
@@ -408,8 +425,8 @@ class Database:
 
     # Add an ip to the central ip table
     def _add_ip(self, ip_address, location_id=None, isp_id=None):
-        # Add IP with just address
-        #ip_id = db._add_ip('192.168.1.1')
+        # Add hashed IP with just address
+        # ip_id = db._add_ip('192.168.1.1')
 
         # Add IP with location and ISP info
         #location_id = db._add_location('USA', 'New York', 'NY')
@@ -417,21 +434,24 @@ class Database:
         #ip_id = db._add_ip('192.168.1.2', location_id, isp_id)
 
         try:
-            # Check if IP already exists
+            # Hash the IP address using SHA256
+            hashed_ip = hashlib.sha256(ip_address.encode()).hexdigest()
+
+            # Check if the hashed IP already exists
             self._c.execute('''
                 SELECT id FROM ip_list 
                 WHERE ip_address = ?
-            ''', (ip_address,))
+            ''', (hashed_ip,))
             
             existing_ip = self._c.fetchone()
             if existing_ip:
                 return existing_ip[0]
             
-            # Insert new IP
+            # Insert new hashed IP
             self._c.execute('''
                 INSERT INTO ip_list (ip_address, location_id, isp_id)
                 VALUES (?, ?, ?)
-            ''', (ip_address, location_id, isp_id))
+            ''', (hashed_ip, location_id, isp_id))
             
             self._conn.commit()
             
@@ -439,7 +459,7 @@ class Database:
             self._c.execute('''
                 INSERT INTO admin_logs (ip_id, action)
                 VALUES (?, ?)
-            ''', (self._c.lastrowid, f"IP Added: {ip_address}"))
+            ''', (self._c.lastrowid, f"IP Added: {ip_address} (hashed)"))
             
             self._conn.commit()
             return self._c.lastrowid
@@ -448,10 +468,6 @@ class Database:
             print(f"Error adding IP: {e}")
             self._conn.rollback()
             return None
-
-    def _add_flagged_metric(self, ip_id, metric_type, value):
-        pass
-
 
 ### GETTER FUNCTIONS
     # Query to get a list of blocked IPs, optionally filtered by a specific IP address
@@ -478,6 +494,7 @@ class Database:
     # Query to get traffic logs, optionally filtered by a start and end timestamp
     def _get_traffic_logs(self, start_time=None, end_time=None):
             try:
+                
                 if start_time and end_time:
                     self._c.execute("""
                         SELECT * FROM traffic_logs
@@ -559,29 +576,7 @@ class Database:
         
     # Query to get the changes/ actions taken on rate limits
     def _get_rate_limit_actions(self):
-        '''
-        Gets all rate limit actions from the database
-        Returns: 
-            List of dicts containing timestamp, action and config if present
-        '''
-        try:
-            self._c.execute('''
-                SELECT timestamp, action, 
-                    CASE WHEN config IS NULL THEN '' ELSE config END as config
-                FROM rate_limit_logs
-                ORDER BY timestamp DESC
-            ''')
-            results = self._c.fetchall()
-
-            return [{
-                'timestamp': row[0],
-                'action': row[1],
-                'config': row[2]
-            } for row in results
-            ]
-        except Exception as e:
-            print(f"Error retrieving rate limit actions: {e}")
-            return []
+        pass
 
     # Query to get a records of the admins actions/ changes they've made 
     def _get_admin_actions(self, start_date=None, end_date=None, ip_id=None, limit=100):
@@ -646,16 +641,31 @@ class Database:
             print(f"An error occurred: {e}")
             return None
 
-### DELETE FUNCTION
 
+
+### DELETE FUNCTION
     def _clear_records(self, days_to_keep=30):
-        """
-        Sets up automatic cleanup of old records and performs immediate cleanup.
-        Args:
-            days_to_keep (int): Number of days to keep records before deletion (default: 30)
-        Returns:
-            dict: Count of deleted records per table, or None if error occurs
-        """
+        # Clear records older than 30 days (default)
+        #deleted = db._clear_records()
+
+        # Set retention period to 30 days (default)
+        #db._clear_records()
+        # Change retention period to 60 days
+        #db._clear_records(days_to_keep=60)
+
+        # Example response:
+        # {
+        #     'traffic_logs': 150,
+        #     'rate_limit_logs': 45,
+        #     'admin_logs': 30,
+        #     'flagged_metrics': 200,
+        #     'blocked_ips': 25
+        # }
+        
+        #Sets up automatic cleanup of old records and performs immediate cleanup.
+        #Args:
+        #    days_to_keep (int): Number of days to keep records before deletion (default: 30)
+
         try:
             # Create a table to store cleanup configuration
             self._c.execute('''
@@ -666,7 +676,7 @@ class Database:
                 )
             ''')
 
-            # Create trigger for automatic unblocking
+            # unblocked info is changed to "Auto-unblocked" when the block duration expires
             self._c.execute('''
                 CREATE TRIGGER IF NOT EXISTS unblock_expired_ips
                 AFTER UPDATE ON blocked_ips
@@ -690,7 +700,7 @@ class Database:
                 VALUES (1, ?, CURRENT_TIMESTAMP)
             ''', (days_to_keep,))
 
-            # Define tables and their timestamp columns
+            # Create triggers for automatic cleanup on each table
             tables = {
                 'traffic_logs': 'timestamp',
                 'rate_limit_logs': 'timestamp',
@@ -699,8 +709,8 @@ class Database:
                 'blocked_ips': 'unblock_time'
             }
 
-            # Create cleanup triggers
             for table, timestamp_col in tables.items():
+                # Create trigger that runs on INSERT
                 self._c.execute(f'''
                     CREATE TRIGGER IF NOT EXISTS cleanup_{table}_trigger
                     AFTER INSERT ON {table}
@@ -733,21 +743,44 @@ class Database:
                     deleted_counts[table] = count
                 else:
                     deleted_counts[table] = 0
-                    
-            # Log cleanup action
+
+            # Log this cleanup action
             self._c.execute('''
                 INSERT INTO admin_logs (ip_id, action)
                 VALUES (?, ?)
-            ''', (0, f"Records cleanup: Keeping {days_to_keep} days of records"))
+            ''', (0, f"Records cleanup configuration updated: Keeping {days_to_keep} days of records"))
 
             self._conn.commit()
             return deleted_counts
 
         except sqlite3.Error as e:
+            print(f"Error setting up automatic cleanup: {e}")
             self._conn.rollback()
-            print(f"Error in _clear_records: {e}")
             return None
+
+
+    # Store WHOIS information in the database
+    def _store_domain_details(domain, whois_info):
+        try:
+            conn = sqlite3.connect('database.db')
+            cursor = conn.cursor()
+            
+            # Handle potential list/tuple values for dates
+            creation_date = whois_info.creation_date[0] if isinstance(whois_info.creation_date, (list, tuple)) else whois_info.creation_date
+            expiration_date = whois_info.expiration_date[0] if isinstance(whois_info.expiration_date, (list, tuple)) else whois_info.expiration_date
+            
+            cursor.execute('''
+                INSERT INTO Whois (Website, Registering_Company, Date_Created, Date_Expires, DNS_Servers)
+                VALUES (?, ?, ?, ?, ?)''',
+                (domain, 
+                whois_info.registrar, 
+                str(creation_date), 
+                str(expiration_date), 
+                ','.join(whois_info.name_servers)))
+            
+            conn.commit()
+            print(f"WHOIS info for {domain} inserted into database.")
         except Exception as e:
-            self._conn.rollback()
-            print(f"Unexpected error in _clear_records: {e}")
-            return None
+            print(f"Error saving to database: {e}")
+        finally:
+            conn.close()

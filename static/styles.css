@@ -167,3 +167,67 @@ pre {
     font-size: 13px;
     line-height: 1.4;
 }
+
+#flash-messages {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.flash-message {
+    background-color: #e4d9ff;
+    color: #2c3e50;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px #000000;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.flash-message.error{
+    background-color: #d9534f;
+}
+
+.flash-message.success{
+    background-color: #5cb85c;
+}
+
+@keyframes fadeInUp {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.container {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    box-sizing: border-box;
+    }
+
+button:hover {
+background: #0056b3;
+}
+
+.toggle {
+    margin-top: 15px;
+    text-align: center;
+    color: #007BFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.toggle:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    min-height: 20px;
+    transition: all 0.3s ease;
+}

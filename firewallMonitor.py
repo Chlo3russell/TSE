@@ -1,9 +1,10 @@
 from datetime import datetime, timedelta
+import time
 from defense.defenseScript import Blocker
 from Database.databaseScript import Database
-from logger import setup_logger
+from logs.logger import setupLogger
 
-logger = setup_logger(__name__)
+logger = setupLogger(__name__)
 BLOCK_DURATION = 300
 
 class Firewall: 
@@ -11,17 +12,19 @@ class Firewall:
         '''
         Initalises the Defense class, the class that conjoins the database script with the defense script.
         '''
-
-        self.db = Database()
-        self.blocker = Blocker(BLOCK_DURATION)
-        logger.info("Firewall Class Initalised")
+        try:
+            self.db = Database()
+            self.blocker = Blocker(BLOCK_DURATION)
+            logger.info("Successfully initalised Firewall")
+        except Exception as e:
+            logger.exception(f"Failed to initalised Firewall: {e}")
 
     def block_ip(self, ip_address, reason='') -> bool:
         '''
-        Block an IP and log the action to the database
+        Block an IP and log the action to the database\n
         Args: 
             ip_address: IP address to block
-            reason: Reason for blocking (optional)
+            reason: Reason for blocking (optional)\n
         Returns:
             bool: True if successful, False if unsuccessful
         '''
@@ -38,7 +41,9 @@ class Firewall:
                 ip_id = ip_info['id']
             
             # Block the IP using the Blocker object
-            self.blocker.block_ip(ip_address)
+            if not self.blocker.block_ip(ip_address):
+                logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                return False
 
             # Calculate the block times
             block_time = datetime.now()
@@ -62,14 +67,14 @@ class Firewall:
                 return False
             
         except Exception as e: 
-            logger.error(f"Error blocking IP {ip_address} | {e}")
+            logger.exception(f"Error blocking IP: {ip_address} | {e}")
             return False
 
     def unblock_ip(self, ip_address) -> bool:
         '''
-        Unblock an IP and remove it from the database
+        Unblock an IP and remove it from the database\n
         Args:
-            ip_address: IP address to unblock
+            ip_address: IP address to unblock\n
         Returns:
             bool: True if successful, False if unsuccessful
         '''
@@ -78,32 +83,33 @@ class Firewall:
             ip_info = self.db._get_ip(ip_address)
             # If you cannot find the IP, throw and error
             if not ip_info:
-                logger.warning(f"IP {ip_address} cannot be found in the database")
+                logger.warning(f"IP: {ip_address} cannot be found in the database")
                 return False
             
             # Get IP ID
             ip_id = ip_info['id']
 
             # Unblock the IP using the Blocker object
-            self.blocker.unblock_ip(ip_address)
-
+            if not self.blocker.unblock_ip(ip_address):
+                logger.error(f"Blocker failed to unblock IP: {ip_address}")
+            
             # Log the unblock action
             self.db._add_admin_action(
                 ip_id=ip_id,
                 action=f"Manually unblocked IP {ip_address}"
             )
-            
+
             logger.info(f"Successfully logged the unblocking of IP {ip_address} to the database")
             return True
     
         except Exception as e:
-            logger.error(f"Error unblocking IP {ip_address} | {e}")
+            logger.exception(f"Error unblocking IP: {ip_address} | {e}")
             return False
 
 
     def add_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
         '''
-        Add a rate limit and add the action to the database
+        Add a rate limit and add the action to the database\n
         Args:
             protocol: Protocol to apply the rate limit to
             port: Port to apply the rate limit to
@@ -113,7 +119,10 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try: 
-            self.blocker.add_rate_limit(protocol, port, per_second, burst_limit)
+            if not self.blocker.add_rate_limit(protocol, port, per_second, burst_limit):
+                logger.error(f"Blocker failed to add rate limit for Protocol: {protocol}, Port: {port}")
+                return False
+            
             self.db._add_rate_limit_action("Add rate limit", {
                 'protocol': protocol,
                 'port': port,
@@ -123,12 +132,12 @@ class Firewall:
             logger.info(f"Added rate limit for Protocol: {protocol}, Port: {port}")
             return True
         except Exception as e:
-            logger.error(f"Error adding rate limit for Protocol: {protocol}, Port: {port} | {e}")
+            logger.exception(f"Error adding rate limit for Protocol: {protocol}, Port: {port} | {e}")
             return False
 
     def remove_rate_limit(self, protocol, port=None, per_second=150, burst_limit=50) -> bool:
         '''
-        Remove a rate limit and add the action to the database
+        Remove a rate limit and add the action to the database\n
         Args:
             protocol: Protocol to remove the rate limit from
             port: Port to remove the rate limit from
@@ -138,8 +147,10 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try: 
-            self.blocker.remove_rate_limit(protocol, port, per_second, burst_limit)
-            self.db._add_rate_limit_action("Add rate limit", {
+            if not self.blocker.remove_rate_limit(protocol, port, per_second, burst_limit):
+                logger.error(f"Blocker failed to remove rate limit for Protocol: {protocol}, Port: {port}")
+                return False
+            self.db._add_rate_limit_action("Remove rate limit", {
                 'protocol': protocol,
                 'port': port,
                 'limit': per_second,
@@ -148,5 +159,15 @@ class Firewall:
             logger.info(f"Removed rate limit for Protocol: {protocol}, Port: {port}")
             return True
         except Exception as e:
-            logger.error(f"Error removing rate limit for Protocol: {protocol}, Port: {port} | {e}")
+            logger.exception(f"Error removing rate limit for Protocol: {protocol}, Port: {port} | {e}")
             return False
+    
+    def cleanup_loop(self, interval=300, days_to_keep=30):
+        while True:
+            try:
+                self.blocker.unblock_list() # Firewall unblocking
+                self.db._clear_records(days_to_keep=days_to_keep) # DB cleanup
+                logger.info("Periodic cleanup complete")
+            except Exception as e:
+                logger.exception(f"Unexpected exception when cleaning records: {e}") 
+            time.sleep(interval) # Run every 5 mins

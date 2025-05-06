@@ -1,23 +1,79 @@
 from datetime import datetime
 import os
 import time
-from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
-import sqlite3
-from firewallMonitor import Firewall
-from Database.databaseScript import Database
 import subprocess
 import threading
+import sqlite3
+import ipaddress
+
+from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
+from firewallMonitor import Firewall
+from Database.databaseScript import Database
+
+from flask import session
+from functools import wraps
+from flask_cors import CORS
 
 # Path to central log file
 LOG_FILE = 'logs/app.log'
 
 app = Flask(__name__)
-app.secret_key = "defenseBranch"
+CORS(app)  # Add CORS support
+app.secret_key = "defenceBranch"
 
-# Initialize database and firewall
-defense = Firewall()
+def get_firewall():
+    '''
+    Helper function to get the firewall
+    '''
+    if 'firewall' not in g:
+        g.firewall = Firewall()
+    return g.firewall
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        try:
+            if not request.is_json:
+                return jsonify({"message": "Missing JSON"}), 400
+                
+            data = request.get_json()
+            username = data.get('username')
+            password = data.get('password')
+            
+            # Check against the Node.js stored credentials
+            if username == 'testuser' and password == 'password123':
+                session['user_id'] = username
+                return jsonify({"message": "success"})
+            
+            return jsonify({"message": "Invalid username or password"}), 401
+            
+        except Exception as e:
+            print(f"Login error: {str(e)}")  # Debug logging
+            return jsonify({"message": "Server error"}), 500
+            
+    return render_template('login/login.html')
+
+@app.teardown_appcontext
+def close_firewall(exception):
+    '''
+    Helper function to close the firewall connection
+    '''
+    fw = g.pop('firewall', None)
+    if fw is not None:
+        fw.db._conn.close()  # Close the db connection if firewall has one
 
 def get_db():
+    '''
+    Helper function to get the db connection
+    '''
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = Database()
@@ -25,9 +81,19 @@ def get_db():
 
 @app.teardown_appcontext
 def close_connection(exception):
+    '''
+    Helper function to close the db connection
+    '''
     db = getattr(g, '_database', None)
     if db is not None:
         db._conn.close()
+
+def is_valid_ip(ip_address):
+    try:
+        ipaddress.ip_address(ip_address)
+        return True
+    except ValueError:
+        return False
 
 def run_attack(attack_script):
     """
@@ -38,6 +104,7 @@ def run_attack(attack_script):
     threading.Thread(target=attack_thread).start()
 
 @app.route("/")
+@login_required
 def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.
@@ -65,6 +132,7 @@ def defense_settings():
     '''
     try:
         db = get_db()
+        firewall = get_firewall()
     
         if request.method == 'POST':
             ip_address = request.form.get('ip_address')
@@ -76,27 +144,55 @@ def defense_settings():
 
             # Block/Unblock 
             if ip_address: 
-                if action == 'block': 
-                    if not defense.block_ip(ip_address, reason="Blocked manually by admin"):
-                        flash("Failed to block IP", "error")
-                elif action == 'unblock': 
-                    if not defense.unblock_ip(ip_address):
-                        flash("Failed to unblock IP", "error")
+                try:
+                    if is_valid_ip(ip_address):
+                        if action == 'block': 
+                            if not firewall.block_ip(ip_address, reason="Blocked manually by admin"):
+                                flash("Failed to block IP", "error")
+                            else:
+                                flash("IP successfully blocked", "success")
+
+                        elif action == 'unblock': 
+                            if not firewall.unblock_ip(ip_address):
+                                flash("Failed to unblock IP", "error")
+                            else:
+                                flash("IP successfully unblocked", "success")
+                    else:
+                        flash("Invalid IP address format", "error")
+                        return redirect(url_for('defense_settings'))
+                except Exception as e:
+                    flash(f"Unexpected error: {e}", "error")
+                    return redirect(url_for('defense_settings'))
+                
             elif action in ['add_rate_limit', 'remove_rate_limit'] and protocol:
+                if not per_second or not burst_limit:
+                    flash("Per second and Burst limit values are required", "error")
+                    return redirect(url_for('defense_settings'))
                 try:
                     per_second = int(per_second)
                     burst_limit = int(burst_limit)
                     port = int(port) if port else None
-                    # Validate protocol
+
+                    if per_second <=0 or burst_limit <=0:
+                        flash("Rate limits must be positive integers", "error")
+                        return redirect(url_for('defense_settings'))
+
                     if action == 'add_rate_limit':
-                        defense.add_rate_limit(protocol, port, per_second, burst_limit)
+                        if firewall.add_rate_limit(protocol, port, per_second, burst_limit):
+                            flash("Rate limit added", "success")
+                        else:
+                            flash("Failed to add rate limit", "error")
+
                     elif action == 'remove_rate_limit':
-                        defense.remove_rate_limit(protocol, port, per_second, burst_limit)
-                except Exception as e:
-                    flash(f"Error parsing rate limit values: {e}", "error")
+                        if firewall.remove_rate_limit(protocol, port, per_second, burst_limit):
+                            flash("Rate limit removed", "success")
+                        else:
+                            flash("Failed to remove rate limit", "error")
+                except ValueError:
+                    flash(f"Rate limit values must be integers", "error")
                     return redirect(url_for('defense_settings'))
-            return redirect(url_for('defense_settings'))
-      
+            return redirect(url_for('defense_settings')) 
+        
         blocked_ips = db._get_blocked_ips()
         return render_template('defense.html', blocked_ips=blocked_ips)
     except Exception as e:
@@ -131,7 +227,7 @@ def api_rate_limits():
 
 @app.route("/logviewer")
 def log_view():
-    return render_template("logviewer.html")
+    return render_template("log_viewer.html")
 
 @app.route("/logs")  # Single clear route for logs
 def stream_logs():
@@ -231,6 +327,4 @@ def attack_simulation():
 if __name__ == "__main__":
     if not os.path.exists("logs"):
         os.makedirs("logs")
-    with open(LOG_FILE, "a") as file:
-        file.write("LOG STREAM OPENED")
     app.run(debug=True, port=5001)
