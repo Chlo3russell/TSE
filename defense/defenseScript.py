@@ -127,9 +127,9 @@ class Blocker:
         '''
         try:
             if os.name == "posix":
-                command = subprocess.check_output(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
+                command = subprocess.run(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
             elif os.name == "nt":
-                command = subprocess.check_output(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check=True, text=True)
+                command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check=True, text=True)
             return command.stdout 
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to check firewall rules: {e}")
