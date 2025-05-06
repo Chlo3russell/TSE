@@ -2,9 +2,9 @@ from datetime import datetime, timedelta
 import time
 from defense.defenseScript import Blocker
 from database.databaseScript import Database
-from logs.logger import setup_logger
+from logs.logger import setup_logger  # Changed from setupLogger
 
-logger = setup_logger(__name__)
+logger = setup_logger(__name__)  # Changed from setupLogger
 BLOCK_DURATION = 300
 
 class Firewall: 
@@ -42,7 +42,8 @@ class Firewall:
             
             # Block the IP using the Blocker object
             if not self.blocker.block_ip(ip_address):
-                logger.error(f"Blocker failed to block IP: {ip_address} | {e}")
+                # removed e
+                logger.error(f"Blocker failed to block IP: {ip_address}")
                 return False
 
             # Calculate the block times

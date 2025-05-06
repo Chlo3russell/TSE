@@ -5,7 +5,7 @@ from scapy.all import IP, ICMP, sr1
 from logs.logger import setup_logger
 import os
 
-# initalise logger
+# iniliase logger
 logger = setup_logger(__name__)
 
 # Create a simple table

@@ -17,6 +17,10 @@ def run_monitoring():
 def run_dashboard():
     os.system("python dashboard.py")  
 
+def run_attack():
+    syn = synack.SYNFlood()
+    syn.startAttack()
+
 '''
 def run_node_server():
     # Get the directory containing login templates
@@ -42,5 +46,5 @@ threading.Thread(target=run_flask).start()
 threading.Thread(target=run_monitoring).start()
 #threading.Thread(target=run_node_server).start()
 time.sleep(20)
-threading.Thread(target=synack.syn_flood(packet_count=10000)).start()
+threading.Thread(target=run_attack).start()
 

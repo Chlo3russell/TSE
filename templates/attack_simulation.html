@@ -1,23 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="defense-container">
     <h1>Attack Simulation</h1>
 
-    <div>
+    <div class="attack-section">
         <h2>SYN Flood Attack</h2>
         <p>This overwhelms the target server with a flood of SYN packets, making it unable to respond to legitimate traffic.</p>
-        <button onclick="location.href='/syn_attack'">Run SYN Flood Attack</button>
+        <button id="synBtn" onclick="startAttack('syn')">Run SYN Flood Attack</button>
+        <button id="synStopBtn" onclick="stopAttack('syn')" style="display: none; background-color: #d9534f;">Stop Attack</button>
+        <div id="synStatus" class="status"></div>
     </div>
 
-    <div>
+    <div class="attack-section">
         <h2>HTTP Flood Attack</h2>
         <p>This sends a large number of HTTP requests to the target server, consuming resources and potentially causing a denial of service.</p>
-        <button onclick="location.href='/http_attack'">Run HTTP Flood Attack</button>
-        
+        <button id="httpBtn" onclick="startAttack('http')">Run HTTP Flood Attack</button>
+        <button id="httpStopBtn" onclick="stopAttack('http')" style="display: none; background-color: #d9534f;">Stop Attack</button>
+        <div id="httpStatus" class="status"></div>
     </div>
 
-    <div>
+    <div class="attack-section">
         <h2>UDP Flood Attack</h2>
         <p>This attack floods the target server with UDP packets, overwhelming its network and causing a denial of service.</p>
-        <button onclick="location.href='/udp_attack'">Run UDP Flood Attack</button>
+        <button id="udpBtn" onclick="startAttack('udp')">Run UDP Flood Attack</button>
+        <button id="udpStopBtn" onclick="stopAttack('udp')" style="display: none; background-color: #d9534f;">Stop Attack</button>
+        <div id="udpStatus" class="status"></div>
     </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/attack_simulation.js') }}"></script>
 {% endblock %}

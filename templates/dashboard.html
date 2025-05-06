@@ -1,6 +1,7 @@
 {% extends "base.html "%}
 {% block content %}
-<h1>Database Contents</h1>
+<div class="defense-container">
+    <h1>Database Contents</h1>
     
     {% for table_name, rows in data.items() %}
         <h2>{{ table_name }}</h2>
@@ -27,4 +28,5 @@
             <p>No data in this table</p>
         {% endif %}
     {% endfor %}
+</div>
 {% endblock %}

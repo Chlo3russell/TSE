@@ -9,13 +9,27 @@ import ipaddress
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
 from database.databaseScript import Database
+from logs.logger import setup_logger
 
 from flask import session
 from functools import wraps
 from flask_cors import CORS
 
+# Import attack classes
+from attacks.synack import SYNFlood
+from attacks.httpflood import HTTPFlood
+from attacks.UDPFlood import UDPFloodAttack
+
+# Store attack instances
+attack_instances = {
+    'syn': None,
+    'http': None,
+    'udp': None
+}
+
 # Path to central log file
 LOG_FILE = 'logs/app.log'
+logger = setup_logger()
 
 app = Flask(__name__)
 CORS(app)  # Add CORS support
@@ -36,6 +50,12 @@ def login_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
+
+@app.route("/logout")
+def logout():
+    session.pop('user_id', None)
+    # Return JSON response instead of redirect
+    return jsonify({"message": "success"}) 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -104,7 +124,6 @@ def run_attack(attack_script):
     threading.Thread(target=attack_thread).start()
 
 @app.route("/")
-@login_required
 def dashboard():
     """
     Fetch all tables and their data from the SQLite database and display them.
@@ -112,7 +131,7 @@ def dashboard():
     try:
         db = get_db()
         # Get list of all tables
-        db._c.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        db._c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name != 'sqlite_sequence'")
         tables = [row["name"] for row in db._c.fetchall()]
         
         # Retrieve data from each table
@@ -126,6 +145,7 @@ def dashboard():
         return (f"Database error occurred: {e}", 500)
 
 @app.route("/defense-settings", methods=['GET', 'POST'])
+@login_required
 def defense_settings():
     '''
     Get block or unblock actions from the page.
@@ -317,12 +337,69 @@ def traffic_log_view():
     return render_template('traffic_logs.html', traffic_logs=traffic_logs)
 
 @app.route("/attack_simulation")
+@login_required
 def attack_simulation():
     """
     Render the attack simulation page.
     """
     return render_template("attack_simulation.html")
 
+@app.route("/syn_attack", methods=['POST'])
+@login_required
+def syn_attack():
+    try:
+        attack_instances['syn'] = SYNFlood()
+        threading.Thread(target=attack_instances['syn'].startAttack).start()
+        return jsonify({"success": True})
+    except Exception as e:
+        logger.error(f"Failed to start SYN attack: {e}")
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/http_attack", methods=['POST'])
+@login_required
+def http_attack():
+    try:
+        attack_instances['http'] = HTTPFlood()
+        threading.Thread(target=attack_instances['http'].startAttack).start()
+        return jsonify({"success": True})
+    except Exception as e:
+        logger.error(f"Failed to start HTTP attack: {e}")
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/udp_attack", methods=['POST'])
+@login_required
+def udp_attack():
+    try:
+        attack_instances['udp'] = UDPFloodAttack('localhost', 5000)
+        threading.Thread(target=attack_instances['udp'].start).start()
+        return jsonify({"success": True})
+    except Exception as e:
+        logger.error(f"Failed to start UDP attack: {e}")
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/stop_syn_attack", methods=['POST'])
+@login_required
+def stop_syn_attack():
+    if attack_instances['syn']:
+        attack_instances['syn'].stopAttack()
+        attack_instances['syn'] = None
+    return jsonify({"success": True})
+
+@app.route("/stop_http_attack", methods=['POST'])
+@login_required
+def stop_http_attack():
+    if attack_instances['http']:
+        attack_instances['http'].active = False
+        attack_instances['http'] = None
+    return jsonify({"success": True})
+
+@app.route("/stop_udp_attack", methods=['POST'])
+@login_required
+def stop_udp_attack():
+    if attack_instances['udp']:
+        # UDP attack stops naturally after duration
+        attack_instances['udp'] = None
+    return jsonify({"success": True})
 
 if __name__ == "__main__":
     if not os.path.exists("logs"):
