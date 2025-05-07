@@ -11,10 +11,8 @@ from Database.databaseScript import Database
 from logs.logger import setup_logger
 from firewallMonitor import Firewall
 
-# Suppress all warnings since we removed cryptography
+# Suppress all warnings since removed cryptography
 warnings.filterwarnings("ignore")
-
-logger = setup_logger('traffic_monitor')
 
 # Configuration 
 THRESHOLD = 150
@@ -33,6 +31,7 @@ LOGIN_ENDPOINTS = ['/login', '/logout']
 # Initialize components
 defense = Firewall()
 db = Database()
+logger = setup_logger('traffic_monitor')
 
 # Unified tracking structure
 packet_counts = defaultdict(lambda: {
