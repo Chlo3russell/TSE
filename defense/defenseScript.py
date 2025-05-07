@@ -1,4 +1,5 @@
 import re
+import re
 import time
 import subprocess
 import os
@@ -86,6 +87,7 @@ class Blocker:
                 command = subprocess.run(["sudo", "/sbin/iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
                 return [line.split()[4] for line in command.stdout.splitlines() if "DROP" in line]
             elif os.name == "nt":
+                command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
                 command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
                 blocked = []
                 current_rule = {}

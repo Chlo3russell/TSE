@@ -3,7 +3,6 @@ run.py - file that runs both the fake website and the traffic monitor in separat
 '''
 import threading
 import os
-import time
 import subprocess
 from attacks import synack, httpflood, UDPFlood
 from targetWebsite import targetWebsite

@@ -21,7 +21,7 @@ class Database:
         # Call private method to setup db & create indexes
         self.__setup_db()
         self.__create_indexes()
-        #logger.info("Database initialised successfully.")
+        logger.info("Database initialised successfully.")
     
     def __setup_db(self):
         
@@ -37,7 +37,7 @@ class Database:
                     FOREIGN KEY (isp_id) REFERENCES isp(id)
                 )
             ''')
-            #logger.info("Table 'ip_list' created successfully.")
+            logger.info("Table 'ip_list' created successfully.")
 
             # Create Blocked IP table
             self._c.execute('''
@@ -50,7 +50,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            #logger.info("Table 'blocked_ips' created successfully.")
+            logger.info("Table 'blocked_ips' created successfully.")
 
             # Create Traffic table
             self._c.execute('''
@@ -63,7 +63,7 @@ class Database:
                     FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            #logger.info("Table 'traffic_logs' created successfully.")
+            logger.info("Table 'traffic_logs' created successfully.")
 
             # Create Rate limiting events table
             self._c.execute('''
@@ -74,7 +74,7 @@ class Database:
                     config TEXT
                 )
             ''')
-            #logger.info("Table 'rate_limit_logs' created successfully.")
+            logger.info("Table 'rate_limit_logs' created successfully.")
 
             # Create Admin events table
             self._c.execute('''
@@ -86,7 +86,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            #logger.info("Table 'admin_logs' created successfully.")
+            logger.info("Table 'admin_logs' created successfully.")
 
             # Create flagged metrics table
             self._c.execute('''
@@ -99,7 +99,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            #logger.info("Table 'flagged_metrics' created successfully.")
+            logger.info("Table 'flagged_metrics' created successfully.")
 
             # Create Location table
             self._c.execute('''
@@ -110,7 +110,7 @@ class Database:
                     region VARCHAR(100)
                 )
             ''')
-            #logger.info("Table 'location' created successfully.")
+            logger.info("Table 'location' created successfully.")
 
             # Create ISP table
             self._c.execute('''
@@ -120,7 +120,7 @@ class Database:
                     contact_information VARCHAR(255)
                 )
             ''')
-            #logger.info("Table 'isp' created successfully.")
+            logger.info("Table 'isp' created successfully.")
 
         except sqlite3.Error as e:
             logger.error(f"Error creating tables: {e}")
@@ -134,18 +134,18 @@ class Database:
         try:
             # Index for frequently queried columns
             self._c.execute('CREATE INDEX IF NOT EXISTS index_ip_address ON ip_list(ip_address)')
-            #logger.info("Index 'index_ip_address' created successfully.")
+            logger.info("Index 'index_ip_address' created successfully.")
 
             self._c.execute('CREATE INDEX IF NOT EXISTS index_blocked_ips_id ON blocked_ips(ip_id)')
             
-            #logger.info("Index 'index_ip_address' created successfully.")
+            logger.info("Index 'index_ip_address' created successfully.")
             self._c.execute('CREATE INDEX IF NOT EXISTS index_traffic_logs_timestamp ON traffic_logs(timestamp)')
             
-            #logger.info("Index 'index_ip_address' created successfully.")
+            logger.info("Index 'index_ip_address' created successfully.")
             self._c.execute('CREATE INDEX IF NOT EXISTS index_admin_logs_timestamp ON admin_logs(timestamp)')
 
             self._c.execute('CREATE INDEX IF NOT EXISTS index_flagged_metrics_time ON flagged_metrics(time_of_activity)')
-            #logger.info("Index 'index_ip_address' created successfully.")
+            logger.info("Index 'index_ip_address' created successfully.")
             
         except sqlite3.Error as e:
             self._conn.rollback()
@@ -624,7 +624,7 @@ class Database:
                 ORDER BY timestamp DESC
             ''')
             results = self._c.fetchall()
-            #logger.info("Retrieved all rate limit actions.")
+            logger.info("Retrieved all rate limit actions.")
             return [{
                 'timestamp': row['timestamp'],
                 'action': row['action'],
