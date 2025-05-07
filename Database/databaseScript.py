@@ -109,7 +109,7 @@ class Database:
             self._c.execute('''
                 CREATE TABLE IF NOT EXISTS admin_logs (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    ip_id INTEGER NOT NULL,
+                    ip_id INTEGER,
                     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
                     action TEXT NOT NULL,
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
@@ -475,7 +475,7 @@ class Database:
             self._c.execute('''
                 INSERT INTO admin_logs (ip_id, action)
                 VALUES (?, ?)
-            ''', (0, f"Rate Limit Change: {action}"))
+            ''', (None, f"Rate Limit Change: {action}"))
             
             self._conn.commit()
             logger.info(f"Rate limit action logged: {action}")
@@ -662,7 +662,7 @@ class Database:
         try:
             self._c.execute('''
                 SELECT timestamp, action, 
-                       CASE WHEN config IS NULL THEN '' ELSE config END as config
+                CASE WHEN config IS NULL THEN '' ELSE config END as config
                 FROM rate_limit_logs
                 ORDER BY timestamp DESC
             ''')
