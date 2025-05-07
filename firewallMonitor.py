@@ -5,7 +5,6 @@ from database.databaseScript import Database
 from logs.logger import setup_logger  # Changed from setupLogger
 
 logger = setup_logger(__name__)  # Changed from setupLogger
-BLOCK_DURATION = 300
 
 class Firewall: 
     def __init__(self):
@@ -14,7 +13,7 @@ class Firewall:
         '''
         try:
             self.db = Database()
-            self.blocker = Blocker(BLOCK_DURATION)
+            self.blocker = Blocker()
             logger.info("Successfully initalised Firewall")
         except Exception as e:
             logger.exception(f"Failed to initalised Firewall: {e}")
