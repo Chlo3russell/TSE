@@ -16,7 +16,7 @@ class Blocker:
         '''
         try:
             if os.name == "posix":
-                command = ['iptables'] + list(args)
+                command = ['sudo', '/sbin/iptables'] + list(args)
             elif os.name == "nt":
                 command = ['netsh'] + list(args)
             else:
@@ -43,6 +43,7 @@ class Blocker:
         '''
         if os.name == "posix":
             self._run_command("-A", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), append the rule (-A) to the incoming traffic (INPUT) matching packets to the source ip address given, (-j DROP) block that traffic.
+            return True
         elif os.name == "nt":
             if not self.check_if_ip_blocked(ip_address):
             # Apply the rule to each profile explicitly
@@ -65,6 +66,7 @@ class Blocker:
         if self.check_if_ip_blocked(ip_address):
             if os.name == "posix":
                 self._run_command("-D", "INPUT", "-s", ip_address, "-j", "DROP") # Command to change the firewall rules (iptables), delete a rule (-D) for the incoming traffic (INPUT), get the blocked source ip (-s ip_address) and remove that rule/ the block (-j DROP)
+                return True
             elif os.name == "nt":
                 for profile in ["DOMAIN", "PRIVATE", "PUBLIC"]:
                     self._run_command("advfirewall", "firewall", "delete", "rule", f"name=Block {ip_address} {profile}")
@@ -81,8 +83,8 @@ class Blocker:
         '''
         try:
             if os.name == "posix":
-                command = subprocess.run(["iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
-                return [line.split()[3] for line in command.stdout.splitlines() if "DROP" in line]
+                command = subprocess.run(["sudo", "/sbin/iptables", "-L", "INPUT", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Command to change the firewall rules (iptables), list all rules (-L) for the incoming traffic (INPUT), display IPs (-n), show rule numbers (--line-numbers) which is useful for deleting rules by number is multiple rle were on one IP
+                return [line.split()[4] for line in command.stdout.splitlines() if "DROP" in line]
             elif os.name == "nt":
                 command = subprocess.run(["netsh", "advfirewall", "firewall", "show", "rule", "name=all"], capture_output= True, check= True, text= True)
                 blocked = []
@@ -135,7 +137,8 @@ class Blocker:
         rules = []
         try:
             if os.name == "posix":
-                command = subprocess.run(["iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
+                command = subprocess.run(["sudo", "/sbin/iptables", "-L", "-n", "--line-numbers"], capture_output=True, check=True, text=True) # Same command in the get_self.blocked_ips function but runs it in shell and returns the output
+                return command
             elif os.name == "nt":
                 command = subprocess.check_output("netsh advfirewall firewall show rule name=all", shell=True, text=True)
                 rule_names = re.findall(r"Rule Name:\s+(.*)", command)

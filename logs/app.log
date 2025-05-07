@@ -1,0 +1,180 @@
+2025-05-07 13:39:34,168 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:34,168 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:34,206 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:37,021 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:37,021 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:37,052 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:39,449 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:39,861 - defense.defenseScript - INFO - Blocker successfully blocked IP: 192.168.10.1
+
+2025-05-07 13:39:39,862 - database.databaseScript - WARNING - No IP details found for IP: 192.168.10.1.
+
+2025-05-07 13:39:39,866 - database.databaseScript - INFO - IP added successfully: 192.168.10.1
+
+2025-05-07 13:39:39,870 - database.databaseScript - INFO - IP 1 blocked successfully.
+
+2025-05-07 13:39:39,870 - firewallMonitor - INFO - Successfully logged the block of IP 192.168.10.1 to the database
+
+2025-05-07 13:39:39,878 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:39,878 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:39,905 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:51,434 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:51,434 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:51,464 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:53,620 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:54,053 - defense.defenseScript - INFO - Blocker successfully unblocked IP: 192.168.10.1
+
+2025-05-07 13:39:54,056 - database.databaseScript - INFO - Unblocked IP: 192.168.10.1
+
+2025-05-07 13:39:54,056 - database.databaseScript - INFO - Retrieved IP details for IP: 192.168.10.1.
+
+2025-05-07 13:39:54,058 - database.databaseScript - INFO - Admin action logged: Manually unblocked IP 192.168.10.1
+
+2025-05-07 13:39:54,058 - firewallMonitor - INFO - Successfully logged the unblocking of IP 192.168.10.1 to the database
+
+2025-05-07 13:39:54,065 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:39:54,065 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:54,096 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:39:57,105 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:00,102 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:03,100 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:06,111 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:09,101 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:12,121 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:15,121 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:18,106 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:21,099 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:21,893 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:22,303 - defense.defenseScript - INFO - Blocker successfully blocked IP: 192.168.10.1
+
+2025-05-07 13:40:22,303 - database.databaseScript - INFO - Retrieved IP details for IP: 192.168.10.1.
+
+2025-05-07 13:40:22,307 - database.databaseScript - INFO - IP 1 blocked successfully.
+
+2025-05-07 13:40:22,307 - firewallMonitor - INFO - Successfully logged the block of IP 192.168.10.1 to the database
+
+2025-05-07 13:40:22,314 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:22,314 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:22,343 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:24,968 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:25,279 - defense.defenseScript - WARNING - Cannot block IP that is already blocked
+
+2025-05-07 13:40:25,279 - firewallMonitor - ERROR - Failed to block IP at monitor level: 192.168.10.1
+
+2025-05-07 13:40:25,285 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:25,285 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:25,312 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:28,328 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:31,317 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:33,404 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:33,867 - defense.defenseScript - INFO - Blocker successfully unblocked IP: 192.168.10.1
+
+2025-05-07 13:40:33,870 - database.databaseScript - INFO - Unblocked IP: 192.168.10.1
+
+2025-05-07 13:40:33,870 - database.databaseScript - INFO - Retrieved IP details for IP: 192.168.10.1.
+
+2025-05-07 13:40:33,874 - database.databaseScript - INFO - Admin action logged: Manually unblocked IP 192.168.10.1
+
+2025-05-07 13:40:33,874 - firewallMonitor - INFO - Successfully logged the unblocking of IP 192.168.10.1 to the database
+
+2025-05-07 13:40:33,883 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:33,884 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:33,912 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:36,921 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:37,004 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:37,311 - defense.defenseScript - WARNING - Cannot unblock IP: 192.168.10.1 as it isn't blocked
+
+2025-05-07 13:40:37,311 - firewallMonitor - ERROR - Blocker failed to unblock IP: 192.168.10.1
+
+2025-05-07 13:40:37,317 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:37,318 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:37,352 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:40,342 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:41,641 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:41,642 - defense.defenseScript - ERROR - Cannot perform rate limiting via Iptables on non-linux systems
+
+2025-05-07 13:40:41,642 - firewallMonitor - ERROR - Blocker failed to add rate limit for Protocol: tcp, Port: 80
+
+2025-05-07 13:40:41,648 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:41,649 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:41,676 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:44,678 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:51,610 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 13:40:51,611 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:51,639 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:54,663 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:40:57,652 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:00,653 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:03,655 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:06,653 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:09,648 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:12,661 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:15,655 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:18,651 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:21,646 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
+2025-05-07 13:41:24,642 - database.databaseScript - INFO - Retrieved all blocked IPs.
+
