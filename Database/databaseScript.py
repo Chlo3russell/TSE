@@ -481,6 +481,7 @@ class Database:
             ''', (ip_address, location_id, isp_id))
             
             self._conn.commit()
+            ip_id = self._c.lastrowid
             
             # Log the action in admin_logs
             self._c.execute('''
@@ -490,7 +491,7 @@ class Database:
             
             self._conn.commit()
             logger.info(f"IP added successfully: {ip_address}")
-            return self._c.lastrowid
+            return ip_id
         
         except sqlite3.Error as e:
             logger.error(f"Error adding IP: {e}")
@@ -723,7 +724,7 @@ class Database:
             """, (ip_id,))
             self._conn.commit()
 
-            if self._c.rowcount() == 0:
+            if self._c.rowcount == 0:
                 logger.info(f"No blocked record found for IP: {ip_address}")
             else:
                 logger.info(f"Unblocked IP: {ip_address}")

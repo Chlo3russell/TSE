@@ -37,9 +37,10 @@ class Firewall:
             # Check if the IP is already in the database
             ip_info = self.db._get_ip(ip_address)
             # If IP isn't in the database, add the IP and get the IP ID
-            if not ip_info:
+            if ip_info == None:
                 ip_id = self.db._add_ip(ip_address)
-                if not ip_id:
+                print(ip_id)
+                if ip_id == None:
                     logger.error(f"Failed to add IP {ip_address} to the database")
                     return False
             else:
