@@ -1,9 +1,12 @@
 from datetime import datetime, timedelta
 import time
 from defense.defenseScript import Blocker
+from database.databaseScript import Database
+from logs.logger import setup_logger  # Changed from setupLogger
 from Database.databaseScript import Database
 from logs.logger import setup_logger  # Changed from setupLogger
 
+logger = setup_logger(__name__)  # Changed from setupLogger
 logger = setup_logger(__name__)  # Changed from setupLogger
 BLOCK_DURATION = 300
 
@@ -14,7 +17,8 @@ class Firewall:
         '''
         try:
             self.db = Database()
-            self.blocker = Blocker(BLOCK_DURATION)
+            self.blocker = Blocker()
+            self.block_duration = 300
             logger.info("Successfully initalised Firewall")
         except Exception as e:
             logger.exception(f"Failed to initalised Firewall: {e}")
@@ -29,12 +33,18 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try:
+            # Block the IP using the Blocker object
+            if not self.blocker.block_ip(ip_address):
+                logger.error(f"Failed to block IP at monitor level: {ip_address}")
+                return False
+            
             # Check if the IP is already in the database
             ip_info = self.db._get_ip(ip_address)
             # If IP isn't in the database, add the IP and get the IP ID
-            if not ip_info:
+            if ip_info == None:
                 ip_id = self.db._add_ip(ip_address)
-                if not ip_id:
+                print(ip_id)
+                if ip_id == None:
                     logger.error(f"Failed to add IP {ip_address} to the database")
                     return False
             else:
@@ -48,7 +58,7 @@ class Firewall:
 
             # Calculate the block times
             block_time = datetime.now()
-            unblock_time = block_time + timedelta(seconds=self.blocker.block_duration)
+            unblock_time = block_time + timedelta(seconds=self.block_duration)
 
             # Log the block in the database
             block_logged = self.db._add_blocked_ip(
@@ -80,6 +90,15 @@ class Firewall:
             bool: True if successful, False if unsuccessful
         '''
         try:
+            # Unblock the IP using the Blocker object
+            if not self.blocker.unblock_ip(ip_address):
+                logger.error(f"Blocker failed to unblock IP: {ip_address}")
+                return False
+            
+            if not self.db.unblock_ip(ip_address):
+                logger.error(f"Database failed to unblock IP: {ip_address}")
+                return False
+            
             # Try to get the IP from the database
             ip_info = self.db._get_ip(ip_address)
             # If you cannot find the IP, throw and error
@@ -89,10 +108,6 @@ class Firewall:
             
             # Get IP ID
             ip_id = ip_info['id']
-
-            # Unblock the IP using the Blocker object
-            if not self.blocker.unblock_ip(ip_address):
-                logger.error(f"Blocker failed to unblock IP: {ip_address}")
             
             # Log the unblock action
             self.db._add_admin_action(
@@ -151,6 +166,7 @@ class Firewall:
             if not self.blocker.remove_rate_limit(protocol, port, per_second, burst_limit):
                 logger.error(f"Blocker failed to remove rate limit for Protocol: {protocol}, Port: {port}")
                 return False
+            
             self.db._add_rate_limit_action("Remove rate limit", {
                 'protocol': protocol,
                 'port': port,
@@ -166,7 +182,6 @@ class Firewall:
     def cleanup_loop(self, interval=300, days_to_keep=30):
         while True:
             try:
-                self.blocker.unblock_list() # Firewall unblocking
                 self.db._clear_records(days_to_keep=days_to_keep) # DB cleanup
                 logger.info("Periodic cleanup complete")
             except Exception as e:

@@ -10,7 +10,7 @@ logger = setup_logger(__name__)
 
 class SYNFlood:
     
-     #works by sending multiple SYN packets to overwhelm the target's TCP connection queue.
+    #works by sending multiple SYN packets to overwhelm the target's TCP connection queue.
     
     def __init__(self, target_ip='127.0.0.1', target_port=5001):
         

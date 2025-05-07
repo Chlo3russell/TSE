@@ -8,16 +8,17 @@ import ipaddress
 
 from flask import Flask, Response, jsonify, render_template, redirect, stream_with_context, url_for, request, flash, g
 from firewallMonitor import Firewall
-from Database.databaseScript import Database
+from database.databaseScript import Database
+from logs.logger import setup_logger
 
 from flask import session
 from functools import wraps
 from flask_cors import CORS
 
 # Import attack classes
-from Attacks.synack import SYNFlood
-from Attacks.httpflood import HTTPFlood
-from Attacks.UDPFlood import UDPFloodAttack
+from attacks.synack import SYNFlood
+from attacks.httpflood import HTTPFlood
+from attacks.UDPFlood import UDPFloodAttack
 
 # Store attack instances
 attack_instances = {
@@ -28,6 +29,7 @@ attack_instances = {
 
 # Path to central log file
 LOG_FILE = 'logs/app.log'
+logger = setup_logger()
 
 app = Flask(__name__)
 CORS(app)  # Add CORS support
@@ -52,10 +54,8 @@ def login_required(f):
 @app.route("/logout")
 def logout():
     session.pop('user_id', None)
-     # Return JSON response instead of redirect
+    # Return JSON response instead of redirect
     return jsonify({"message": "success"}) 
-
-
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

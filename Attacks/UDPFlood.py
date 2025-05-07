@@ -84,4 +84,3 @@ if __name__ == "__main__":
     # Create and start the attack
     attack = UDPFloodAttack(target, port, duration, rate)
     attack.start()
-

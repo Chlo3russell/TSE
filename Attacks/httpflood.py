@@ -7,9 +7,9 @@ from logs.logger import setup_logger  # Changed from setupLogger
 logger = setup_logger(__name__)  # Changed from setupLogger
 
 class HTTPFlood:
-     
+
     def __init__(self, target_url="http://localhost:5000", num_threads=100, duration=60):
-       
+
         self.target_url = target_url
         self.num_threads = num_threads
         self.duration = duration

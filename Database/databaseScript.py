@@ -481,6 +481,7 @@ class Database:
             ''', (ip_address, location_id, isp_id))
             
             self._conn.commit()
+            ip_id = self._c.lastrowid
             
             # Log the action in admin_logs
             self._c.execute('''
@@ -490,7 +491,7 @@ class Database:
             
             self._conn.commit()
             logger.info(f"IP added successfully: {ip_address}")
-            return self._c.lastrowid
+            return ip_id
         
         except sqlite3.Error as e:
             logger.error(f"Error adding IP: {e}")
@@ -698,6 +699,41 @@ class Database:
             return None
 
 ### DELETE FUNCTION
+    def unblock_ip(self, ip_address):
+        '''
+        Remove an IP from the blocked_ips table after it has been unblocked from the firewall\n
+        Args:
+            ip_address: IP given to unblock
+        Returns:
+            bool: True or False depending on success of removal
+        '''
+        try:
+            self._c.execute("""
+                SELECT id from ip_list WHERE ip_address = ?
+            """, (ip_address,))
+            result = self._c.fetchone()
+
+            if result == None:
+                logger.warning(f"IP: {ip_address} not found in IP list")
+                return False
+            
+            ip_id = result[0]
+
+            self._c.execute("""
+                DELETE FROM blocked_ips WHERE ip_id = ?
+            """, (ip_id,))
+            self._conn.commit()
+
+            if self._c.rowcount == 0:
+                logger.info(f"No blocked record found for IP: {ip_address}")
+            else:
+                logger.info(f"Unblocked IP: {ip_address}")
+
+            return True
+        except sqlite3.Error as e:
+            logger.error(f"Error occurred whilst removing IP from blocked IPs table: {e}")
+            return False
+
     def _clear_records(self, days_to_keep=30) -> dict:
         """
         Sets up automatic cleanup of old records and performs immediate cleanup.
