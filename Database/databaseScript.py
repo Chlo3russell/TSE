@@ -21,7 +21,7 @@ class Database:
         # Call private method to setup db & create indexes
         self.__setup_db()
         self.__create_indexes()
-        logger.info("Database initialised successfully.")
+        #logger.info("Database initialised successfully.")
     
     def __setup_db(self):
         
@@ -37,7 +37,7 @@ class Database:
                     FOREIGN KEY (isp_id) REFERENCES isp(id)
                 )
             ''')
-            logger.info("Table 'ip_list' created successfully.")
+            #logger.info("Table 'ip_list' created successfully.")
 
             # Create Blocked IP table
             self._c.execute('''
@@ -50,7 +50,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'blocked_ips' created successfully.")
+            #logger.info("Table 'blocked_ips' created successfully.")
 
             # Create Traffic table
             self._c.execute('''
@@ -63,7 +63,7 @@ class Database:
                     FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'traffic_logs' created successfully.")
+            #logger.info("Table 'traffic_logs' created successfully.")
 
             # Create Rate limiting events table
             self._c.execute('''
@@ -74,7 +74,7 @@ class Database:
                     config TEXT
                 )
             ''')
-            logger.info("Table 'rate_limit_logs' created successfully.")
+            #logger.info("Table 'rate_limit_logs' created successfully.")
 
             # Create Admin events table
             self._c.execute('''
@@ -86,7 +86,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'admin_logs' created successfully.")
+            #logger.info("Table 'admin_logs' created successfully.")
 
             # Create flagged metrics table
             self._c.execute('''
@@ -99,7 +99,7 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'flagged_metrics' created successfully.")
+            #logger.info("Table 'flagged_metrics' created successfully.")
 
             # Create Location table
             self._c.execute('''
@@ -110,7 +110,7 @@ class Database:
                     region VARCHAR(100)
                 )
             ''')
-            logger.info("Table 'location' created successfully.")
+            #logger.info("Table 'location' created successfully.")
 
             # Create ISP table
             self._c.execute('''
@@ -120,7 +120,7 @@ class Database:
                     contact_information VARCHAR(255)
                 )
             ''')
-            logger.info("Table 'isp' created successfully.")
+            #logger.info("Table 'isp' created successfully.")
 
         except sqlite3.Error as e:
             logger.error(f"Error creating tables: {e}")
@@ -134,18 +134,18 @@ class Database:
         try:
             # Index for frequently queried columns
             self._c.execute('CREATE INDEX IF NOT EXISTS index_ip_address ON ip_list(ip_address)')
-            logger.info("Index 'index_ip_address' created successfully.")
+            #logger.info("Index 'index_ip_address' created successfully.")
 
             self._c.execute('CREATE INDEX IF NOT EXISTS index_blocked_ips_id ON blocked_ips(ip_id)')
             
-            logger.info("Index 'index_ip_address' created successfully.")
+            #logger.info("Index 'index_ip_address' created successfully.")
             self._c.execute('CREATE INDEX IF NOT EXISTS index_traffic_logs_timestamp ON traffic_logs(timestamp)')
             
-            logger.info("Index 'index_ip_address' created successfully.")
+            #logger.info("Index 'index_ip_address' created successfully.")
             self._c.execute('CREATE INDEX IF NOT EXISTS index_admin_logs_timestamp ON admin_logs(timestamp)')
 
             self._c.execute('CREATE INDEX IF NOT EXISTS index_flagged_metrics_time ON flagged_metrics(time_of_activity)')
-            logger.info("Index 'index_ip_address' created successfully.")
+            #logger.info("Index 'index_ip_address' created successfully.")
             
         except sqlite3.Error as e:
             self._conn.rollback()
@@ -623,7 +623,7 @@ class Database:
                 ORDER BY timestamp DESC
             ''')
             results = self._c.fetchall()
-            logger.info("Retrieved all rate limit actions.")
+            #logger.info("Retrieved all rate limit actions.")
             return [{
                 'timestamp': row['timestamp'],
                 'action': row['action'],
@@ -698,6 +698,41 @@ class Database:
             return None
 
 ### DELETE FUNCTION
+    def unblock_ip(self, ip_address):
+        '''
+        Remove an IP from the blocked_ips table after it has been unblocked from the firewall\n
+        Args:
+            ip_address: IP given to unblock
+        Returns:
+            bool: True or False depending on success of removal
+        '''
+        try:
+            self._c.execute("""
+                SELECT id from ip_list WHERE ip_address = ?
+            """, (ip_address,))
+            result = self._c.fetchone()
+
+            if result == None:
+                logger.warning(f"IP: {ip_address} not found in IP list")
+                return False
+            
+            ip_id = result[0]
+
+            self._c.execute("""
+                DELETE FROM blocked_ips WHERE ip_id = ?
+            """, (ip_id,))
+            self._conn.commit()
+
+            if self._c.rowcount() == 0:
+                logger.info(f"No blocked record found for IP: {ip_address}")
+            else:
+                logger.info(f"Unblocked IP: {ip_address}")
+
+            return True
+        except sqlite3.Error as e:
+            logger.error(f"Error occurred whilst removing IP from blocked IPs table: {e}")
+            return False
+
     def _clear_records(self, days_to_keep=30) -> dict:
         """
         Sets up automatic cleanup of old records and performs immediate cleanup.

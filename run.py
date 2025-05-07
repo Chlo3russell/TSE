@@ -17,10 +17,16 @@ def run_monitoring():
 def run_dashboard():
     os.system("python dashboard.py")  
 
-def run_attack():
-    syn = synack.SYNFlood()
-    syn.startAttack()
-
+def run_attack(attack):
+    if attack == "syn":
+        syn = synack.SYNFlood()
+        syn.startAttack()
+    elif attack == "udp":
+        udp = UDPFlood.UDPFloodAttack(target_ip="127.0.0.1", target_port=80)
+        udp.start()
+    elif attack == "http":
+        http = httpflood.HTTPFlood()
+        http.startAttack()
 '''
 def run_node_server():
     # Get the directory containing login templates
@@ -39,12 +45,14 @@ def run_node_server():
     except FileNotFoundError:
         print("Node.js is not installed or not in PATH. Please install Node.js first.")
 '''
-        
+
 # Start all services
 threading.Thread(target=run_dashboard).start()
+time.sleep(5)
 threading.Thread(target=run_flask).start()
+time.sleep(5)
 threading.Thread(target=run_monitoring).start()
 #threading.Thread(target=run_node_server).start()
-time.sleep(20)
-threading.Thread(target=run_attack).start()
+time.sleep(5)
+threading.Thread(target=run_attack("udp")).start()
 

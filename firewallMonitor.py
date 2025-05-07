@@ -84,6 +84,10 @@ class Firewall:
                 logger.error(f"Blocker failed to unblock IP: {ip_address}")
                 return False
             
+            if not self.db.unblock_ip(ip_address):
+                logger.error(f"Database failed to unblock IP: {ip_address}")
+                return False
+            
             # Try to get the IP from the database
             ip_info = self.db._get_ip(ip_address)
             # If you cannot find the IP, throw and error
