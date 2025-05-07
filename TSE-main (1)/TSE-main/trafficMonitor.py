@@ -1,4 +1,5 @@
 from scapy.all import sniff, IP, TCP, UDP, Raw
+from scapy.all import get_if_list  # Ensure this is imported
 from collections import defaultdict, deque
 import time
 import threading
@@ -220,19 +221,41 @@ def analyze_traffic_patterns():
             logger.error(f"Traffic analysis error: {str(e)}")
             time.sleep(30)
 
+
 def start_sniffing():
     """Main entry point with enhanced monitoring"""
     logger.info(f"Starting enhanced network monitoring system on port {FLASK_PORT}")
-    
+
     # Start analysis thread
     threading.Thread(target=analyze_traffic_patterns, daemon=True).start()
-    
-    # Capture all traffic to Flask port
-    sniff(
-        prn=process_packets,
-        store=False,
-        filter=f"tcp port {FLASK_PORT} or udp port {FLASK_PORT}"
-    )
+
+    # Fetch interfaces and log them
+    interfaces = get_if_list()
+    logger.info(f"Available interfaces: {interfaces}")
+
+    # Prioritize known loopback-compatible interfaces (Npcap)
+    possible_interfaces = [
+        iface for iface in interfaces
+        if "loopback" in iface.lower() or "npcap" in iface.lower() or "\\Device\\NPF_Loopback" in iface
+    ] + interfaces  # Fallback to all
+
+    for iface in possible_interfaces:
+        try:
+            logger.info(f"Trying to sniff on interface: {iface}")
+            sniff(
+                iface=iface,
+                prn=lambda pkt: [logger.debug(f"Captured packet: {pkt.summary()}"), process_packets(pkt)],
+                store=False,
+                filter=f"tcp port {FLASK_PORT} or udp port {FLASK_PORT}",
+                promisc=True
+            )
+            return  # Exit loop on successful sniff
+        except Exception as e:
+            logger.warning(f"Failed to sniff on interface {iface}: {e}")
+
+    logger.error("Failed to start sniffing on any known interface. Please check permissions and interface names.")
+
+
 
 if __name__ == "__main__":
     start_sniffing()
