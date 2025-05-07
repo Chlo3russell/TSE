@@ -1,10 +1,8 @@
 from scapy.all import sniff, IP, TCP, UDP
-from scapy.all import sniff, IP, TCP, UDP
 from collections import defaultdict, deque
 import time
 import threading
 import numpy as np
-from datetime import datetime
 from datetime import datetime
 from sklearn.ensemble import IsolationForest
 import warnings

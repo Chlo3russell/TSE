@@ -6,6 +6,7 @@ import os
 import subprocess
 from attacks import synack, httpflood, UDPFlood
 from targetWebsite import targetWebsite
+import platform
 
 def run_flask():
     os.system("python targetWebsite/targetWebsite.py")  
@@ -26,32 +27,30 @@ def run_attack(attack):
     elif attack == "http":
         http = httpflood.HTTPFlood()
         http.startAttack()
-'''
+
 def run_node_server():
     # Get the directory containing login templates
     login_dir = os.path.join(os.path.dirname(__file__), 'templates', 'login')
-    print("Login directory exists:", os.path.exists(login_dir))
+    
     # Use node command on Windows, nodejs on some Linux systems
-    node_cmd = 'node' if os.name == 'nt' else 'nodejs'
-    print("Login directory exists:", os.path.exists(login_dir))
+    node_cmd = 'node' if platform.system() == 'Windows' else 'nodejs'
+    
     try:
         # Run npm install first to ensure dependencies
         subprocess.run(['npm', 'install'], cwd=login_dir, check=True)
+        
         # Then start the server
         subprocess.run([node_cmd, 'server.js'], cwd=login_dir)
     except subprocess.CalledProcessError as e:
         print(f"Failed to start Node.js server: {e}")
     except FileNotFoundError:
         print("Node.js is not installed or not in PATH. Please install Node.js first.")
-'''
 
 # Start all services
 threading.Thread(target=run_dashboard).start()
-time.sleep(5)
 threading.Thread(target=run_flask).start()
-time.sleep(5)
 threading.Thread(target=run_monitoring).start()
-#threading.Thread(target=run_node_server).start()
-time.sleep(5)
-threading.Thread(target=run_attack("udp")).start()
+threading.Thread(target=run_node_server).start()
+
+
 

@@ -1088,3 +1088,417 @@ Attack completed:
 
 2025-05-06 22:30:28,424 - Attacks.synack - INFO - Attack completed. Sent 37 packets
 
+2025-05-07 19:46:36,151 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:46:36,152 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:46:36,152 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:46:36,152 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:46:36,152 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,153 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,154 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,154 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:46:36,154 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:46:36,155 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:46:36,156 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:46:36,156 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:47:18,022 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:47:18,023 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:47:18,024 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,024 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,024 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,024 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,024 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:47:18,024 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:47:18,025 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:47:18,026 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:47:18,026 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:52:12,539 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:52:12,539 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:52:12,540 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:52:12,540 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:52:12,540 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:52:12,540 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:52:12,540 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:52:12,541 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:52:12,541 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,541 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,541 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,542 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,542 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:52:12,542 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:52:12,543 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:52:12,543 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:52:12,543 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:52:12,544 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:52:12,544 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:52:12,544 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:52:12,544 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:52:12,545 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:52:12,545 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,545 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,545 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,545 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:52:12,546 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:52:12,546 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:53:10,002 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:53:10,003 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,003 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,003 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,003 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,003 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:53:10,003 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:53:10,004 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:53:10,004 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,005 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,006 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,006 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:53:10,006 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:53:10,006 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:55:17,822 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:55:17,822 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:55:17,822 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:55:17,822 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:55:17,822 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,823 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,824 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:55:17,824 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:55:17,825 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:55:17,825 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:55:17,825 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:55:17,825 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:55:17,826 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:55:17,826 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:55:17,826 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:55:17,826 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:55:17,826 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,827 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,827 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,827 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:55:17,827 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:55:17,827 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:56:54,750 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:56:54,750 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:56:54,751 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:56:54,751 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:56:54,751 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:56:54,751 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:56:54,752 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:56:54,752 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:56:54,752 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,752 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,752 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,753 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,753 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:56:54,753 - firewallMonitor - INFO - Successfully initalised Firewall
+
+2025-05-07 19:56:54,754 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:56:54,754 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:56:54,754 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:56:54,754 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:56:54,754 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:56:54,755 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:56:54,755 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:56:54,755 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:56:54,755 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,755 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,756 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,756 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:54,756 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:56:54,756 - traffic_monitor - INFO - Starting network monitoring system for web application on port 5001
+
+2025-05-07 19:56:56,044 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:56:56,045 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:56:56,045 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:56:56,046 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:56:56,046 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:56:56,046 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:56:56,047 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:56:56,048 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:56:56,048 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:56,049 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:56,049 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:56,050 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:56,050 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:56:58,984 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:56:58,984 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:56:58,984 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:56:58,984 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:56:58,985 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:56:58,985 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:56:58,985 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:56:58,986 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:56:58,986 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:58,986 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:58,986 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:58,987 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:56:58,987 - database.databaseScript - INFO - Database initialised successfully.
+
+2025-05-07 19:57:14,134 - database.databaseScript - INFO - Table 'ip_list' created successfully.
+
+2025-05-07 19:57:14,134 - database.databaseScript - INFO - Table 'blocked_ips' created successfully.
+
+2025-05-07 19:57:14,135 - database.databaseScript - INFO - Table 'traffic_logs' created successfully.
+
+2025-05-07 19:57:14,135 - database.databaseScript - INFO - Table 'rate_limit_logs' created successfully.
+
+2025-05-07 19:57:14,136 - database.databaseScript - INFO - Table 'admin_logs' created successfully.
+
+2025-05-07 19:57:14,136 - database.databaseScript - INFO - Table 'flagged_metrics' created successfully.
+
+2025-05-07 19:57:14,137 - database.databaseScript - INFO - Table 'location' created successfully.
+
+2025-05-07 19:57:14,137 - database.databaseScript - INFO - Table 'isp' created successfully.
+
+2025-05-07 19:57:14,137 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:57:14,138 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:57:14,138 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:57:14,138 - database.databaseScript - INFO - Index 'index_ip_address' created successfully.
+
+2025-05-07 19:57:14,139 - database.databaseScript - INFO - Database initialised successfully.
+
