@@ -1,0 +1,30 @@
+<!-- This is the base template for the web application. It includes a navigation bar and a content block. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='js/attack_simulation.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <title>Base</title>
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('dashboard')}}">Homepage</a>
+        {% if 'user_id' in session %}
+            <a href="{{url_for('defense_settings')}}">Defense Settings</a>
+            <a href="{{url_for('attack_simulation')}}">Attack Simulation</a>
+        {% endif %}
+        <a href="{{url_for('log_view')}}">Logs</a>
+        {% if 'user_id' in session %}
+            <a href="#" onclick="handleLogout(event)" style="float: right;">Logout ({{ session['user_id'] }})</a>
+        {% else %}
+            <a href="{{url_for('login')}}" style="float: right;">Login</a>
+        {% endif %}
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
