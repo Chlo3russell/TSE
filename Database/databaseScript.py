@@ -37,7 +37,6 @@ class Database:
                     FOREIGN KEY (isp_id) REFERENCES isp(id)
                 )
             ''')
-            logger.info("Table 'ip_list' created successfully.")
 
             # Create Blocked IP table
             self._c.execute('''
@@ -50,7 +49,6 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'blocked_ips' created successfully.")
 
             # Create Traffic table
             self._c.execute('''
@@ -63,7 +61,6 @@ class Database:
                     FOREIGN KEY (source_ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'traffic_logs' created successfully.")
 
             # Create Rate limiting events table
             self._c.execute('''
@@ -74,7 +71,6 @@ class Database:
                     config TEXT
                 )
             ''')
-            logger.info("Table 'rate_limit_logs' created successfully.")
 
             # Create Admin events table
             self._c.execute('''
@@ -86,7 +82,6 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'admin_logs' created successfully.")
 
             # Create flagged metrics table
             self._c.execute('''
@@ -99,7 +94,6 @@ class Database:
                     FOREIGN KEY (ip_id) REFERENCES ip_list(id) ON DELETE CASCADE
                 )
             ''')
-            logger.info("Table 'flagged_metrics' created successfully.")
 
             # Create Location table
             self._c.execute('''
@@ -110,7 +104,6 @@ class Database:
                     region VARCHAR(100)
                 )
             ''')
-            logger.info("Table 'location' created successfully.")
 
             # Create ISP table
             self._c.execute('''
@@ -120,10 +113,10 @@ class Database:
                     contact_information VARCHAR(255)
                 )
             ''')
-            logger.info("Table 'isp' created successfully.")
 
+            logger.info("All database tables created successfully.")
         except sqlite3.Error as e:
-            logger.error(f"Error creating tables: {e}")
+            logger.error(f"Error creating database tables: {e}")
             raise
 
 ### INDEX
