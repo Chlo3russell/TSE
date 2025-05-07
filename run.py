@@ -6,6 +6,7 @@ import os
 import subprocess
 from attacks import synack, httpflood, UDPFlood
 from targetWebsite import targetWebsite
+import time
 
 def run_flask():
     os.system("python targetWebsite/targetWebsite.py")  

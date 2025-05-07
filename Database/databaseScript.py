@@ -619,7 +619,7 @@ class Database:
         try:
             self._c.execute('''
                 SELECT timestamp, action, 
-                       CASE WHEN config IS NULL THEN '' ELSE config END as config
+                CASE WHEN config IS NULL THEN '' ELSE config END as config
                 FROM rate_limit_logs
                 ORDER BY timestamp DESC
             ''')

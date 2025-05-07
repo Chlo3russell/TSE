@@ -1088,3 +1088,7 @@ Attack completed:
 
 2025-05-06 22:30:28,424 - Attacks.synack - INFO - Attack completed. Sent 37 packets
 
+2025-05-07 19:41:15,222 - attacks.UDPFlood - INFO - Starting UDP flood attack against 127.0.0.1:80
+
+2025-05-07 19:41:15,222 - attacks.UDPFlood - INFO - Duration: 10s, Rate: 0.1s between packets
+
