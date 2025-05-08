@@ -49,12 +49,6 @@ class Firewall:
                     return False
             else:
                 ip_id = ip_info['id']
-            
-            # Block the IP using the Blocker object
-            if not self.blocker.block_ip(ip_address):
-                # removed e
-                logger.error(f"Blocker failed to block IP: {ip_address}")
-                return False
 
             # Calculate the block times
             block_time = datetime.now()

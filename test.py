@@ -24,4 +24,4 @@ while blocker.check_if_ip_blocked('192.168.0.80') == True:
     blocker.get_blocked_ips()
     blocker.unblock_ip("192.168.0.80")
 '''
-firewall.block_ip('192.168.60.6')
+firewall.block_ip('192.168.69.6')

@@ -12,7 +12,7 @@ class SYNFlood:
     
     #works by sending multiple SYN packets to overwhelm the target's TCP connection queue.
     
-    def __init__(self, target_ip='127.0.0.1', target_port=5001):
+    def __init__(self, target_ip='192.168.0.80', target_port=5001):
         
         self.target_ip = target_ip
         self.target_port = target_port
