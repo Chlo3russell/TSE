@@ -1,4 +1,14 @@
 function startAttack(type) {
+    // Start the traffic monitor before the attack
+    fetch('/start-monitoring', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Traffic monitor started:', data.message || data);
+        })
+        .catch(error => {
+            console.error('Error starting traffic monitor:', error);
+        });
+
     document.getElementById(`${type}Btn`).disabled = true;
     document.getElementById(`${type}StopBtn`).style.display = 'inline-block';
     document.getElementById(`${type}Status`).textContent = 'Attack running...';
